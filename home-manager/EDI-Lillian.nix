@@ -18,7 +18,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-  ];23.05
+  ];
 
   nixpkgs = {
     # You can add overlays here
