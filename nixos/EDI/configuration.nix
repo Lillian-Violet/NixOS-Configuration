@@ -10,7 +10,8 @@
 }: {
   # You can import other NixOS modules here
   imports = [
-    <home-manager/nixos>
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
@@ -23,8 +24,15 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    ./././home-manager/EDI-Lillian.nix
   ];
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      lillian = import .../home-manager/EDI-Lillian.nix;
+    };
+  };
 
   nixpkgs = {
     # You can add overlays here
