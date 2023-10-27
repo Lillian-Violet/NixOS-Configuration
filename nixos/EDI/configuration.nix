@@ -30,7 +30,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      lillian = import ../../../home-manager/EDI-Lillian.nix;
+      lillian = import ../../home-manager/EDI-Lillian.nix;
     };
   };
 
