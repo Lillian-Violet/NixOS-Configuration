@@ -58,7 +58,7 @@
       allowUnfree = true;
       permittedInsecurePackages = [
         "electron-22.3.27"
-      ]
+      ];
     };
   };
 
