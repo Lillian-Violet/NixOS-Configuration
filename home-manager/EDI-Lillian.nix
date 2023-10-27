@@ -68,7 +68,7 @@
     # Chat applications:
     element-desktop
     signal-desktop
-    webcord-vencord
+    webcord
 
     # Gaming:
     prismlauncher
@@ -190,8 +190,11 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
+  programs.git = {
+    enable = true;
+    userEmail = "git@gladtherescake.eu";
+    userName = "Lillian-Violet";
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
