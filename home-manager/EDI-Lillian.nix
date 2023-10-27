@@ -110,7 +110,7 @@
       jnoortheen.nix-ide
       kamadorueda.alejandra
       ms-toolsai.jupyter
-      ms-python.python
+      #ms-python.python
       rust-lang.rust-analyzer
       yzhang.markdown-all-in-one
     ];
