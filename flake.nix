@@ -66,6 +66,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/EDI/configuration.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };
@@ -76,6 +77,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/GLaDOS/configuration.nix
+          sops-nix.nixosModules.sops
         ];
       };
     };
