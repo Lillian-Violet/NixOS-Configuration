@@ -10,6 +10,7 @@
 }: {
   # You can import other NixOS modules here
   imports = [
+    <home-manager/nixos>
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
