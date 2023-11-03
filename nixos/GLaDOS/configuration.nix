@@ -10,6 +10,8 @@
 }: {
   # You can import other NixOS modules here
   imports = [
+    # Import home-manager's NixOS module
+    inputs.home-manager.nixosModules.home-manager
     # If you want to use modules your own flake exports (from modules/nixos):
     # outputs.nixosModules.example
 
@@ -23,6 +25,14 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs outputs;};
+    users = {
+      # Import your home-manager configuration
+      lillian = import ../../home-manager/GLaDOS-Lillian.nix;
+    };
+  };
 
   nixpkgs = {
     # You can add overlays here
@@ -46,6 +56,9 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+      permittedInsecurePackages = [
+        "electron-22.3.27"
+      ];
     };
   };
 
@@ -72,10 +85,11 @@
   };
 
   environment.systemPackages = with pkgs; [
-    rage
+    age
     alejandra
     git-filter-repo
     home-manager
+    kirigami
     libsForQt5.discover
     libsForQt5.kdepim-addons
     libsForQt5.packagekit-qt
@@ -154,7 +168,7 @@
     enable = true;
   };
 
-  networking.hostName = "EDI";
+  networking.hostName = "GLaDOS";
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 3;

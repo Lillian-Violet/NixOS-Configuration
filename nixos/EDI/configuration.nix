@@ -89,6 +89,7 @@
     alejandra
     git-filter-repo
     home-manager
+    kirigami
     libsForQt5.discover
     libsForQt5.kdepim-addons
     libsForQt5.packagekit-qt
