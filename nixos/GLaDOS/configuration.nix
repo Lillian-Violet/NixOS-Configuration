@@ -89,9 +89,9 @@
     alejandra
     git-filter-repo
     home-manager
-    kirigami
     libsForQt5.discover
     libsForQt5.kdepim-addons
+    libsForQt5.kirigami2
     libsForQt5.packagekit-qt
     libportal-qt5
     noto-fonts
