@@ -105,12 +105,20 @@
     enable = true;
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
-      dracula-theme.theme-dracula
       arrterian.nix-env-selector
+      ban.spellright
+      dracula-theme.theme-dracula
+      eamodio.gitlens
+      github.vscode-pull-request-github
       jnoortheen.nix-ide
       kamadorueda.alejandra
       ms-toolsai.jupyter
+      ms-pyright.pyright
       #ms-python.python
+      ms-python.vscode-pylance
+      ms-vscode-remote.remote-containers
+      ms-vscode-remote.remote-ssh
+      oderwat.indent-rainbow
       rust-lang.rust-analyzer
       yzhang.markdown-all-in-one
     ];
