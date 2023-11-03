@@ -44,6 +44,10 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+
+      permittedInsecurePackages = [
+        "electron-22.3.27"
+      ];
     };
   };
 
@@ -64,7 +68,7 @@
     # Chat applications:
     element-desktop
     signal-desktop
-    webcord-vencord
+    webcord
 
     # Gaming:
     prismlauncher
@@ -106,7 +110,7 @@
       jnoortheen.nix-ide
       kamadorueda.alejandra
       ms-toolsai.jupyter
-      ms-python.python
+      #ms-python.python
       rust-lang.rust-analyzer
       yzhang.markdown-all-in-one
     ];
@@ -114,6 +118,18 @@
 
   programs.zsh = {
     enable = true;
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.7.0";
+          sha256 = "149zh2rm59blr2q458a5irkfh82y3dwdich60s9670kl3cl5h2m1";
+        };
+      }
+    ];
     enableAutosuggestions = true;
     enableCompletion = true;
     historySubstringSearch.enable = true;
@@ -178,7 +194,6 @@
         "web-search"
         "zsh-interactive-cd"
         "zsh-navigation-tools"
-        "zsh-nix-shell"
       ];
       theme = "jtriley";
     };
@@ -186,8 +201,11 @@
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
-  programs.git.enable = true;
-
+  programs.git = {
+    enable = true;
+    userEmail = "git@gladtherescake.eu";
+    userName = "Lillian-Violet";
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
