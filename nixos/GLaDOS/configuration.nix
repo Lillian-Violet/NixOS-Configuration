@@ -89,6 +89,7 @@
     alejandra
     git-filter-repo
     home-manager
+    input-leap
     libsForQt5.discover
     libsForQt5.kdepim-addons
     libsForQt5.kirigami2
