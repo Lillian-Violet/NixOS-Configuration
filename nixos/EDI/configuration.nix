@@ -135,6 +135,7 @@
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
   services.xserver.displayManager.defaultSession = "plasmawayland";
+  programs.kdeconnect.enable
 
   # Enable flatpak support
   services.flatpak.enable = true;
