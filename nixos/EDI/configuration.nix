@@ -93,6 +93,7 @@
     libsForQt5.discover
     libsForQt5.kdepim-addons
     libsForQt5.kirigami2
+    libsForQt5.kdeconnect-kde
     libsForQt5.packagekit-qt
     libportal-qt5
     noto-fonts
