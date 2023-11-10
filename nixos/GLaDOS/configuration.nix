@@ -91,6 +91,7 @@
     home-manager
     input-leap
     libsForQt5.discover
+    libsForQt5.kdeconnect-kde
     libsForQt5.kdepim-addons
     libsForQt5.kirigami2
     libsForQt5.packagekit-qt
