@@ -103,6 +103,7 @@
     oh-my-zsh
     pciutils
     rsync
+    steam
     wget
     zsh
   ];
@@ -110,6 +111,11 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
   hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
 
   # Set your time zone.
