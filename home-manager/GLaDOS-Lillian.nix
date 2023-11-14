@@ -22,7 +22,7 @@
   ];
 
   home.packages = with pkgs; [
-    heroic
+    heroic-unwrapped
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
