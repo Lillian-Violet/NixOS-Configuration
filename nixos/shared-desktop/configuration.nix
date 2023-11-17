@@ -149,6 +149,10 @@
     pulse.enable = true;
   };
 
+  programs.noisetorch = {
+    enable = true;
+  };
+
   programs.zsh = {
     enable = true;
   };
