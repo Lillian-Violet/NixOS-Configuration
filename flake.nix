@@ -81,5 +81,16 @@
         ];
       };
     };
+
+    nixosConfigurations = {
+      queen = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/queen/configuration.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
+    };
   };
 }
