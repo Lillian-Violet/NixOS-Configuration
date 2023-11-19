@@ -45,6 +45,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  networking.firewall.allowedTCPPorts = [80 443];
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -65,6 +67,12 @@
 
   programs.zsh = {
     enable = true;
+  };
+
+  security.acme = {
+    acceptTerms = true;
+    # Replace the email here!
+    email = "letsencrypt@gladtherescake.eu";
   };
 
   users.users = {
