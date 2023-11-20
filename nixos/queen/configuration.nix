@@ -122,6 +122,7 @@
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
       shell = pkgs.zsh;
     };
+    nextcloud.extraGroups = [config.sops.secrets.queen-Lillian."nextcloudadmin" config.sops.secrets.queen-Lillian."nextclouddb"];
   };
 
   # Enable completion of system packages by zsh
