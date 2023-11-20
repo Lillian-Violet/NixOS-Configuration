@@ -53,7 +53,7 @@
       dbuser = "nextcloud";
       dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
       dbname = "nextcloud";
-      dbpassFile = config.sops.secrets "nextclouddb".path;
+      dbpassFile = config.sops.secrets."nextclouddb".path;
 
       #TODO: work with sops to set this instead of a file & make sure the db setup is the same as on the previous server for easy migration
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
