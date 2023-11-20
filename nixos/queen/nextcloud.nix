@@ -42,6 +42,8 @@
     # Set what time makes sense for you
     autoUpdateApps.startAt = "05:00:00";
 
+    configureRedis = true;
+
     config = {
       # Further forces Nextcloud to use HTTPS
       overwriteProtocol = "https";
@@ -51,10 +53,10 @@
       dbuser = "nextcloud";
       dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
       dbname = "nextcloud";
-      dbpassFile = "/var/nextcloud-db-pass";
+      dbpassFile = config.sops.secrets.queen-Lillian."nextclouddb".path;
 
       #TODO: work with sops to set this instead of a file & make sure the db setup is the same as on the previous server for easy migration
-      adminpassFile = "/var/nextcloud-admin-pass";
+      adminpassFile = config.sops.secrets.queen-Lillian."nextcloudadmin".path;
       adminuser = "admin";
     };
   };
