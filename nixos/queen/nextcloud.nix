@@ -44,15 +44,17 @@
 
     configureRedis = true;
 
+    package = pkgs.nextcloud27;
+
     config = {
       # Further forces Nextcloud to use HTTPS
       overwriteProtocol = "https";
 
       # Nextcloud PostegreSQL database configuration, recommended over using SQLite
-      dbtype = "pgsql";
+      dbtype = "mysql";
       dbuser = "nextcloud";
-      dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
-      dbname = "nextcloud";
+      dbhost = "/run/mysql";
+      dbname = "NC";
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
       #TODO: work with sops to set this instead of a file & make sure the db setup is the same as on the previous server for easy migration
@@ -61,21 +63,22 @@
     };
   };
 
-  services.postgresql = {
+  services.mysql = {
     enable = true;
 
+    package = pkgs.mariadb_110;
     # Ensure the database, user, and permissions always exist
-    ensureDatabases = ["nextcloud"];
+    ensureDatabases = ["NC"];
     ensureUsers = [
       {
         name = "nextcloud";
-        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+        ensurePermissions."DATABASE NC" = "ALL PRIVILEGES";
       }
     ];
   };
 
   systemd.services."nextcloud-setup" = {
-    requires = ["postgresql.service"];
-    after = ["postgresql.service"];
+    requires = ["mysql.service"];
+    after = ["mysql.service"];
   };
 }

@@ -83,7 +83,7 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
-    postgresql_16
+    mariadb_110
     rsync
     wget
     zsh
