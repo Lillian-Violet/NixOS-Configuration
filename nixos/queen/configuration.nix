@@ -77,7 +77,7 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
-    postgesql
+    postgresql_16
     rsync
     wget
     zsh
