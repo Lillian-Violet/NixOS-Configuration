@@ -46,7 +46,7 @@
 
   sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
   #TODO: keyfile for age (generate and sync)
-  sops.age.keyFile = /home/lillian/.config/sops/age.keys.txt;
+  sops.age.keyFile = /home/lillian/.config/sops/age/keys.txt;
   sops.secrets."nextcloudadmin".mode = "0400";
   sops.secrets."nextclouddb".mode = "0400";
 
