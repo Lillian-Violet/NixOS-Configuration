@@ -44,6 +44,7 @@
     };
   };
 
+  sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
   sops.secrets."nextcloudadmin".mode = "0400";
   sops.secrets."nextclouddb".mode = "0400";
 
