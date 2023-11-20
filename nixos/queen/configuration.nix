@@ -71,7 +71,7 @@
     alejandra
     git-filter-repo
     home-manager
-    nextcloud
+    nextcloud27
     nginx
     noto-fonts
     noto-fonts-emoji-blob-bin
