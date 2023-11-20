@@ -44,6 +44,9 @@
     };
   };
 
+  sops.secrets.queen-Lillian."nextcloudadmin".mode = "0400";
+  sops.secrets.queen-Lillian."nextclouddb".mode = "0400";
+
   nix = {
     gc = {
       automatic = true;
