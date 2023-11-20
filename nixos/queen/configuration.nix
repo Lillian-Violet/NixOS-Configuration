@@ -44,8 +44,8 @@
     };
   };
 
-  sops.secrets.queen-Lillian."nextcloudadmin".mode = "0400";
-  sops.secrets.queen-Lillian."nextclouddb".mode = "0400";
+  sops.secrets."nextcloudadmin".mode = "0400";
+  sops.secrets."nextclouddb".mode = "0400";
 
   nix = {
     gc = {
@@ -125,7 +125,7 @@
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
       shell = pkgs.zsh;
     };
-    nextcloud.extraGroups = [config.sops.secrets.queen-Lillian."nextcloudadmin" config.sops.secrets.queen-Lillian."nextclouddb"];
+    nextcloud.extraGroups = [config.sops.secrets."nextcloudadmin" config.sops.secrets."nextclouddb"];
   };
 
   # Enable completion of system packages by zsh
