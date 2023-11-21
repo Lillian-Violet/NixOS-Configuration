@@ -8,4 +8,5 @@
     fsType = "ext4";
   };
   swapDevices = [{device = "/dev/sda2";}];
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 }
