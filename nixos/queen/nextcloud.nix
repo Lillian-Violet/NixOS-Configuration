@@ -46,8 +46,7 @@
 
     package = pkgs.nextcloud27;
 
-    #Directory for the data
-    datadir = ../../../../../var/lib/NCData;
+    #Directory for the data is /var/lib/nextcloud
 
     config = {
       # Further forces Nextcloud to use HTTPS
@@ -71,7 +70,7 @@
 
     package = pkgs.mariadb_110;
 
-    dataDir = ../../../../../var/lib/NCMariaDB;
+    #Directory for the database is /var/lib/mysql
 
     # Ensure the database, user, and permissions always exist
     ensureDatabases = ["NC"];
