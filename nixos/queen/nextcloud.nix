@@ -74,9 +74,8 @@
     settings = {
       mysqld = {
         innodb_force_recovery = 10;
-        log_error = /var/log/mysql/mysql_error.log;
       };
-      mysqld_safe = {
+      mariadb = {
         log_error = /var/log/mysql/mysql_error.log;
       };
     };
