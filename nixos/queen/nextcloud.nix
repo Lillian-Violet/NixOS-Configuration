@@ -71,14 +71,6 @@
     package = pkgs.mariadb_110;
 
     #Directory for the database is /var/lib/mysql
-    settings = {
-      mysqld = {
-        innodb_force_recovery = 10;
-      };
-      mariadb = {
-        log_error = /var/log/mysql/mysql_error.log;
-      };
-    };
 
     # Ensure the database, user, and permissions always exist
     ensureDatabases = ["NC"];
