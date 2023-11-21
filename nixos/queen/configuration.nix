@@ -52,7 +52,7 @@
 
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
   sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
-  sops.age.keyFile = ../../../../var/lib/sops/age/keys.txt;
+  sops.age.keyFile = ./keys.txt;
   sops.secrets."nextcloudadmin".mode = "0400";
   sops.secrets."nextclouddb".mode = "0400";
 
