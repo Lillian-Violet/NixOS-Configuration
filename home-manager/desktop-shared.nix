@@ -75,6 +75,7 @@
 
     # Office applications:
     onlyoffice-bin
+    teams-for-linux
 
     # System tools:
     rage
