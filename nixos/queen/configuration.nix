@@ -19,7 +19,7 @@
     ./nextcloud.nix
   ];
 
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
   zramSwap.enable = false;
   networking.domain = "";
   services.openssh.enable = true;
