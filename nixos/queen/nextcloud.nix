@@ -74,6 +74,10 @@
     settings = {
       mysqld = {
         innodb_force_recovery = 10;
+        log_error = /var/log/mysql/mysql_error.log;
+      };
+      mysqld_safe = {
+        log_error = /var/log/mysql/mysql_error.log;
       };
     };
 
