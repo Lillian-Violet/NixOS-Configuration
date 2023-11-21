@@ -73,7 +73,7 @@
     #Directory for the database is /var/lib/mysql
     settings = {
       mysqld = {
-        innodb_force_recovery = true;
+        innodb_force_recovery = 1;
       };
     };
 
