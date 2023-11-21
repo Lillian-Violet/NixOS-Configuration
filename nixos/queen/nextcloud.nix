@@ -71,6 +71,11 @@
     package = pkgs.mariadb_110;
 
     #Directory for the database is /var/lib/mysql
+    settings = {
+      mysqld = {
+        innodb_force_recovery = true;
+      };
+    };
 
     # Ensure the database, user, and permissions always exist
     ensureDatabases = ["NC"];
