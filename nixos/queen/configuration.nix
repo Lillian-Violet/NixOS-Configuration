@@ -54,7 +54,9 @@
   sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
   sops.age.keyFile = ./keys.txt;
   sops.secrets."nextcloudadmin".mode = "0400";
+  sops.secrets."nextcloudadmin".owner = config.users.users.nextcloud.name;
   sops.secrets."nextclouddb".mode = "0400";
+  sops.secrets."nextclouddb".owner = config.users.users.nextcloud.name;
 
   nix = {
     gc = {
