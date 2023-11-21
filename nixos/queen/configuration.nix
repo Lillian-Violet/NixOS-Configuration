@@ -125,7 +125,7 @@
   security.acme = {
     acceptTerms = true;
     # Replace the email here!
-    email = "letsencrypt@gladtherescake.eu";
+    defaults.email = "letsencrypt@gladtherescake.eu";
   };
 
   users.users = {
