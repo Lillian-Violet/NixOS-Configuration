@@ -150,8 +150,7 @@
 
   networking.hostName = "queen";
 
-  #TODO: see if this bootloader works on the vps and if not replace it!
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.grub.enable = true;
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
