@@ -176,9 +176,10 @@
       volumes = [
         "/var/lib/mssql"
       ];
-      cmd = [
-        "-e \"ACCEPT_EULA=Y\" -e \"MSSQL_SA_PASSWORD=password\""
-      ];
+      environment = {
+        "ACCEPT_EULA" = "y";
+        "MSSQL_SA_PASSWORD" = "password";
+      };
     };
   };
 
