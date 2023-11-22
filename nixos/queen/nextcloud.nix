@@ -112,8 +112,10 @@
     ];
   };
 
+  systemd.user.services.mbsync.Unit.After = ["sops-nix.service"];
+
   systemd.services."nextcloud-setup" = {
-    requires = ["mysql.service" "sops-nix.service"];
-    after = ["mysql.service" "sops-nix.service"];
+    requires = ["mysql.service"];
+    after = ["mysql.service"];
   };
 }
