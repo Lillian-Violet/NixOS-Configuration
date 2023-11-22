@@ -88,12 +88,12 @@
       mysqld = {
         log-error = "/var/log/mysql_err.log";
         port = 3306;
-        character_set_server = utf8mb4;
-        collation_server = utf8mb4_general_ci;
-        transaction_isolation = READ-COMMITTED;
-        binlog_format = ROW;
-        innodb_large_prefix = on;
-        innodb_file_format = barracuda;
+        character_set_server = "utf8mb4";
+        collation_server = "utf8mb4_general_ci";
+        transaction_isolation = "READ-COMMITTED";
+        binlog_format = "ROW";
+        innodb_large_prefix = "on";
+        innodb_file_format = "barracuda";
         innodb_file_per_table = 1;
       };
     };
