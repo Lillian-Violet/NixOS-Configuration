@@ -55,9 +55,8 @@
       # Nextcloud PostegreSQL database configuration, recommended over using SQLite
       dbtype = "mysql";
       dbuser = "nextcloud";
-      dbhost = "/run/mysql";
+      dbhost = "mysql";
       dbname = "NC";
-      dbport = 3306;
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
       #TODO: work with sops to set this instead of a file & make sure the db setup is the same as on the previous server for easy migration
