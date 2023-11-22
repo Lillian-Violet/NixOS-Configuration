@@ -128,6 +128,20 @@
     userEmail = "git@gladtherescake.eu";
     userName = "Lillian-Violet";
   };
+
+  config.docker-containers = {
+    mssql = {
+      image = "mcr.microsoft.com/mssql/server:latest";
+      ports = ["127.0.0.1:1433:1433"];
+      volumes = [
+        "/var/lib/mssql"
+      ];
+      cmd = [
+        "--base-url"
+        "\"/mssql\""
+      ];
+    };
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 }
