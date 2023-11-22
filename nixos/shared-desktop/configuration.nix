@@ -171,7 +171,7 @@
 
   virtualisation.oci-containers.containers = {
     mssql = {
-      image = "mcr.microsoft.com/mssql/server:latest";
+      image = "mcr.microsoft.com/mssql/server:2022-latest";
       ports = ["127.0.0.1:1433:1433"];
       volumes = [
         "/var/lib/mssql"
