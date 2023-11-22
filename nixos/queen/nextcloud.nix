@@ -59,7 +59,6 @@
       dbname = "NC";
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
-      #TODO: work with sops to set this instead of a file & make sure the db setup is the same as on the previous server for easy migration
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
       adminuser = "gladtherescake";
     };
@@ -114,7 +113,7 @@
   };
 
   systemd.services."nextcloud-setup" = {
-    requires = ["mysql.service"];
-    after = ["mysql.service"];
+    requires = ["mysql.service" "sops-nix.service"];
+    after = ["mysql.service" "sops-nix.service"];
   };
 }
