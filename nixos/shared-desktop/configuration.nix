@@ -178,12 +178,12 @@
   virtualisation.oci-containers.containers = {
     mssql = {
       image = "mcr.microsoft.com/mssql/server:2022-latest";
-      ports = ["127.0.0.1:1433:1433"];
+      ports = ["1433:1433"];
       environment = {
         "ACCEPT_EULA" = "y";
         "MSSQL_SA_PASSWORD" = "password";
       };
-      volumes = ["/var/lib/myssql"];
+      volumes = ["/home/lillian/docker/mssql:/data"];
     };
   };
 
