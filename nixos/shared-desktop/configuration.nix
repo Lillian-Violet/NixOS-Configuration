@@ -58,6 +58,8 @@
   environment.systemPackages = with pkgs; [
     age
     alejandra
+    docker
+    docker-compose
     git-filter-repo
     home-manager
     input-leap
@@ -164,6 +166,20 @@
       isNormalUser = true;
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
       shell = pkgs.zsh;
+    };
+  };
+
+  config.docker-containers = {
+    mssql = {
+      image = "mcr.microsoft.com/mssql/server:latest";
+      ports = ["127.0.0.1:1433:1433"];
+      volumes = [
+        "/var/lib/mssql"
+      ];
+      cmd = [
+        "--base-url"
+        "\"/mssql\""
+      ];
     };
   };
 
