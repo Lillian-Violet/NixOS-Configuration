@@ -57,6 +57,7 @@
   home.packages = with pkgs; [
     # Coding:
     docker
+    docker-compose
     git
     kate
 
