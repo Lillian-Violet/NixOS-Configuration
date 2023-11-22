@@ -58,6 +58,8 @@
   environment.systemPackages = with pkgs; [
     age
     alejandra
+    docker
+    docker-compose
     git-filter-repo
     home-manager
     input-leap
@@ -159,11 +161,29 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  users.groups.mssql = {};
+
   users.users = {
     lillian = {
       isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
+      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
       shell = pkgs.zsh;
+    };
+    mssql = {
+      isSystemUser = true;
+      group = "mssql";
+    };
+  };
+
+  virtualisation.oci-containers.containers = {
+    mssql = {
+      image = "mcr.microsoft.com/mssql/server:2022-latest";
+      ports = ["1433:1433"];
+      environment = {
+        "ACCEPT_EULA" = "Y";
+        "MSSQL_SA_PASSWORD" = "EbKihNUHg6S$V$qchADFmw!JCm##toc3";
+      };
+      volumes = ["/home/lillian/docker/mssql:/data"];
     };
   };
 
