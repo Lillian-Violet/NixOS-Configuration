@@ -177,7 +177,7 @@
         "ACCEPT_EULA" = "y";
         "MSSQL_SA_PASSWORD" = "password";
       };
-      volumes = ["/home/delegator/filerun/db:/var/lib/myssql"];
+      volumes = ["/var/lib/myssql"];
     };
   };
 
