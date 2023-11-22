@@ -167,6 +167,9 @@
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
       shell = pkgs.zsh;
     };
+    mssql = {
+      isNormalUser = false;
+    };
   };
 
   virtualisation.oci-containers.containers = {
