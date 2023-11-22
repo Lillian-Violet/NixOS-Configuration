@@ -177,8 +177,7 @@
         "/var/lib/mssql"
       ];
       cmd = [
-        "--base-url"
-        "\"/mssql\""
+        "-e \"ACCEPT_EULA=Y\" -e \"MSSQL_SA_PASSWORD=password\""
       ];
     };
   };
