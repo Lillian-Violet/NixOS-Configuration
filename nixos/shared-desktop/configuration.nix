@@ -162,7 +162,7 @@
   users.users = {
     lillian = {
       isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
+      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
       shell = pkgs.zsh;
     };
   };
