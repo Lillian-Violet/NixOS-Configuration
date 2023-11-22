@@ -82,11 +82,9 @@
         tmp_table_size = "64M";
         max_heap_table_size = "64M";
         slow_query_log = 1;
-        slow_query_log_file = /var/log/mysql/slow.log;
         long_query_time = 1;
       };
       mysqld = {
-        log-error = "/var/log/mysql_err.log";
         port = 3306;
         character_set_server = "utf8mb4";
         collation_server = "utf8mb4_general_ci";
