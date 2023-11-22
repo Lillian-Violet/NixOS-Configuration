@@ -168,7 +168,7 @@
       shell = pkgs.zsh;
     };
     mssql = {
-      isNormalUser = false;
+      isSystemUser = true;
     };
   };
 
