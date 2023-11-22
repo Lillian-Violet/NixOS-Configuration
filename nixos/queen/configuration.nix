@@ -127,8 +127,6 @@
 
   programs.git = {
     enable = true;
-    userEmail = "git@gladtherescake.eu";
-    userName = "Lillian-Violet";
   };
 
   security.acme = {
