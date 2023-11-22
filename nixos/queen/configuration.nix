@@ -82,6 +82,7 @@
 
   environment.systemPackages = with pkgs; [
     age
+    git
     alejandra
     git-filter-repo
     home-manager
@@ -122,6 +123,12 @@
 
   programs.zsh = {
     enable = true;
+  };
+
+  programs.git = {
+    enable = true;
+    userEmail = "git@gladtherescake.eu";
+    userName = "Lillian-Violet";
   };
 
   security.acme = {
