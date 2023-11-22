@@ -124,6 +124,8 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
+    userEmail = "git@gladtherescake.eu";
+    userName = "Lillian-Violet";
   };
 
   # Nicely reload system units when changing configs

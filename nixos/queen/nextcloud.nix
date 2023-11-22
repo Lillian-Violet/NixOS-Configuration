@@ -57,6 +57,7 @@
       dbuser = "nextcloud";
       dbhost = "/run/mysql";
       dbname = "NC";
+      dbport = 3306;
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
       #TODO: work with sops to set this instead of a file & make sure the db setup is the same as on the previous server for easy migration
@@ -66,6 +67,13 @@
   };
 
   services.mysql = {
+    settings = {
+      mysqld = {
+        log-error = "/var/log/mysql_err.log";
+        port = 3306;
+      };
+    };
+
     enable = true;
 
     package = pkgs.mariadb_110;
