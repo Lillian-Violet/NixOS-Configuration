@@ -180,8 +180,8 @@
       image = "mcr.microsoft.com/mssql/server:2022-latest";
       ports = ["1433:1433"];
       environment = {
-        "\"ACCEPT_EULA" = "Y\"";
-        "\"MSSQL_SA_PASSWORD" = "password\"";
+        "ACCEPT_EULA" = "Y";
+        "MSSQL_SA_PASSWORD" = "password";
       };
       volumes = ["/home/lillian/docker/mssql:/data"];
     };
