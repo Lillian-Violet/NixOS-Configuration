@@ -169,6 +169,7 @@
     };
     mssql = {
       isSystemUser = true;
+      group = "mssql";
     };
   };
 
