@@ -73,13 +73,15 @@
     #Directory for the database is /var/lib/mysql
 
     # Ensure the database, user, and permissions always exist
-    # ensureDatabases = ["NC"];
-    # ensureUsers = [
-    #   {
-    #     name = "nextcloud";
-    #     ensurePermissions."DATABASE NC" = "ALL PRIVILEGES";
-    #   }
-    # ];
+    ensureDatabases = ["NC"];
+    ensureUsers = [
+      {
+        name = "nextcloud";
+        ensurePermissions = {
+          "NC.*" = "ALL PRIVILEGES";
+        };
+      }
+    ];
   };
 
   systemd.services."nextcloud-setup" = {
