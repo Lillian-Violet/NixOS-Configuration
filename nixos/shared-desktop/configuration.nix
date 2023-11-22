@@ -169,7 +169,7 @@
     };
   };
 
-  docker-containers = {
+  virtualisation.oci-containers.containers = {
     mssql = {
       image = "mcr.microsoft.com/mssql/server:latest";
       ports = ["127.0.0.1:1433:1433"];
