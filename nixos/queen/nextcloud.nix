@@ -49,9 +49,9 @@
       dbuser = "nextcloud";
       dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
       dbname = "nextcloud";
-      dbpassFile = "/var/nextcloud-db-pass";
+      dbpassFile = sops.secrets."nextclouddb".path;
 
-      adminpassFile = "/var/nextcloud-admin-pass";
+      adminpassFile = sops.secrets."nextcloudadmin".path;
       adminuser = "admin";
     };
   };
@@ -65,7 +65,7 @@
     ensureUsers = [
       {
         name = "nextcloud";
-        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+        ensureDBOwnership."DATABASE nextcloud" = "ALL PRIVILEGES";
       }
     ];
   };
