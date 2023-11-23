@@ -70,6 +70,10 @@
     ];
   };
 
+  systemd.services."sops-nix.service" = {
+    before = ["nextcloud-setup.service" "postgresql.service"];
+  };
+
   # Ensure that postgres is running before running the setup
   systemd.services."nextcloud-setup" = {
     requires = ["postgresql.service"];
