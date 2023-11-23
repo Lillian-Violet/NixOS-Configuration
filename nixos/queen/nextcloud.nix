@@ -54,6 +54,13 @@
 
       defaultPhoneRegion = "NL";
 
+      extraAppsEnable = true;
+      extraApps = with config.services.nextcloud.package.packages.apps; {
+        # List of apps we want to install and are already packaged in
+        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
+        inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification twofactor_totp twofactor_webauthn unsplash;
+      };
+
       # Nextcloud PostegreSQL database configuration, recommended over using SQLite
       dbtype = "pgsql";
       dbuser = "nextcloud";
