@@ -72,6 +72,10 @@
     ];
   };
 
+  services.aria2 = {
+    enable = true;
+  };
+
   systemd.services."sops-nix.service" = {
     before = ["nextcloud-setup.service" "postgresql.service"];
   };
