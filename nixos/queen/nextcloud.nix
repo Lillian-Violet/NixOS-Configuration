@@ -57,7 +57,6 @@
       "opcache.interned_strings_buffer" = "16";
       "upload_max_filesize" = "10G";
       "post_max_size" = "10G";
-      "memory_limit" = "8G";
     };
   };
 
