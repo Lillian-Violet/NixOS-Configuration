@@ -57,7 +57,7 @@
       dbuser = "nextcloud";
       dbhost = "mysql";
       dbname = "NC";
-      dbpassFile = config.sops.secrets."nextclouddb".path;
+      #dbpassFile = config.sops.secrets."nextclouddb".path;
 
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
       adminuser = "gladtherescake";
