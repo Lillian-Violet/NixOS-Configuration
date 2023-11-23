@@ -82,6 +82,7 @@
 
   environment.systemPackages = with pkgs; [
     age
+    fzf
     git
     alejandra
     git-filter-repo
