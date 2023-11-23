@@ -48,18 +48,18 @@
     configureRedis = true;
     maxUploadSize = "16G";
 
+    extraAppsEnable = true;
+    extraApps = with config.services.nextcloud.package.packages.apps; {
+      # List of apps we want to install and are already packaged in
+      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
+      inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification unsplash;
+    };
+
     config = {
       # Further forces Nextcloud to use HTTPS
       overwriteProtocol = "https";
 
       defaultPhoneRegion = "NL";
-
-      extraAppsEnable = true;
-      extraApps = with config.services.nextcloud.package.packages.apps; {
-        # List of apps we want to install and are already packaged in
-        # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
-        inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification unsplash;
-      };
 
       # Nextcloud PostegreSQL database configuration, recommended over using SQLite
       dbtype = "pgsql";
