@@ -24,6 +24,10 @@
         ## LetsEncrypt
         enableACME = true;
       };
+      "onlyoffice.example.com" = {
+        forceSSL = true;
+        enableACME = true;
+      };
     };
   };
 
@@ -41,10 +45,15 @@
     autoUpdateApps.enable = true;
     # Set what time makes sense for you
     autoUpdateApps.startAt = "05:00:00";
+    configureRedis = true;
+    maxUploadSize = "16G";
+    enableBrokenCiphersForSSE = false;
 
     config = {
       # Further forces Nextcloud to use HTTPS
       overwriteProtocol = "https";
+
+      defaultPhoneRegion = "NL";
 
       # Nextcloud PostegreSQL database configuration, recommended over using SQLite
       dbtype = "pgsql";
@@ -56,6 +65,12 @@
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
       adminuser = "GLaDTheresCake";
     };
+  };
+
+  onlyoffice = {
+    enable = true;
+    hostname = "onlyoffice.example.com";
+    jwtSecretFile = config.sops.secrets."local.json".path;
   };
 
   # Enable PostgreSQL
@@ -78,7 +93,7 @@
   };
 
   systemd.services."sops-nix.service" = {
-    before = ["nextcloud-setup.service" "postgresql.service"];
+    before = ["nextcloud-setup.service" "postgresql.service" "onlyoffice.service"];
   };
 
   # Ensure that postgres is running before running the setup
