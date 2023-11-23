@@ -76,6 +76,9 @@
   services.onlyoffice = {
     enable = true;
     hostname = "onlyoffice.gladtherescake.eu";
+    postgresHost = "/run/postgesql";
+    postgresUser = "onlyoffice";
+    postgresName = "onlyoffice";
     jwtSecretFile = config.sops.secrets."local.json".path;
   };
 
@@ -84,11 +87,15 @@
     enable = true;
 
     # Ensure the database, user, and permissions always exist
-    ensureDatabases = ["nextcloud"];
+    ensureDatabases = ["nextcloud" "onlyoffice"];
     ensureUsers = [
       {
         name = "nextcloud";
         ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+      }
+      {
+        name = "onlyoffice";
+        ensurePermissions."DATABASE onlyoffice" = "ALL PRIVILEGES";
       }
     ];
   };
