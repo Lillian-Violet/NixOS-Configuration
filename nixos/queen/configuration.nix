@@ -146,7 +146,7 @@
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
       shell = pkgs.zsh;
     };
-    nextcloud.extraGroups = [config.users.groups.keys.name];
+    nextcloud.extraGroups = [config.users.groups.keys.name "aria2"];
   };
 
   # Enable completion of system packages by zsh
