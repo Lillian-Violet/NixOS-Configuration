@@ -1,108 +1,82 @@
-# Nextcloud
 {
   config,
-  lib,
   pkgs,
-  sops,
   ...
 }: {
-  sops.secrets.nextcloudadmin = {
-    mode = "0440";
-    owner = config.users.users.nextcloud.name;
-    group = config.users.users.nextcloud.group;
+  # Enable Nginx
+  services.nginx = {
+    enable = true;
+
+    # Use recommended settings
+    recommendedGzipSettings = true;
+    recommendedOptimisation = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
+
+    # Only allow PFS-enabled ciphers with AES256
+    sslCiphers = "AES256+EECDH:AES256+EDH:!aNULL";
+
+    # Setup Nextcloud virtual host to listen on ports
+    virtualHosts = {
+      "nextcloud.gladtherescake.eu" = {
+        ## Force HTTP redirect to HTTPS
+        forceSSL = true;
+        ## LetsEncrypt
+        enableACME = true;
+      };
+    };
   };
 
-  users.users.nextcloud.extraGroups = ["render" "users"];
-
-  environment.systemPackages = with pkgs; [
-    unstable.exiftool
-    ffmpeg
-    nodejs_18
-  ];
-
-  # Allow using /dev/dri for Memories
-  systemd.services.phpfpm-nextcloud.serviceConfig = {
-    PrivateDevices = lib.mkForce false;
-  };
-
-  services.nginx.virtualHosts."nextcloud.gladtherescake.eu".listen = [
-    {
-      addr = "127.0.0.1";
-      port = 8180;
-    }
-  ];
-
+  # Actual Nextcloud Config
   services.nextcloud = {
     enable = true;
-    package = pkgs.nextcloud27;
     hostName = "nextcloud.gladtherescake.eu";
-    database.createLocally = true;
-    configureRedis = true;
-    appstoreEnable = true;
+    # Enable built-in virtual host management
+    # Takes care of somewhat complicated setup
+    # See here: https://github.com/NixOS/nixpkgs/blob/master/nixos/modules/services/web-apps/nextcloud.nix#L529
+    nginx.enable = true;
+
+    # Use HTTPS for links
+    https = true;
+
+    # Auto-update Nextcloud Apps
+    autoUpdateApps.enable = true;
+    # Set what time makes sense for you
+    autoUpdateApps.startAt = "05:00:00";
+
     config = {
-      adminuser = "nextcloud";
-      adminpassFile = "${config.sops.secrets.nextcloudadmin.path}";
-      dbtype = "mysql";
-      defaultPhoneRegion = "US";
-      trustedProxies = ["127.0.0.1"];
-    };
+      # Further forces Nextcloud to use HTTPS
+      overwriteProtocol = "https";
 
-    extraOptions = {
-      mail_smtpmode = "sendmail";
-      mail_sendmailmode = "pipe";
-      mysql.utf8mb4 = true;
-    };
+      # Nextcloud PostegreSQL database configuration, recommended over using SQLite
+      dbtype = "pgsql";
+      dbuser = "nextcloud";
+      dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
+      dbname = "nextcloud";
+      dbpassFile = "/var/nextcloud-db-pass";
 
-    phpOptions = pkgs.lib.mkForce {
-      "opcache.interned_strings_buffer" = "16";
-      "upload_max_filesize" = "10G";
-      "post_max_size" = "10G";
-      "memory_limit" = "8G";
+      adminpassFile = "/var/nextcloud-admin-pass";
+      adminuser = "admin";
     };
   };
 
-  services.traefik.dynamicConfigOptions.http.routers.nextcloud = {
-    rule = "Host(`nextcloud.gladtherescake.eu`)";
-    service = "nextcloud";
-    middlewares = ["headers"];
-    entrypoints = ["websecure"];
-    tls = {
-      certResolver = "le";
-    };
+  # Enable PostgreSQL
+  services.postgresql = {
+    enable = true;
+
+    # Ensure the database, user, and permissions always exist
+    ensureDatabases = ["nextcloud"];
+    ensureUsers = [
+      {
+        name = "nextcloud";
+        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+      }
+    ];
   };
 
-  services.traefik.dynamicConfigOptions.http.services.nextcloud = {
-    loadBalancer = {
-      servers = [
-        {
-          url = "http://localhost:8180";
-        }
-      ];
-    };
-  };
-
-  systemd.timers."nextcloud-files-update" = {
-    wantedBy = ["timers.target"];
-    timerConfig = {
-      OnBootSec = "2m";
-      OnUnitActiveSec = "15m";
-      Unit = "nextcloud-files-update.service";
-    };
-  };
-
-  systemd.services."nextcloud-files-update" = {
-    bindsTo = ["mysql.service" "phpfpm-nextcloud.service"];
-    after = ["mysql.service" "phpfpm-nextcloud.service"];
-    script = ''
-
-      ${config.services.nextcloud.occ}/bin/nextcloud-occ files:scan -q --all
-      ${config.services.nextcloud.occ}/bin/nextcloud-occ preview:pre-generate
-    '';
-
-    serviceConfig = {
-      User = "nextcloud";
-    };
-
-    path = ["config.services.nextcloud" pkgs.perl];
+  # Ensure that postgres is running before running the setup
+  systemd.services."nextcloud-setup" = {
+    requires = ["postgresql.service"];
+    after = ["postgresql.service"];
   };
 }
