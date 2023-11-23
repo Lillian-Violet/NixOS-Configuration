@@ -52,7 +52,7 @@
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
-      adminuser = "admin";
+      adminuser = "GLaDTheresCake";
     };
   };
 
