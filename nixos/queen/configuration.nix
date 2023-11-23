@@ -84,6 +84,8 @@
     fzf
     git
     alejandra
+    ffmpeg
+    aria2
     git-filter-repo
     home-manager
     nextcloud27
@@ -93,6 +95,7 @@
     noto-fonts-emoji
     oh-my-zsh
     postgresql
+    python
     rsync
     wget
     zsh
