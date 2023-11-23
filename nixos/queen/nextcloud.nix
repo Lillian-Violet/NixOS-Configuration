@@ -67,7 +67,7 @@
     };
   };
 
-  onlyoffice = {
+  services.onlyoffice = {
     enable = true;
     hostname = "onlyoffice.example.com";
     jwtSecretFile = config.sops.secrets."local.json".path;
