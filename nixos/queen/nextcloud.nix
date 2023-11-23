@@ -74,6 +74,7 @@
 
   services.aria2 = {
     enable = true;
+    rpcListenPort = 6969;
   };
 
   systemd.services."sops-nix.service" = {
