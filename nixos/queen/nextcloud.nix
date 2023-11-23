@@ -113,7 +113,7 @@
   };
 
   systemd.services."sops-nix.service" = {
-    before = ["nextcloud-setup" "mysql.service"];
+    before = ["nextcloud-setup.service" "mysql.service"];
   };
 
   systemd.services."nextcloud-setup" = {
