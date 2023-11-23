@@ -97,6 +97,7 @@
     postgresql
     python3
     rsync
+    youtube-dl
     wget
     zsh
   ];
