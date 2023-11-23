@@ -24,7 +24,7 @@
         ## LetsEncrypt
         enableACME = true;
       };
-      "onlyoffice.example.com" = {
+      "onlyoffice.gladtherescake.eu" = {
         forceSSL = true;
         enableACME = true;
       };
@@ -68,7 +68,7 @@
 
   services.onlyoffice = {
     enable = true;
-    hostname = "onlyoffice.example.com";
+    hostname = "onlyoffice.gladtherescake.eu";
     jwtSecretFile = config.sops.secrets."local.json".path;
   };
 
