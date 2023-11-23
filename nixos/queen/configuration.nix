@@ -53,6 +53,8 @@
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
   sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
   sops.age.keyFile = ./keys.txt;
+  sops.secrets."nextcloudadmin".mode = "0440";
+  sops.secrets."nextcloudadmin".owner = config.users.users.nextcloud.name;
   sops.secrets."nextclouddb".mode = "0440";
   sops.secrets."nextclouddb".owner = config.users.users.nextcloud.name;
 
@@ -91,7 +93,7 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
-    mariadb_110
+    postgresql
     rsync
     wget
     zsh
