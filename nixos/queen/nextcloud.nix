@@ -32,6 +32,8 @@
     enable = true;
     hostName = "nextcloud.gladtherescake.eu";
 
+    package = pkgs.nextcloud27;
+
     # Use HTTPS for links
     https = true;
 
