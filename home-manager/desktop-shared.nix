@@ -87,6 +87,7 @@
     nextcloud-client
     nitrokey-app
     protonvpn-gui
+    sops
     virtualbox
     watchmate
     qbittorrent
