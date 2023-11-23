@@ -47,7 +47,6 @@
     autoUpdateApps.startAt = "05:00:00";
     configureRedis = true;
     maxUploadSize = "16G";
-    enableBrokenCiphersForSSE = false;
 
     config = {
       # Further forces Nextcloud to use HTTPS
