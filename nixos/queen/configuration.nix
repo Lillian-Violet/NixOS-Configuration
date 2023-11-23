@@ -95,7 +95,7 @@
     noto-fonts-emoji
     oh-my-zsh
     postgresql
-    python
+    python3
     rsync
     wget
     zsh
