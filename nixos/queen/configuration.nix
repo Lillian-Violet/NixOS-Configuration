@@ -93,7 +93,7 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
-    postgresql_14
+    postgresql
     rsync
     wget
     zsh
