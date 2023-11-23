@@ -96,6 +96,7 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
+    onlyoffice-documentserver
     postgresql
     python3
     rsync
