@@ -17,6 +17,7 @@
     # ./nvim.nix
     ./hardware-configuration.nix
     ./nextcloud.nix
+    ./mail-server.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -58,6 +59,8 @@
   sops.secrets."nextclouddb".owner = config.users.users.nextcloud.name;
   sops.secrets."local.json".mode = "0440";
   sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
+  sops.secrets."mailpass".mode = "0440";
+  sops.secrets."mailpass".owner = config.users.users."no-reply@nextcloud.gladtherescake.eu".name;
 
   nix = {
     gc = {
