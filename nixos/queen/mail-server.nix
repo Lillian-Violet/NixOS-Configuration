@@ -16,15 +16,6 @@
     })
   ];
 
-  users.groups.virtualMail = {};
-
-  users.users = {
-    virtualMail = {
-      isSystemUser = true;
-      isNormalUser = false;
-      group = "virtualMail";
-    };
-  };
   mailserver = {
     enable = true;
     fqdn = "mail.gladtherescake.eu";
