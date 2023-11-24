@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  lib,
   config,
   pkgs,
   ...
@@ -15,6 +16,8 @@
     })
   ];
 
+  users.groups.virtualMail = {};
+
   users.users = {
     virtualMail = {
       isSystemUser = true;
@@ -26,12 +29,21 @@
     enable = true;
     fqdn = "mail.gladtherescake.eu";
     domains = ["nextcloud.gladtherescake.eu"];
+    mailserver.enableImapSsl = true;
 
     loginAccounts = {
       "no-reply@nextcloud.gladtherescake.eu" = {
         hashedPasswordFile = config.sops.secrets."mailpass".path;
-        aliases = ["postmaster@nextcloud.gladtherescake.eu" "abuse@nextcloud.gladtherescake.eu" "security@nextcloud.gladtherescake.eu"];
       };
     };
+    forwards = {
+      "abuse@nextcloud.gladtherescake.eu" = "nextcloud@gladtherescake.eu";
+      "postmaster@nextcloud.gladtherescake.eu" = "nextcloud@gladtherescake.eu";
+    };
+    openFirewall = true;
+    mailserver.rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu"];
+    certificateScheme = "acme-nginx";
   };
+  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "letsencryp@gladtherescake.eu";
 }
