@@ -85,6 +85,10 @@
     jwtSecretFile = config.sops.secrets."local.json".path;
   };
 
+  services.rabbitmq = {
+    enable = true;
+  };
+
   # Enable PostgreSQL
   services.postgresql = {
     enable = true;
