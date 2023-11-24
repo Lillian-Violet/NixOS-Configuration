@@ -20,7 +20,7 @@
     enable = true;
     fqdn = "mail.gladtherescake.eu";
     domains = ["nextcloud.gladtherescake.eu"];
-    mailserver.enableImapSsl = true;
+    enableImapSsl = true;
 
     loginAccounts = {
       "no-reply@nextcloud.gladtherescake.eu" = {
