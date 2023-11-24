@@ -84,6 +84,8 @@
   environment.systemPackages = with pkgs; [
     age
     fzf
+    docker
+    docker-compose
     git
     alejandra
     ffmpeg
