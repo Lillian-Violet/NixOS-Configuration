@@ -78,11 +78,11 @@
 
   services.onlyoffice = {
     enable = true;
-    hostname = "localhost";
-    postgresHost = "/run/postgesql";
-    postgresUser = "onlyoffice";
-    postgresName = "onlyoffice";
-    jwtSecretFile = config.sops.secrets."local.json".path;
+    hostname = "office.gladtherescake.eu";
+    #postgresHost = "/run/postgesql";
+    #postgresUser = "onlyoffice";
+    #postgresName = "onlyoffice";
+    #jwtSecretFile = config.sops.secrets."local.json".path;
   };
 
   services.rabbitmq = {
