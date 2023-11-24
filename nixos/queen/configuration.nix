@@ -108,7 +108,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.firewall.allowedTCPPorts = [80 443];
+  networking.firewall.allowedTCPPorts = [80 443 1443];
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -150,6 +150,18 @@
       shell = pkgs.zsh;
     };
     nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
+  };
+
+  virtualisation.oci-containers.containers = {
+    mssql = {
+      image = "mcr.microsoft.com/mssql/server:2022-latest";
+      ports = ["1433:1433"];
+      environment = {
+        "ACCEPT_EULA" = "Y";
+        "MSSQL_SA_PASSWORD" = "EbKihNUHg6S$V$qchADFmw!JCm##toc3";
+      };
+      volumes = ["/home/lillian/docker/mssql:/data"];
+    };
   };
 
   # Enable completion of system packages by zsh
