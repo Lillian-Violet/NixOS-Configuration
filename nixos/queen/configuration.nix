@@ -60,7 +60,7 @@
   sops.secrets."local.json".mode = "0440";
   sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
   sops.secrets."mailpass".mode = "0440";
-  sops.secrets."mailpass".owner = config.users.users."no-reply@nextcloud.gladtherescake.eu".name;
+  sops.secrets."mailpass".owner = config.users.users.virtualMail.name;
 
   nix = {
     gc = {
@@ -160,6 +160,10 @@
     mssql = {
       isSystemUser = true;
       group = "mssql";
+    };
+    virtualMail = {
+      isSystemUser = true;
+      group = "virtualMail";
     };
   };
 
