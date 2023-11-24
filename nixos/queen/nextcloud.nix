@@ -78,7 +78,7 @@
 
   services.onlyoffice = {
     enable = true;
-    example = true;
+    enableExampleServer = true;
     hostname = "onlyoffice.gladtherescake.eu";
     postgresHost = "/run/postgesql";
     postgresUser = "onlyoffice";
