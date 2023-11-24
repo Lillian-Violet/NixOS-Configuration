@@ -166,7 +166,7 @@
         "ACCEPT_EULA" = "Y";
         "MSSQL_SA_PASSWORD" = "EbKihNUHg6S$V$qchADFmw!JCm##toc3";
       };
-      volumes = ["/home/lillian/docker/mssql:/data"];
+      volumes = ["/var/lib/container/mssql:/data"];
     };
   };
 
