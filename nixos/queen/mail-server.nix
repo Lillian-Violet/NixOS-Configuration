@@ -28,7 +28,7 @@
       };
     };
     openFirewall = true;
-    mailserver.rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu"];
+    rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu"];
     certificateScheme = "acme-nginx";
   };
   security.acme.acceptTerms = true;
