@@ -17,7 +17,7 @@
     # ./nvim.nix
     ./hardware-configuration.nix
     ./nextcloud.nix
-    #./mail-server.nix
+    ./mail-server.nix
     #./akkoma.nix
   ];
 
