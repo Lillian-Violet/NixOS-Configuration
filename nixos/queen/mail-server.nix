@@ -18,6 +18,7 @@
   users.users = {
     virtualMail = {
       isSystemUser = true;
+      isNormalUser = false;
       group = "virtualMail";
     };
   };
