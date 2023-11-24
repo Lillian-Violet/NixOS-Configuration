@@ -18,6 +18,7 @@
     ./hardware-configuration.nix
     ./nextcloud.nix
     #./mail-server.nix
+    #./akkoma.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -85,12 +86,15 @@
   };
 
   environment.systemPackages = with pkgs; [
+    akkoma
     age
     fzf
     docker
     docker-compose
     git
     alejandra
+    exiftool
+    imagemagick
     ffmpeg
     aria2
     git-filter-repo
@@ -105,6 +109,7 @@
     postgresql
     python3
     rsync
+    rabbitmq-server
     youtube-dl
     wget
     zsh
