@@ -48,6 +48,9 @@
     configureRedis = true;
     maxUploadSize = "16G";
 
+    #Increase opcache string buffer
+    phpOptions."opcache.interned_strings_buffer" = "23";
+
     extraAppsEnable = true;
     extraApps = with config.services.nextcloud.package.packages.apps; {
       # List of apps we want to install and are already packaged in
