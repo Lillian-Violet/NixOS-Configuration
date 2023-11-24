@@ -27,7 +27,6 @@
         hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
     };
-    openFirewall = true;
     rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu"];
     certificateScheme = "acme-nginx";
   };
