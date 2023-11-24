@@ -24,12 +24,6 @@
         hashedPasswordFile = config.sops.secrets."mailpass".path;
         aliases = ["postmaster@nextcloud.gladtherescake.eu" "abuse@nextcloud.gladtherescake.eu" "security@nextcloud.gladtherescake.eu"];
       };
-
-      # Use Let's Encrypt certificates. Note that this needs to set up a stripped
-      # down nginx and opens port 80.
-      certificateScheme = "acme-nginx";
     };
-    security.acme.acceptTerms = true;
-    security.acme.defaults.email = "security@nextcloud.gladtherescake.eu";
   };
 }
