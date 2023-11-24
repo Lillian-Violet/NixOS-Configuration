@@ -27,10 +27,6 @@
         hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
     };
-    forwards = {
-      "abuse@nextcloud.gladtherescake.eu" = "nextcloud@gladtherescake.eu";
-      "postmaster@nextcloud.gladtherescake.eu" = "nextcloud@gladtherescake.eu";
-    };
     openFirewall = true;
     mailserver.rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu"];
     certificateScheme = "acme-nginx";
