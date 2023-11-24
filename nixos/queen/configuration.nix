@@ -17,7 +17,7 @@
     # ./nvim.nix
     ./hardware-configuration.nix
     ./nextcloud.nix
-    ./mail-server.nix
+    #./mail-server.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -160,10 +160,6 @@
     mssql = {
       isSystemUser = true;
       group = "mssql";
-    };
-    virtualMail = {
-      isSystemUser = true;
-      group = "virtualMail";
     };
   };
 
