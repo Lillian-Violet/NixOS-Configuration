@@ -14,6 +14,13 @@
       sha256 = "0lpz08qviccvpfws2nm83n7m2r8add2wvfg9bljx9yxx8107r919";
     })
   ];
+
+  users.users = {
+    virtualMail = {
+      isSystemUser = true;
+      group = "virtualMail";
+    };
+  };
   mailserver = {
     enable = true;
     fqdn = "mail.gladtherescake.eu";
