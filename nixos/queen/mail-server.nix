@@ -18,6 +18,7 @@
 
   mailserver = {
     enable = true;
+    enableImap = true;
     fqdn = "mail.gladtherescake.eu";
     domains = ["nextcloud.gladtherescake.eu"];
 
