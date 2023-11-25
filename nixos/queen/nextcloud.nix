@@ -94,7 +94,7 @@
     enable = true;
 
     # Ensure the database, user, and permissions always exist
-    ensureDatabases = ["nextcloud" "onlyoffice"];
+    ensureDatabases = ["nextcloud" "onlyoffice" "akkoma"];
     ensureUsers = [
       {
         name = "nextcloud";
@@ -103,6 +103,10 @@
       {
         name = "onlyoffice";
         ensurePermissions."DATABASE onlyoffice" = "ALL PRIVILEGES";
+      }
+      {
+        name = "akkoma";
+        ensurePermissions."DATABASE akkoma" = "ALL PRIVILEGES";
       }
     ];
   };
