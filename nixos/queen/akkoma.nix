@@ -20,7 +20,6 @@
     package = pkgs.akkoma;
     extraPackages = with pkgs; [ffmpeg exiftool imagemagick];
     nginx = {
-      addSSL = true;
       enableACME = true;
       forceSSL = true;
       serverName = "akkoma.gladtherescake.eu";
