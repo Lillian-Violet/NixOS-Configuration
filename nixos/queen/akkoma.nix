@@ -25,5 +25,16 @@
       forceSSL = true;
       serverName = "akkoma.gladtherescake.eu";
     };
+    config = {
+      ":pleroma".":instance" = {
+        name = "GLaDTheresCake Akkoma";
+        email = "akkoma@gladtherescake.eu";
+        notify_email = "no-reply@akkoma.gladtherescake.eu";
+        languages = ["en" "nl"];
+        registrations_open = false;
+        max_pinned_statuses = 10;
+        cleanup_attachments = true;
+      };
+    };
   };
 }
