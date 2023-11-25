@@ -21,7 +21,7 @@
     enableImap = true;
     enableSubmission = true;
     fqdn = "mail.gladtherescake.eu";
-    domains = ["nextcloud.gladtherescake.eu"];
+    domains = ["nextcloud.gladtherescake.eu" "akkoma.gladtherescake.eu"];
 
     loginAccounts = {
       "no-reply@nextcloud.gladtherescake.eu" = {
