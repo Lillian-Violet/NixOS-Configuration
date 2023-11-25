@@ -25,7 +25,7 @@
       serverName = "akkoma.gladtherescake.eu";
     };
     config = {
-      ":pleroma".":admin_token" = "3xBpYUqvTugQ*9E$b^5aPaGt3uNNzA9c";
+      ":pleroma".":admin_token" = "uknJWzFoYtEyZXXsCCtAMYzojXMQoHas";
       ":pleroma".":instance" = {
         name = "GLaDTheresCake Akkoma";
         email = "akkoma@gladtherescake.eu";
