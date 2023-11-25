@@ -38,7 +38,7 @@
         };
         description = "Lillian's Akkoma server!";
         languages = ["en" "nl"];
-        registrations_open = false;
+        registrations_open = true;
         max_pinned_statuses = 10;
         cleanup_attachments = true;
       };
