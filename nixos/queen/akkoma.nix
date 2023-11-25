@@ -29,6 +29,7 @@
         name = "GLaDTheresCake Akkoma";
         email = "akkoma@gladtherescake.eu";
         notify_email = "no-reply@akkoma.gladtherescake.eu";
+        description = "Lillian's Akkoma server!";
         languages = ["en" "nl"];
         registrations_open = false;
         max_pinned_statuses = 10;
