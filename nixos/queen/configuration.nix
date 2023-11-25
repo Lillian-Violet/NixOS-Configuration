@@ -148,7 +148,6 @@
 
   security.acme = {
     acceptTerms = true;
-    # Replace the email here!
     defaults.email = "letsencrypt@gladtherescake.eu";
   };
 
