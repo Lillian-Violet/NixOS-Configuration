@@ -24,6 +24,8 @@
       forceSSL = true;
       serverName = "akkoma.gladtherescake.eu";
     };
+    dist.cookie._secret = config.sops.secrets."releaseCookie".path;
+
     config = {
       ":pleroma".":admin_token" = "uknJWzFoYtEyZXXsCCtAMYzojXMQoHas";
       ":pleroma".":instance" = {
