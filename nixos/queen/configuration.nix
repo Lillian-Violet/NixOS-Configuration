@@ -62,6 +62,8 @@
   sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
   sops.secrets."mailpass".mode = "0440";
   sops.secrets."mailpass".owner = config.users.users.virtualMail.name;
+  sops.secrets."releaseCookie".mode = "0440";
+  sops.secrets."releaseCookie".owner = config.users.users.akkoma.name;
 
   nix = {
     gc = {
