@@ -27,8 +27,11 @@
       "no-reply@nextcloud.gladtherescake.eu" = {
         hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
+      "no-reply@akkoma.gladtherescake.eu" = {
+        hashedPasswordFile = config.sops.secrets."mailpass".path;
+      };
     };
-    rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu"];
+    rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu" "no-reply@akkoma.gladtherescake.eu"];
     certificateScheme = "acme-nginx";
   };
 }
