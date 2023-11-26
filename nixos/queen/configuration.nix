@@ -108,8 +108,8 @@
     noto-fonts-emoji
     oh-my-zsh
     onlyoffice-documentserver
-    postgresql_16
-    postgresql16Packages.rum
+    postgresql_15
+    postgresql15Packages.rum
     python3
     rsync
     rabbitmq-server
@@ -209,5 +209,5 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "23.05";
+  system.stateVersion = "unstable";
 }
