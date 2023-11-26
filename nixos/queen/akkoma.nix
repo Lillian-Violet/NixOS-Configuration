@@ -27,7 +27,6 @@
     dist.cookie._secret = config.sops.secrets."releaseCookie".path;
 
     config = {
-      ":pleroma".":admin_token" = "uknJWzFoYtEyZXXsCCtAMYzojXMQoHas";
       ":pleroma".":instance" = {
         name = "GLaDTheresCake Akkoma";
         email = "akkoma@gladtherescake.eu";
@@ -38,6 +37,18 @@
           cmd_path = "/run/wrappers/bin/sendmail";
           cmd_args = "-N delay,failure,success";
           qmail = true;
+        };
+        frontends = {
+          primary = {
+            package = pkgs.akkoma-frontends.akkoma-fe;
+            name = "akkoma-fe";
+            ref = "stable";
+          };
+          admin = {
+            package = pkgs.akkoma-frontends.admin-fe;
+            name = "admin-fe";
+            ref = "stable";
+          };
         };
         description = "Lillian's Akkoma server!";
         languages = ["en" "nl"];
