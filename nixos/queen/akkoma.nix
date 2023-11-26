@@ -38,18 +38,6 @@
           cmd_args = "-N delay,failure,success";
           qmail = true;
         };
-        frontends = {
-          primary = {
-            package = pkgs.akkoma-frontends.akkoma-fe;
-            name = "akkoma-fe";
-            ref = "stable";
-          };
-          admin = {
-            package = pkgs.akkoma-frontends.admin-fe;
-            name = "admin-fe";
-            ref = "stable";
-          };
-        };
         description = "Lillian's Akkoma server!";
         languages = ["en" "nl"];
         registrations_open = true;
