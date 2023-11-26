@@ -108,7 +108,8 @@
     noto-fonts-emoji
     oh-my-zsh
     onlyoffice-documentserver
-    postgresql
+    postgresql_16
+    postgresql16Packages.rum
     python3
     rsync
     rabbitmq-server
