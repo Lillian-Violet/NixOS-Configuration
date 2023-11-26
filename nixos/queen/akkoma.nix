@@ -24,7 +24,7 @@
       forceSSL = true;
       serverName = "akkoma.gladtherescake.eu";
     };
-    dist.cookie._secret = config.sops.secrets."releaseCookie".path;
+    #dist.cookie._secret = config.sops.secrets."releaseCookie".path;
 
     config = {
       ":pleroma".":instance" = {
