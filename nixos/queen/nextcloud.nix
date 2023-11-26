@@ -93,6 +93,8 @@
   services.postgresql = {
     enable = true;
 
+    package = pkgs.postgresql_16;
+
     # Ensure the database, user, and permissions always exist
     ensureDatabases = ["nextcloud" "onlyoffice" "akkoma"];
     ensureUsers = [
