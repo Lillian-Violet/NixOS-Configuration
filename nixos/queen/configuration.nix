@@ -166,6 +166,7 @@
     };
 
     nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
+    aria2.extraGroups = ["nextcloud"];
     mssql = {
       isSystemUser = true;
       group = "mssql";
