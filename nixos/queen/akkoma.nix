@@ -6,6 +6,9 @@
   pkgs,
   ...
 }: {
+  sops.secrets."releaseCookie".mode = "0440";
+  sops.secrets."releaseCookie".owner = config.users.users.akkoma.name;
+
   users.groups.akkoma = {};
 
   users.users = {

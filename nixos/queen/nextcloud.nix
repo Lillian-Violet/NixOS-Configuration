@@ -3,6 +3,22 @@
   pkgs,
   ...
 }: {
+  sops.secrets."nextcloudadmin".mode = "0440";
+  sops.secrets."nextcloudadmin".owner = config.users.users.nextcloud.name;
+  sops.secrets."nextclouddb".mode = "0440";
+  sops.secrets."nextclouddb".owner = config.users.users.nextcloud.name;
+  sops.secrets."local.json".mode = "0440";
+  sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
+
+  users.users = {
+    nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
+    aria2.extraGroups = ["nextcloud"];
+    mssql = {
+      isSystemUser = true;
+      group = "mssql";
+    };
+  };
+
   # Enable Nginx
   services.nginx = {
     enable = true;
