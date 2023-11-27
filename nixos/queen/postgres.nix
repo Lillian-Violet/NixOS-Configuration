@@ -7,7 +7,12 @@
     enable = true;
 
     # Ensure the database, user, and permissions always exist
-    ensureDatabases = ["nextcloud" "onlyoffice" "akkoma"];
+    ensureDatabases = [
+      "nextcloud"
+      "onlyoffice"
+      "akkoma"
+      "gotosocial"
+    ];
     ensureUsers = [
       {
         name = "nextcloud";
