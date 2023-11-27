@@ -67,6 +67,7 @@
     #Increase opcache string buffer
     phpOptions."opcache.interned_strings_buffer" = "23";
 
+    appstoreEnable = true;
     extraAppsEnable = true;
     extraApps = with config.services.nextcloud.package.packages.apps; {
       # List of apps we want to install and are already packaged in
