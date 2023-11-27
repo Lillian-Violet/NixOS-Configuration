@@ -22,6 +22,7 @@
 
   services.gotosocial = {
     enable = true;
+    package = pkgs.gotosocial;
     setupPostgresqlDB = true;
     settings = {
       application-name = "gotosocial";
@@ -40,5 +41,10 @@
       smtp-password = config.sops.secrets."mailpass".path;
       smtp-from = "no-reply@social.gladtherescake.eu";
     };
+  };
+
+  systemd.services."gotosocial" = {
+    requires = ["postgresql.service"];
+    after = ["postgresql.service"];
   };
 }
