@@ -56,8 +56,6 @@
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
   sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
   sops.age.keyFile = ./keys.txt;
-  sops.secrets."mssqlpass".mode = "0440";
-  sops.secrets."mssqlpass".owner = config.users.users.mssql.name;
 
   nix = {
     gc = {
@@ -167,7 +165,7 @@
       ports = ["1433:1433"];
       environment = {
         "ACCEPT_EULA" = "Y";
-        "MSSQL_SA_PASSWORD" = "${config.sops.placeholder."mssqlpass"}";
+        "MSSQL_SA_PASSWORD" = "${sops.placeholder."mssqlpass"}";
       };
       volumes = ["/home/lillian/docker/mssql:/data"];
     };
