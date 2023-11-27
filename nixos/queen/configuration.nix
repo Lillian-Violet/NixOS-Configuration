@@ -165,7 +165,7 @@
       ports = ["1433:1433"];
       environment = {
         "ACCEPT_EULA" = "Y";
-        "MSSQL_SA_PASSWORD" = "EbKihNUHg6S$V$qchADFmw!JCm##toc3";
+        "MSSQL_SA_PASSWORD" = "${config.sops.placeholder.mssqlpass}";
       };
       volumes = ["/home/lillian/docker/mssql:/data"];
     };
