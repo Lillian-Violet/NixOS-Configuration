@@ -18,7 +18,8 @@
     ./hardware-configuration.nix
     ./nextcloud.nix
     ./mail-server.nix
-    ./akkoma.nix
+    ./gotosocial.nix
+    #./akkoma.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
