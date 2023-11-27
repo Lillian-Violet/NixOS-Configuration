@@ -55,16 +55,6 @@
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
   sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
   sops.age.keyFile = ./keys.txt;
-  sops.secrets."nextcloudadmin".mode = "0440";
-  sops.secrets."nextcloudadmin".owner = config.users.users.nextcloud.name;
-  sops.secrets."nextclouddb".mode = "0440";
-  sops.secrets."nextclouddb".owner = config.users.users.nextcloud.name;
-  sops.secrets."local.json".mode = "0440";
-  sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
-  sops.secrets."mailpass".mode = "0440";
-  sops.secrets."mailpass".owner = config.users.users.virtualMail.name;
-  sops.secrets."releaseCookie".mode = "0440";
-  sops.secrets."releaseCookie".owner = config.users.users.akkoma.name;
 
   nix = {
     gc = {
@@ -164,19 +154,6 @@
       isNormalUser = true;
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
       shell = pkgs.zsh;
-    };
-
-    nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
-    aria2.extraGroups = ["nextcloud"];
-    mssql = {
-      isSystemUser = true;
-      group = "mssql";
-    };
-
-    virtualMail = {
-      isSystemUser = true;
-      isNormalUser = false;
-      group = "virtualMail";
     };
   };
 
