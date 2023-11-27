@@ -85,6 +85,7 @@
     docker
     docker-compose
     git
+    gotosocial
     alejandra
     exiftool
     imagemagick
