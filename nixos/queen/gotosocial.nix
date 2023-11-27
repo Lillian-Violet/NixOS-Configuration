@@ -37,7 +37,7 @@
       smtp-host = "localhost";
       smtp-port = 587;
       smtp-username = "no-reply@social.gladtherescake.eu";
-      smtp-password = config.sops.secrets."releaseCookie".path;
+      smtp-password = config.sops.secrets."mailpass".path;
       smtp-from = "no-reply@social.gladtherescake.eu";
     };
   };
