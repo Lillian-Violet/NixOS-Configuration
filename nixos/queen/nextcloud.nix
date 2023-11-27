@@ -117,7 +117,15 @@
   };
 
   systemd.services."sops-nix.service" = {
-    before = ["nextcloud-setup.service" "postgresql.service" "onlyoffice-converter.service" "onlyoffice-docservice.service" "nginx.service" "phpfpm-nextcloud.service" "redis-nextcloud.service"];
+    before = [
+      "nextcloud-setup.service"
+      "postgresql.service"
+      "onlyoffice-converter.service"
+      "onlyoffice-docservice.service"
+      "nginx.service"
+      "phpfpm-nextcloud.service"
+      "redis-nextcloud.service"
+    ];
   };
 
   # Ensure that postgres is running before running the setup

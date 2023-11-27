@@ -21,7 +21,11 @@
     enableImap = true;
     enableSubmission = true;
     fqdn = "mail.gladtherescake.eu";
-    domains = ["nextcloud.gladtherescake.eu" "akkoma.gladtherescake.eu"];
+    domains = [
+      "nextcloud.gladtherescake.eu"
+      "akkoma.gladtherescake.eu"
+      "social.gladtherescake.eu"
+    ];
 
     loginAccounts = {
       "no-reply@nextcloud.gladtherescake.eu" = {
@@ -30,8 +34,15 @@
       "no-reply@akkoma.gladtherescake.eu" = {
         hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
+      "no-reply@social.gladtherescake.eu" = {
+        hashedPasswordFile = config.sops.secrets."mailpass".path;
+      };
     };
-    rejectRecipients = ["no-reply@nextcloud.gladtherescake.eu" "no-reply@akkoma.gladtherescake.eu"];
+    rejectRecipients = [
+      "no-reply@nextcloud.gladtherescake.eu"
+      "no-reply@akkoma.gladtherescake.eu"
+      "no-reply@social.gladtherescake.eu"
+    ];
     certificateScheme = "acme-nginx";
   };
 }
