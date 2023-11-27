@@ -161,8 +161,6 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  users.groups.mssql = {};
-
   users.users = {
     lillian = {
       isNormalUser = true;
