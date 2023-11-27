@@ -169,22 +169,6 @@
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
       shell = pkgs.zsh;
     };
-    mssql = {
-      isSystemUser = true;
-      group = "mssql";
-    };
-  };
-
-  virtualisation.oci-containers.containers = {
-    mssql = {
-      image = "mcr.microsoft.com/mssql/server:2022-latest";
-      ports = ["1433:1433"];
-      environment = {
-        "ACCEPT_EULA" = "Y";
-        "MSSQL_SA_PASSWORD" = "EbKihNUHg6S$V$qchADFmw!JCm##toc3";
-      };
-      volumes = ["/home/lillian/docker/mssql:/data"];
-    };
   };
 
   # Enable completion of system packages by zsh
