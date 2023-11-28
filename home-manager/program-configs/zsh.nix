@@ -24,7 +24,7 @@
     enableCompletion = true;
     historySubstringSearch.enable = true;
     syntaxHighlighting.enable = true;
-    zsh-abbr.enable = true;
+    #zsh-abbr.enable = true;
     oh-my-zsh = {
       enable = true;
       plugins = [
