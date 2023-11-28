@@ -66,7 +66,7 @@
     # Chat applications:
     element-desktop
     signal-desktop
-    webcord
+    webcord-vencord
 
     # Gaming:
     prismlauncher
