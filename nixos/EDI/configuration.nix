@@ -39,5 +39,5 @@
   networking.hostName = "EDI";
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "unstable";
+  system.stateVersion = "23.05";
 }
