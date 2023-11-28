@@ -3,7 +3,7 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     sops-nix.url = "github:Mic92/sops-nix";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
