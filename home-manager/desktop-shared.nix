@@ -102,7 +102,7 @@
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       arrterian.nix-env-selector
-      ban.spellright
+      #ban.spellright
       dracula-theme.theme-dracula
       eamodio.gitlens
       github.vscode-pull-request-github
