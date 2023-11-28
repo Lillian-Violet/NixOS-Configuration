@@ -112,7 +112,7 @@
       ms-pyright.pyright
       #ms-python.python
       ms-python.vscode-pylance
-      ms-vscode-remote.remote-containers
+      #ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       oderwat.indent-rainbow
       rust-lang.rust-analyzer
