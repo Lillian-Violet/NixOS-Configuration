@@ -77,6 +77,7 @@
     pciutils
     rsync
     steam
+    sqlfluff
     wget
     zsh
   ];
