@@ -113,6 +113,8 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  networking.firewall.enable = true;
+
   networking.firewall.allowedTCPPorts = [80 443 1433];
 
   # Set your time zone.
