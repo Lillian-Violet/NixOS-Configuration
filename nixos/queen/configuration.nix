@@ -115,7 +115,7 @@
 
   networking.firewall.enable = true;
 
-  networking.firewall.allowedTCPPorts = [80 443 1433];
+  networking.firewall.allowedTCPPorts = [22 80 443 1433];
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
