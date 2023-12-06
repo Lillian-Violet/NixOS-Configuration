@@ -25,7 +25,7 @@
     nginx = {
       enableACME = true;
       forceSSL = true;
-      serverName = "social.gladtherescake.eu";
+      serverName = "akkoma.gladtherescake.eu";
     };
     #dist.cookie._secret = config.sops.secrets."releaseCookie".path;
     config = {
