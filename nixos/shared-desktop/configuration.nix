@@ -62,12 +62,14 @@
     docker-compose
     git-filter-repo
     home-manager
-    input-leap
+    krunner-translator
     libsForQt5.discover
     libsForQt5.kcalc
     libsForQt5.kdepim-addons
     libsForQt5.kirigami2
     libsForQt5.kdeconnect-kde
+    libsForQt5.krunner-ssh
+    libsForQt5.krunner-symbols
     libsForQt5.packagekit-qt
     libportal-qt5
     noto-fonts
@@ -78,6 +80,7 @@
     pciutils
     rsync
     steam
+    sqlfluff
     wget
     zsh
   ];

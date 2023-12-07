@@ -42,6 +42,10 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
+
+      permittedInsecurePackages = [
+        "electron-24.8.6"
+      ];
     };
   };
 
@@ -62,7 +66,7 @@
     # Chat applications:
     element-desktop
     signal-desktop
-    webcord
+    webcord-vencord
 
     # Gaming:
     prismlauncher
@@ -103,7 +107,7 @@
     package = pkgs.vscodium;
     extensions = with pkgs.vscode-extensions; [
       arrterian.nix-env-selector
-      ban.spellright
+      #ban.spellright
       dracula-theme.theme-dracula
       eamodio.gitlens
       github.vscode-pull-request-github
@@ -113,7 +117,7 @@
       ms-pyright.pyright
       #ms-python.python
       ms-python.vscode-pylance
-      ms-vscode-remote.remote-containers
+      #ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       oderwat.indent-rainbow
       rust-lang.rust-analyzer

@@ -20,7 +20,7 @@
     ./nextcloud.nix
     ./mail-server.nix
     ./gotosocial.nix
-    #./akkoma.nix
+    ./akkoma.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -113,7 +113,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  networking.firewall.allowedTCPPorts = [80 443 1443];
+  networking.firewall.enable = true;
+
+  networking.firewall.allowedTCPPorts = [22 80 443 1433];
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
