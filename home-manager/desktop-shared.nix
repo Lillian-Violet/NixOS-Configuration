@@ -42,10 +42,6 @@
       allowUnfree = true;
       # Workaround for https://github.com/nix-community/home-manager/issues/2942
       allowUnfreePredicate = _: true;
-
-      permittedInsecurePackages = [
-        "electron-25.9.0"
-      ];
     };
   };
 
@@ -84,7 +80,6 @@
 
     # System tools:
     rage
-    bitwarden
     discover
     flameshot
     fzf
