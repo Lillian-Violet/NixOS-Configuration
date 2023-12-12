@@ -94,6 +94,7 @@
 
     # Web browsing:
     firefox
+    librewolf
     ungoogled-chromium
   ];
 
