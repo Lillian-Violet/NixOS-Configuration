@@ -66,5 +66,11 @@
       "no-reply@social.gladtherescake.eu"
     ];
     certificateScheme = "acme-nginx";
+    certificateDomains = [
+      "imap.lillianviolet.dev"
+      "mail.lillianviolet.dev"
+      "pop3.lillianviolet.dev"
+      "lillianviolet.dev"
+    ];
   };
 }
