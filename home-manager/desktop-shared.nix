@@ -77,6 +77,7 @@
     onlyoffice-bin
     teams-for-linux
     gimp-with-plugins
+    thunderbird
 
     # System tools:
     rage
