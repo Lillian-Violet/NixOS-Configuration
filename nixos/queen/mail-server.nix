@@ -36,6 +36,7 @@
       "nextcloud.gladtherescake.eu"
       "akkoma.gladtherescake.eu"
       "social.gladtherescake.eu"
+      "lillianviolet.dev"
     ];
 
     loginAccounts = {
@@ -48,7 +49,17 @@
       "no-reply@social.gladtherescake.eu" = {
         hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
+      "info@lillianviolet.dev" = {
+        hashedPasswordFile = config.sops.secrets."mailpass".path;
+        aliases = [
+          "@lillianviolet.dev"
+        ];
+        catchAll = [
+          "lillianviolet.dev"
+        ];
+      };
     };
+
     rejectRecipients = [
       "no-reply@nextcloud.gladtherescake.eu"
       "no-reply@akkoma.gladtherescake.eu"
