@@ -36,7 +36,6 @@
       "nextcloud.gladtherescake.eu"
       "akkoma.gladtherescake.eu"
       "social.gladtherescake.eu"
-      "lillianviolet.dev"
     ];
 
     loginAccounts = {
@@ -49,6 +48,26 @@
       "no-reply@social.gladtherescake.eu" = {
         hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
+    };
+
+    rejectRecipients = [
+      "no-reply@nextcloud.gladtherescake.eu"
+      "no-reply@akkoma.gladtherescake.eu"
+      "no-reply@social.gladtherescake.eu"
+    ];
+    certificateScheme = "acme-nginx";
+  };
+
+  mailserver = {
+    enable = true;
+    enableImap = true;
+    enableSubmission = true;
+    fqdn = "mail.lillianviolet.dev";
+    domains = [
+      "lillianviolet.dev"
+    ];
+
+    loginAccounts = {
       "info@lillianviolet.dev" = {
         hashedPasswordFile = config.sops.secrets."mailpass".path;
         aliases = [
@@ -59,12 +78,6 @@
         ];
       };
     };
-
-    rejectRecipients = [
-      "no-reply@nextcloud.gladtherescake.eu"
-      "no-reply@akkoma.gladtherescake.eu"
-      "no-reply@social.gladtherescake.eu"
-    ];
     certificateScheme = "acme-nginx";
   };
 }
