@@ -19,6 +19,7 @@
     ./postgres.nix
     ./nextcloud.nix
     ./mail-server.nix
+    ./webmail.nix
     ./gotosocial.nix
     ./akkoma.nix
   ];
