@@ -62,9 +62,13 @@
     };
 
     mailboxes = {
-      Inbox = {
+      All = {
         auto = "subscribe";
-        specialUse = "Inbox";
+        specialUse = "All";
+      };
+      Archive = {
+        auto = "subscribe";
+        specialUse = "Archive";
       };
       Drafts = {
         auto = "subscribe";
