@@ -3,8 +3,7 @@
   pkgs,
   lib,
   ...
-}:
-with lib; {
+}: {
   services.roundcube = {
     enable = true;
     # this is the url of the vhost, not necessarily the same as the fqdn of
@@ -18,8 +17,4 @@ with lib; {
       $config['smtp_pass'] = "%p";
     '';
   };
-
-  services.nginx.enable = true;
-
-  networking.firewall.allowedTCPPorts = [80 443];
 }
