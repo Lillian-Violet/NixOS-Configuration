@@ -6,6 +6,7 @@
   pkgs,
   ...
 }: {
+  #The thing you want for multiple domains is SNI, I don't know how to set that up
   imports = [
     (builtins.fetchTarball {
       # Pick a release version you are interested in and set its hash, e.g.
@@ -57,6 +58,29 @@
         catchAll = [
           "lillianviolet.dev"
         ];
+      };
+    };
+
+    mailboxes = {
+      Inbox = {
+        auto = "subscribe";
+        specialUse = "Inbox";
+      };
+      Drafts = {
+        auto = "subscribe";
+        specialUse = "Drafts";
+      };
+      Junk = {
+        auto = "subscribe";
+        specialUse = "Junk";
+      };
+      Sent = {
+        auto = "subscribe";
+        specialUse = "Sent";
+      };
+      Trash = {
+        auto = "no";
+        specialUse = "Trash";
       };
     };
 
