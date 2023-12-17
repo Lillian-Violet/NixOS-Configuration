@@ -106,6 +106,7 @@
     python3
     rsync
     rabbitmq-server
+    roundcube
     youtube-dl
     wget
     zsh
