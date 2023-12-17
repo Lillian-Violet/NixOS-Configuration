@@ -21,7 +21,7 @@
     ./mail-server.nix
     ./webmail.nix
     ./gotosocial.nix
-    ./akkoma.nix
+    #./akkoma.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
