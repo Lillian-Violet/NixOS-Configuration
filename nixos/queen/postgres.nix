@@ -16,19 +16,19 @@
     ensureUsers = [
       {
         name = "nextcloud";
-        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+        ensureDBOwnership = true;
       }
       {
         name = "onlyoffice";
-        ensurePermissions."DATABASE onlyoffice" = "ALL PRIVILEGES";
+        ensureDBOwnership = true;
       }
       {
         name = "akkoma";
-        ensurePermissions."DATABASE akkoma" = "ALL PRIVILEGES";
+        ensureDBOwnership = true;
       }
       {
         name = "gotosocial";
-        ensurePermissions."DATABASE gotosocial" = "ALL PRIVILEGES";
+        ensureDBOwnership = true;
       }
     ];
   };
