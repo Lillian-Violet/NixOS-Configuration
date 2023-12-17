@@ -13,10 +13,6 @@
   users.users = {
     nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
     aria2.extraGroups = ["nextcloud"];
-    mssql = {
-      isSystemUser = true;
-      group = "mssql";
-    };
   };
 
   # Enable Nginx
@@ -68,12 +64,12 @@
     phpOptions."opcache.interned_strings_buffer" = "23";
 
     appstoreEnable = true;
-    extraAppsEnable = true;
-    extraApps = with config.services.nextcloud.package.packages.apps; {
-      # List of apps we want to install and are already packaged in
-      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
-      inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification unsplash;
-    };
+    #extraAppsEnable = true;
+    #extraApps = with config.services.nextcloud.package.packages.apps; {
+    # List of apps we want to install and are already packaged in
+    # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
+    #  inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification unsplash;
+    #};
 
     config = {
       # Further forces Nextcloud to use HTTPS
