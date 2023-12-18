@@ -150,8 +150,6 @@
     defaults.email = "letsencrypt@gladtherescake.eu";
   };
 
-  users.groups.mssql = {};
-
   users.groups.virtualMail = {};
 
   users.users = {
