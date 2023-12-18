@@ -9,7 +9,7 @@
     package = pkgs.postgresql_14;
     enable = true;
 
-    # Ensure the database, user, and permissions always exist
+    # Ensure the database, user, and ownership is set
     ensureDatabases = [
       "nextcloud"
       "onlyoffice"
