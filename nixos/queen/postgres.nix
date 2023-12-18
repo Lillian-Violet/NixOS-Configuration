@@ -4,6 +4,9 @@
   ...
 }: {
   services.postgresql = {
+    #TODO: update to postgres 15 before migrating to 23.11
+    # https://nixos.org/manual/nixos/stable/#module-postgresql
+    package = pkgs.postgresql_14;
     enable = true;
 
     # Ensure the database, user, and permissions always exist
