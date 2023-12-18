@@ -177,7 +177,7 @@
   networking.hostName = "queen";
 
   boot.loader.grub.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.grub.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
