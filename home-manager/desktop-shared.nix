@@ -56,6 +56,7 @@
 
   home.packages = with pkgs; [
     # Coding:
+    direnv
     git
     kate
 
