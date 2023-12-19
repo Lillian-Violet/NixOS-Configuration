@@ -20,13 +20,13 @@
   sops.secrets."mailpass".mode = "0440";
   sops.secrets."mailpass".owner = config.users.users.virtualMail.name;
 
-  users.users = {
-    virtualMail = {
-      isSystemUser = true;
-      isNormalUser = false;
-      group = "virtualMail";
-    };
-  };
+  # users.users = {
+  #   virtualMail = {
+  #     isSystemUser = true;
+  #     isNormalUser = false;
+  #     group = "virtualMail";
+  #   };
+  # };
 
   mailserver = {
     enable = true;
