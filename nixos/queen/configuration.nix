@@ -150,7 +150,7 @@
     defaults.email = "letsencrypt@gladtherescake.eu";
   };
 
-  users.groups.virtualMail = {};
+  # users.groups.virtualMail = {};
 
   users.users = {
     lillian = {
