@@ -65,7 +65,8 @@
 
     appstoreEnable = true;
     extraAppsEnable = true;
-    extraApps = with config.services.nextcloud.package.packages.apps; {
+    #extraApps = with config.services.nextcloud.package.packages.apps; {
+    extraApps = {
       news = pkgs.fetchNextcloudApp {
         name = "news";
         sha256 = "52179795dba6a4eea0354deb66c14af10adc1ba2e7c6e3ee08de0eebcb773f6c";
