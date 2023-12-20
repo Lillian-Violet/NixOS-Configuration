@@ -95,7 +95,7 @@
     aria2
     git-filter-repo
     home-manager
-    nextcloud27
+    nextcloud28
     nginx
     noto-fonts
     noto-fonts-emoji-blob-bin
