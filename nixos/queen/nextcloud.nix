@@ -48,7 +48,7 @@
     enable = true;
     hostName = "nextcloud.gladtherescake.eu";
 
-    package = pkgs.nextcloud27;
+    package = pkgs.nextcloud28;
 
     # Use HTTPS for links
     https = true;
@@ -74,7 +74,8 @@
       };
       # List of apps we want to install and are already packaged in
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
-      inherit calendar contacts deck forms music notes onlyoffice polls twofactor_nextcloud_notification unsplash;
+      #inherit calendar contacts deck forms notes onlyoffice polls twofactor_nextcloud_notification unsplash;
+      #inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification unsplash;
     };
 
     config = {
