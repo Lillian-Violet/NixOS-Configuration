@@ -71,7 +71,7 @@
         name = "news";
         sha256 = "52179795dba6a4eea0354deb66c14af10adc1ba2e7c6e3ee08de0eebcb773f6c";
         url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha2/news.tar.gz";
-        version = "25.0.0-alpha2";
+        version = "25.0.0";
       };
       # List of apps we want to install and are already packaged in
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
