@@ -10,15 +10,13 @@
   services.roundcube = {
     enable = true;
 
-    package = pkgs.roundcube.withPlugins (
-      plugins: [
-        plugins.contextmenu
-        plugins.carddav
-        plugins.custom_from
-        plugins.persistent_login
-        plugins.thunderbird_labels
-      ]
-    );
+    plugins = [
+      "contextmenu"
+      "carddav"
+      "custom_from"
+      "persistent_login"
+      "thunderbird_labels"
+    ];
 
     # this is the url of the vhost, not necessarily the same as the fqdn of
     # the mailserver
