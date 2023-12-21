@@ -65,10 +65,17 @@
 
     appstoreEnable = true;
     extraAppsEnable = true;
-    extraApps = with config.services.nextcloud.package.packages.apps; {
+    #extraApps = with config.services.nextcloud.package.packages.apps; {
+    extraApps = {
+      news = pkgs.fetchNextcloudApp {
+        name = "news";
+        sha256 = "0000000000000000000000000000000000000000000000";
+        url = "https://github.com/nextcloud/news/releases/download/25.0.0-alpha2/news.tar.gz";
+        version = "25.0.0";
+      };
       # List of apps we want to install and are already packaged in
       # https://github.com/NixOS/nixpkgs/blob/master/pkgs/servers/nextcloud/packages/nextcloud-apps.json
-      #inherit calendar contacts deck forms music news notes onlyoffice polls twofactor_nextcloud_notification unsplash;
+      #inherit calendar contacts deck forms notes onlyoffice polls twofactor_nextcloud_notification unsplash;
     };
 
     config = {
