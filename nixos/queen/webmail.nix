@@ -9,7 +9,15 @@
   # https://discourse.nixos.org/t/roundcube-with-plugins/28292/7
   services.roundcube = {
     enable = true;
-
+    services.roundcube.package = pkgs.roundcube.withPlugins (
+      plugins: [
+        plugins.contextmenu
+        plugins.carddav
+        plugins.custom_from
+        plugins.persistent_login
+        plugins.thunderbird_labels
+      ]
+    );
     plugins = [
       "contextmenu"
       "carddav"
