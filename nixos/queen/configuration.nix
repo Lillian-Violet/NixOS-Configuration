@@ -108,6 +108,11 @@
     rsync
     rabbitmq-server
     roundcube
+    roundcubePlugins.contextmenu
+    roundcubePlugins.carddav
+    roundcubePlugins.custom_from
+    roundcubePlugins.persistent_login
+    roundcubePlugins.thunderbird_labels
     youtube-dl
     wget
     zsh
