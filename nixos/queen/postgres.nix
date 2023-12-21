@@ -3,9 +3,11 @@
   pkgs,
   ...
 }: {
+  #Define postgres here so this is the only place to update its version
+  postgresPackage = pkgs.postgresql_15;
   services.postgresql = {
     # https://nixos.org/manual/nixos/stable/#module-postgresql
-    package = pkgs.postgresql_15;
+    package = postgresPackage;
     enable = true;
 
     # Ensure the database, user, and ownership is set
