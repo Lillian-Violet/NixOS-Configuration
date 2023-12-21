@@ -6,7 +6,6 @@
   pkgs,
   ...
 }: {
-  #The thing you want for multiple domains is SNI, I don't know how to set that up
   imports = [
     (builtins.fetchTarball {
       # Pick a release version you are interested in and set its hash, e.g.
