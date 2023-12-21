@@ -5,7 +5,7 @@
 }: {
   services.postgresql = {
     # https://nixos.org/manual/nixos/stable/#module-postgresql
-    package = pkgs.postgresql_15;
+    package = pkgs.postgresql_16;
     enable = true;
 
     # Ensure the database, user, and ownership is set

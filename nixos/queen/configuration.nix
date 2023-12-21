@@ -103,7 +103,7 @@
     noto-fonts-emoji
     oh-my-zsh
     onlyoffice-documentserver
-    postgresql_15
+    postgresql_16
     python3
     rsync
     rabbitmq-server
