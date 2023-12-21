@@ -9,7 +9,7 @@
   # https://discourse.nixos.org/t/roundcube-with-plugins/28292/7
   services.roundcube = {
     enable = true;
-    services.roundcube.package = pkgs.roundcube.withPlugins (
+    package = pkgs.roundcube.withPlugins (
       plugins: [
         plugins.contextmenu
         plugins.carddav
