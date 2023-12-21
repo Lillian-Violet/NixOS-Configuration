@@ -21,6 +21,7 @@
     ./mail-server.nix
     ./webmail.nix
     ./gotosocial.nix
+    ../upgrade/postgresql.nix
     #./akkoma.nix
   ];
 
