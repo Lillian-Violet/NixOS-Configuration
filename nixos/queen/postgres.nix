@@ -14,6 +14,7 @@
       "onlyoffice"
       "akkoma"
       "gotosocial"
+      "gitea"
     ];
     ensureUsers = [
       {
@@ -30,6 +31,10 @@
       }
       {
         name = "gotosocial";
+        ensureDBOwnership = true;
+      }
+      {
+        name = "gitea";
         ensureDBOwnership = true;
       }
     ];

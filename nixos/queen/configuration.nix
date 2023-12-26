@@ -22,7 +22,7 @@
     ./webmail.nix
     ./gotosocial.nix
     ../upgrade/postgresql.nix
-    #./akkoma.nix
+    ./akkoma.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -88,6 +88,7 @@
     docker
     docker-compose
     git
+    gitea
     gotosocial
     alejandra
     exiftool
