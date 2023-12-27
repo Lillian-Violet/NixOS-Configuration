@@ -92,5 +92,16 @@
         ];
       };
     };
+
+    nixosConfigurations = {
+      shodan = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/shodan/configuration.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
+    };
   };
 }
