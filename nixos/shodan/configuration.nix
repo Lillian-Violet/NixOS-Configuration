@@ -16,7 +16,7 @@
         builtins.fetchTarball {
           url = "https://github.com/Jovian-Experiments/Jovian-NixOS/archive/${revision}.tar.gz";
           # Update the hash as needed:
-          sha256 = "sha256:9b9cd766072751ea23e22969d4804320a146afa340c496628a4a87797ac13771";
+          sha256 = "sha256:1bj0vm734jllsl7kyicdjlcpm30q6syzavr3im89m0f5bpnzkj7l";
         }
         + "/modules"
     )
@@ -127,7 +127,7 @@
   #What desktop to start when switching to desktop session
   jovian.steam.desktopSession = "plasmawayland";
 
-  jovian.steam.user = users.users.lillian;
+  jovian.steam.user = "lillian";
 
   #Enable gyro service for CEMU
   jovian.devices.steamdeck.enableGyroDsuService = true;
