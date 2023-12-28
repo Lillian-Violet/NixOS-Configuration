@@ -32,7 +32,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      lillian = import ../../home-manager/GLaDOS-Lillian.nix;
+      lillian = import ../../../home-manager/hosts/GLaDOS/GLaDOS-Lillian.nix;
     };
   };
 

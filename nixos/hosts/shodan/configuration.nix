@@ -232,7 +232,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      lillian = import ../../home-manager/shodan-Lillian.nix;
+      lillian = import ../../../home-manager/hosts/shodan/shodan-Lillian.nix;
     };
   };
 
