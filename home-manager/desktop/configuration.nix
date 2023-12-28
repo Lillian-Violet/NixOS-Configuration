@@ -16,7 +16,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ./program-configs/zsh.nix
+    ./package-configs/zsh.nix
   ];
   nixpkgs = {
     # You can add overlays here
