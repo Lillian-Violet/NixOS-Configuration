@@ -65,7 +65,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/EDI/configuration.nix
+          ./nixos/hosts/EDI/configuration.nix
           sops-nix.nixosModules.sops
         ];
       };
@@ -76,7 +76,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/GLaDOS/configuration.nix
+          ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
         ];
       };
@@ -87,7 +87,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/queen/configuration.nix
+          ./nixos/hosts/queen/configuration.nix
           sops-nix.nixosModules.sops
         ];
       };
@@ -98,7 +98,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/shodan/configuration.nix
+          ./nixos/hosts/shodan/configuration.nix
           sops-nix.nixosModules.sops
         ];
       };

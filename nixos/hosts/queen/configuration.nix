@@ -16,13 +16,14 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./hardware-configuration.nix
-    ./postgres.nix
-    ./nextcloud.nix
-    ./mail-server.nix
-    ./webmail.nix
-    ./gotosocial.nix
-    ../upgrade/postgresql.nix
-    ./akkoma.nix
+    ../../package-configs/akkoma/configuration.nix
+    ../../package-configs/gitea/configuration.nix
+    ../../package-configs/gotosocial/configuration.nix
+    ../../package-configs/mail-server/configuration.nix
+    ../../package-configs/nextcloud/configuration.nix
+    ../../package-configs/postgres/configuration.nix
+    ../../package-configs/postgres/upgrade.nix
+    ../../package-configs/roundcube/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -56,7 +57,7 @@
   };
 
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
-  sops.defaultSopsFile = ../../secrets/queen-Lillian.yaml;
+  sops.defaultSopsFile = ./secrets/sops.yaml;
   sops.age.keyFile = ./keys.txt;
 
   nix = {
