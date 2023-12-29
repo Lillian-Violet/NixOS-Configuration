@@ -79,7 +79,6 @@
     oh-my-zsh
     pciutils
     rsync
-    steam
     sqlfluff
     wget
     zsh
