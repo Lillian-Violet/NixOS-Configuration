@@ -24,9 +24,9 @@
     database = {
       type = "postgres";
     };
-    domain = "git.lillianviolet.dev";
-    rootUrl = "https://git.lillianviolet.dev/";
-    httpPort = 3218;
+    DOMAIN = "git.lillianviolet.dev";
+    ROOT_URL = "https://git.lillianviolet.dev/";
+    HTTP_PORT = 3218;
   };
 
   services.nginx = {
