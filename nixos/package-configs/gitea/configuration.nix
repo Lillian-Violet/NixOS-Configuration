@@ -25,6 +25,23 @@
       type = "postgres";
     };
     settings = {
+      "cron.sync_external_users" = {
+        RUN_AT_START = true;
+        SCHEDULE = "@every 24h";
+        UPDATE_EXISTING = true;
+      };
+      mailer = {
+        ENABLED = true;
+        MAILER_TYPE = "sendmail";
+        FROM = "no-reply@git.lillianviolet.dev";
+        SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
+      };
+      repository = {
+        ENABLE_PUSH_CREATE_USER = true;
+      };
+      other = {
+        SHOW_FOOTER_VERSION = false;
+      };
       service.DISABLE_REGISTRATION = true;
       server = {
         DOMAIN = "git.lillianviolet.dev";
