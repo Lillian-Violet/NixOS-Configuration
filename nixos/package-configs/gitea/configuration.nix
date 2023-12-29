@@ -24,10 +24,13 @@
     database = {
       type = "postgres";
     };
-    server = {
-      DOMAIN = "git.lillianviolet.dev";
-      ROOT_URL = "https://git.lillianviolet.dev/";
-      HTTP_PORT = 3218;
+    settings = {
+      service.DISABLE_REGISTRATION = true;
+      server = {
+        DOMAIN = "git.lillianviolet.dev";
+        ROOT_URL = "https://git.lillianviolet.dev/";
+        HTTP_PORT = 3218;
+      };
     };
   };
 
