@@ -25,7 +25,7 @@
       type = "postgres";
     };
     settings = {
-      service.DISABLE_REGISTRATION = true;
+      service.DISABLE_REGISTRATION = false;
       server = {
         DOMAIN = "git.lillianviolet.dev";
         ROOT_URL = "https://git.lillianviolet.dev/";
