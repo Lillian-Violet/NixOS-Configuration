@@ -90,6 +90,7 @@
   environment.systemPackages = with pkgs; [
     #System:
     alejandra
+    btrfs-progs
     git
     git-filter-repo
     home-manager
