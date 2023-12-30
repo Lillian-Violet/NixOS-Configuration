@@ -131,6 +131,9 @@
   #Enable gyro service for CEMU
   jovian.devices.steamdeck.enableGyroDsuService = true;
 
+  #Enable steam deck specific services
+  jovian.devices.steamdeck.enable = true;
+
   #Enable auto updates for the BIOS and controller firmware
   jovian.devices.steamdeck.autoUpdate = true;
 
