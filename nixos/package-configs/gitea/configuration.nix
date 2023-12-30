@@ -34,7 +34,7 @@
         ENABLED = true;
         PROTOCOL = "sendmail";
         FROM = "no-reply@git.lillianviolet.dev";
-        SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
+        SENDMAIL_PATH = "/run/wrappers/bin/sendmail";
       };
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
