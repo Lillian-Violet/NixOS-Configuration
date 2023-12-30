@@ -114,7 +114,6 @@
     libportal-qt5
 
     #Gaming:
-    steam
     heroic-unwrapped
   ];
 
