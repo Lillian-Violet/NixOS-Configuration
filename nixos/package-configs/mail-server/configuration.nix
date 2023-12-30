@@ -37,6 +37,7 @@
       "akkoma.gladtherescake.eu"
       "social.gladtherescake.eu"
       "lillianviolet.dev"
+      "git.lillianviolet.dev"
     ];
 
     loginAccounts = {
@@ -57,6 +58,9 @@
         catchAll = [
           "lillianviolet.dev"
         ];
+      };
+      "no-reply@git.lillianviolet.dev" = {
+        hashedPasswordFile = config.sops.secrets."mailpass".path;
       };
     };
 
@@ -91,6 +95,7 @@
       "no-reply@nextcloud.gladtherescake.eu"
       "no-reply@akkoma.gladtherescake.eu"
       "no-reply@social.gladtherescake.eu"
+      "no-reply@git.lillianviolet.dev"
     ];
     certificateScheme = "acme-nginx";
     certificateDomains = [
