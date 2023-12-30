@@ -32,7 +32,7 @@
       };
       mailer = {
         ENABLED = true;
-        MAILER_TYPE = "sendmail";
+        PROTOCOL = "sendmail";
         FROM = "no-reply@git.lillianviolet.dev";
         SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
       };
