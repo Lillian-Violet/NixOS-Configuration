@@ -34,7 +34,8 @@
         ENABLED = true;
         PROTOCOL = "sendmail";
         FROM = "no-reply@git.lillianviolet.dev";
-        SENDMAIL_PATH = "/run/wrappers/bin/sendmail";
+        SENDMAIL_PATH = "sendmail";
+        SENDMAIL_ARGS = "-bs";
       };
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
