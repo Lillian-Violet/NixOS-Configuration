@@ -13,7 +13,7 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    extest.url = "github:chaorace/nix-extest/main";
+    extest.url = "github:chaorace/extest-nix";
     # Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
