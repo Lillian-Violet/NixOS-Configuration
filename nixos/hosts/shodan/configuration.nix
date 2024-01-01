@@ -140,12 +140,12 @@
   jovian.devices.steamdeck.autoUpdate = true;
 
   programs.steam = {
-    override = {
-      extraProfile = ''export LD_PRELOAD=${pkgs.extest}/lib/libextest.so:$LD_PRELOAD'';
-    };
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    programs.steam.package = pkgs.steam.override {
+      extraProfile = ''export LD_PRELOAD=${pkgs.extest}/lib/libextest.so:$LD_PRELOAD'';
+    };
   };
   hardware.opengl.driSupport32Bit = true; # Enables support for 32bit libs that steam uses
 
