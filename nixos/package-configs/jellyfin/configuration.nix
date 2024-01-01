@@ -6,6 +6,8 @@
   pkgs,
   ...
 }: {
+  users.users.jellyfin.extraGroups = ["nextcloud"];
+
   services.nginx = {
     virtualHosts = {
       "video.gladtherescake.eu" = {
