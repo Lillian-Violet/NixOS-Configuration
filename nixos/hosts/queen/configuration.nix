@@ -24,6 +24,7 @@
     ../../package-configs/postgres/configuration.nix
     ../../package-configs/postgres/upgrade.nix
     ../../package-configs/roundcube/configuration.nix
+    ../../package-configs/jellyfin/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -98,6 +99,9 @@
     aria2
     git-filter-repo
     home-manager
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
     nextcloud28
     nginx
     noto-fonts
