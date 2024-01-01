@@ -62,7 +62,11 @@
 
     #Increase opcache string buffer
     phpOptions."opcache.interned_strings_buffer" = "23";
-
+    # Further forces Nextcloud to use HTTPS
+    extraOptions = {
+      defaultPhoneRegion = "NL";
+      overwriteprotocol = "https";
+    };
     appstoreEnable = true;
     extraAppsEnable = true;
     #extraApps = with config.services.nextcloud.package.packages.apps; {
@@ -72,11 +76,6 @@
     #};
 
     config = {
-      # Further forces Nextcloud to use HTTPS
-      overwriteProtocol = "https";
-
-      defaultPhoneRegion = "NL";
-
       # Nextcloud PostegreSQL database configuration, recommended over using SQLite
       dbtype = "pgsql";
       dbuser = "nextcloud";
