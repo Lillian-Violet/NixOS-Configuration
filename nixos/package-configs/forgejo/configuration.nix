@@ -11,6 +11,7 @@
     gitea = {
       isSystemUser = true;
       isNormalUser = false;
+      group = "gitea";
       extraGroups = ["virtualMail"];
     };
   };
