@@ -40,10 +40,10 @@
       mailer = {
         ENABLED = true;
         PROTOCOL = "sendmail";
-        FROM = "no-reply@git.lillianviolet.dev";
-        USER = "gitea";
+        FROM = "git.lillianviolet.dev";
+        USER = "no-reply";
         SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
-        SENDMAIL_ARGS = "";
+        SENDMAIL_ARGS = "-bs";
       };
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
