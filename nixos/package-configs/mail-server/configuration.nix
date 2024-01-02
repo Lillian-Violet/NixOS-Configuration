@@ -103,7 +103,6 @@
       "mail.lillianviolet.dev"
       "pop3.lillianviolet.dev"
       "lillianviolet.dev"
-      "git.lillianviolet.dev"
     ];
   };
 }
