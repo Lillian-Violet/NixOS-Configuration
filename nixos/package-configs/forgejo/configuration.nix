@@ -47,6 +47,9 @@
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
       };
+      federation = {
+        ENABLED = true;
+      };
       other = {
         SHOW_FOOTER_VERSION = false;
       };
