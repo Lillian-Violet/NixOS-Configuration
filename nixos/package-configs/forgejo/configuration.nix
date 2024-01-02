@@ -26,6 +26,7 @@
     mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
     database = {
       user = "gitea";
+      name = "gitea";
       type = "postgres";
     };
     settings = {
