@@ -37,14 +37,14 @@
         SCHEDULE = "@every 24h";
         UPDATE_EXISTING = true;
       };
-      mailer = {
-        ENABLED = true;
-        PROTOCOL = "sendmail";
-        FROM = "git.lillianviolet.dev";
-        USER = "no-reply";
-        SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
-        SENDMAIL_ARGS = "-bs";
-      };
+      # mailer = {
+      #   ENABLED = true;
+      #   PROTOCOL = "sendmail";
+      #   FROM = "git.lillianviolet.dev";
+      #   USER = "no-reply";
+      #   SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
+      #   SENDMAIL_ARGS = "-bs";
+      # };
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
       };
