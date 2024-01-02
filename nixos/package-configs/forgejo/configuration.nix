@@ -43,7 +43,7 @@
         FROM = "no-reply@git.lillianviolet.dev";
         USER = "gitea";
         SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
-        SENDMAIL_ARGS = "--";
+        SENDMAIL_ARGS = "";
       };
       repository = {
         ENABLE_PUSH_CREATE_USER = true;
