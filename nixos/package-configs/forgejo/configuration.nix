@@ -17,11 +17,14 @@
   sops.secrets."mailpassunhash".mode = "0440";
   sops.secrets."mailpassunhash".owner = config.users.users.virtualMail.name;
 
-  services.gitea = {
+  services.forgejo = {
     enable = true;
+    user = "gitea";
+    stateDir = "/var/lib/gitea";
     #TODO: different mail passwords for different services
     mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
     database = {
+      user = "gitea";
       type = "postgres";
     };
     settings = {

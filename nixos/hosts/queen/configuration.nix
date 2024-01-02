@@ -17,7 +17,7 @@
     # ./nvim.nix
     ./hardware-configuration.nix
     ../../package-configs/akkoma/configuration.nix
-    ../../package-configs/gitea/configuration.nix
+    ../../package-configs/forgejo/configuration.nix
     ../../package-configs/gotosocial/configuration.nix
     ../../package-configs/mail-server/configuration.nix
     ../../package-configs/nextcloud/configuration.nix
