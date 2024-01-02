@@ -20,6 +20,7 @@
   services.forgejo = {
     enable = true;
     user = "gitea";
+    group = "gitea";
     stateDir = "/var/lib/gitea";
     #TODO: different mail passwords for different services
     mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
