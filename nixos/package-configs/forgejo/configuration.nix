@@ -25,7 +25,7 @@
     group = "gitea";
     stateDir = "/var/lib/gitea";
     #TODO: different mail passwords for different services
-    mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
+    #mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
     database = {
       user = "gitea";
       name = "gitea";
