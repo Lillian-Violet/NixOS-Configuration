@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [];
+  users.groups.gitea = {};
   users.users = {
     gitea = {
       isSystemUser = true;
