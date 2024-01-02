@@ -41,7 +41,7 @@
         ENABLED = true;
         PROTOCOL = "sendmail";
         FROM = "no-reply@git.lillianviolet.dev";
-        SENDMAIL_PATH = "sendmail";
+        SENDMAIL_PATH = "${pkgs.system-sendmail}/bin/sendmail";
         SENDMAIL_ARGS = "-bs";
       };
       repository = {
