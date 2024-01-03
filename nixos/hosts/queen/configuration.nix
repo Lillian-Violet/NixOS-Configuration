@@ -25,6 +25,9 @@
     ../../package-configs/postgres/upgrade.nix
     ../../package-configs/roundcube/configuration.nix
     ../../package-configs/jellyfin/configuration.nix
+    ../../package-configs/ombi/configuration.nix
+    ../../package-configs/radarr/configuration.nix
+    ../../package-configs/sonarr/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
