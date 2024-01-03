@@ -6,7 +6,6 @@
   users.users = {
     ombi.extraGroups = ["radarr" "sonarr"];
   };
-  #uses port 7878
   services.ombi = {
     enable = true;
     port = 2368;
@@ -18,7 +17,7 @@
         forceSSL = true;
         enableACME = true;
         locations."/" = {
-          proxyPass = "http://localhost:2386";
+          proxyPass = "http://localhost:2368";
         };
       };
     };
