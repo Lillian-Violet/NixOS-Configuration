@@ -10,7 +10,7 @@
 
   services.nginx = {
     virtualHosts = {
-      "radarr.gladtherescake.eu" = {
+      "sonarr.gladtherescake.eu" = {
         forceSSL = true;
         enableACME = true;
         locations."/" = {
