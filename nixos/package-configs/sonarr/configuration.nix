@@ -4,7 +4,7 @@
   ...
 }: {
   #uses port 8989
-  services.radarr = {
+  services.sonarr = {
     enable = true;
   };
 
