@@ -16,19 +16,17 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./hardware-configuration.nix
-    ../../package-configs/akkoma/configuration.nix
-    ../../package-configs/forgejo/configuration.nix
-    ../../package-configs/gotosocial/configuration.nix
-    ../../package-configs/mail-server/configuration.nix
-    ../../package-configs/nextcloud/configuration.nix
-    ../../package-configs/postgres/configuration.nix
-    ../../package-configs/postgres/upgrade.nix
-    ../../package-configs/roundcube/configuration.nix
-    ../../package-configs/jellyfin/configuration.nix
-    ../../package-configs/ombi/configuration.nix
-    ../../package-configs/radarr/configuration.nix
-    ../../package-configs/sonarr/configuration.nix
-    ../../package-configs/aria2/configuration.nix
+    ../../server/package-configs/akkoma/configuration.nix
+    ../../server/package-configs/forgejo/configuration.nix
+    ../../server/package-configs/gotosocial/configuration.nix
+    ../../server/package-configs/mail-server/configuration.nix
+    ../../server/package-configs/nextcloud/configuration.nix
+    ../../server/package-configs/postgres/configuration.nix
+    ../../server/package-configs/postgres/upgrade.nix
+    ../../server/package-configs/roundcube/configuration.nix
+    ../../server/package-configs/jellyfin/configuration.nix
+    ../../server/package-configs/ombi/configuration.nix
+    ../../server/package-configs/aria2/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
