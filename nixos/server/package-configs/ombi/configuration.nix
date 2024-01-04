@@ -14,7 +14,10 @@
   users.users = {
     radarr.extraGroups = ["aria2"];
     sonarr.extraGroups = ["aria2"];
-    prowlarr.extraGroups = ["aria2"];
+    prowlarr = {
+      group = "prowlarr";
+      extraGroups = ["aria2"];
+    };
   };
   #uses port 7878
   services.radarr = {
