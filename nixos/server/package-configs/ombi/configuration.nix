@@ -4,7 +4,7 @@
   ...
 }: {
   users.users = {
-    ombi.extraGroups = ["radarr" "sonarr" "aria2"];
+    ombi.extraGroups = ["radarr" "sonarr" "aria2" "nextcloud"];
   };
   services.ombi = {
     enable = true;
@@ -15,18 +15,13 @@
     radarr.extraGroups = ["aria2" "nextcloud"];
     sonarr.extraGroups = ["aria2" "nextcloud"];
   };
-  #uses port 7878
-  services.radarr = {
-    enable = true;
-  };
 
-  #uses port 8989
-  services.sonarr = {
-    enable = true;
-  };
-
-  services.prowlarr = {
-    enable = true;
+  services = {
+    #uses port 7878
+    radarr.enable = true;
+    #uses port 8989
+    sonarr.enable = true;
+    prowlarr.enable = true;
   };
 
   services.nginx = {
