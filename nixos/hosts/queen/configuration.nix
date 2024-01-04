@@ -128,6 +128,9 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.nat.enable = true;
+  networking.nat.internalInterfaces = ["ve-+"];
+  networking.nat.externalInterface = "ens18";
 
   networking.firewall.enable = true;
 
