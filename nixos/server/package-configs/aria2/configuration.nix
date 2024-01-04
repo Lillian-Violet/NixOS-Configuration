@@ -3,8 +3,8 @@
   pkgs,
   ...
 }: {
-  sops.secrets."nextcloudadmin".mode = "0440";
-  sops.secrets."nextcloudadmin".owner = config.users.users.aria2.name;
+  sops.secrets."wg-private".mode = "0440";
+  sops.secrets."wg-private".owner = config.users.users.aria2.name;
   containers.aria2 = {
     forwardPorts = {
       hostPort = 6969;
@@ -16,7 +16,7 @@
         isReadOnly = false;
       };
       "/var/lib/wg/private-key" = {
-        hostPath = sops.secrets."nextcloudadmin".path;
+        hostPath = config.sops.secrets."wg-private".path;
         isReadOnly = true;
       };
     };
