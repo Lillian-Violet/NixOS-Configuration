@@ -10,7 +10,6 @@
   sops.secrets."wg-private".mode = "0440";
   sops.secrets."wg-private".owner = config.users.users.aria2.name;
   containers.aria2 = {
-    system.stateVersion = "23.11";
     forwardPorts = [
       {
         hostPort = 6969;
@@ -36,6 +35,7 @@
       pkgs,
       ...
     }: {
+      system.stateVersion = "23.11";
       users.users = {
         aria2.extraGroups = ["jellyfin" "nextcloud"];
       };
