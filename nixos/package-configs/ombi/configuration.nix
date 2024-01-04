@@ -4,7 +4,7 @@
   ...
 }: {
   users.users = {
-    ombi.extraGroups = ["radarr" "sonarr"];
+    ombi.extraGroups = ["radarr" "sonarr" "aria2"];
   };
   services.ombi = {
     enable = true;
