@@ -3,6 +3,9 @@
   pkgs,
   ...
 }: {
+  users.users = {
+    radarr.extraGroups = ["aria2"];
+  };
   #uses port 7878
   services.radarr = {
     enable = true;

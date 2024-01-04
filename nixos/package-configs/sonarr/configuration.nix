@@ -3,6 +3,9 @@
   pkgs,
   ...
 }: {
+  users.users = {
+    sonarr.extraGroups = ["aria2"];
+  };
   #uses port 8989
   services.sonarr = {
     enable = true;
