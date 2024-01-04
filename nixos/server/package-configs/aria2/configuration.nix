@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  users.users.aria2.group = "aria2";
+  users.groups.aria2 = {};
+  users.users.aria2.isSystemUser = true;
+
   sops.secrets."wg-private".mode = "0440";
   sops.secrets."wg-private".owner = config.users.users.aria2.name;
   containers.aria2 = {
