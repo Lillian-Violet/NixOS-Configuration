@@ -6,7 +6,7 @@
   pkgs,
   ...
 }: {
-  users.users.jellyfin.extraGroups = ["nextcloud"];
+  users.users.jellyfin.extraGroups = ["nextcloud" "aria2"];
 
   services.nginx = {
     virtualHosts = {
