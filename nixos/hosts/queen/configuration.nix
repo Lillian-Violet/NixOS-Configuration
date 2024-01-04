@@ -28,6 +28,7 @@
     ../../package-configs/ombi/configuration.nix
     ../../package-configs/radarr/configuration.nix
     ../../package-configs/sonarr/configuration.nix
+    ../../package-configs/aria2/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

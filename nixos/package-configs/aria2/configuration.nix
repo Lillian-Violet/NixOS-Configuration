@@ -9,6 +9,7 @@
   services.aria2 = {
     enable = true;
     downloadDir = "/var/lib/media";
+    rpcListenPort = 6969;
   };
 
   # services.nginx = {
