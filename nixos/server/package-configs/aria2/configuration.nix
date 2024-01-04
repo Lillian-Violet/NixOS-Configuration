@@ -10,10 +10,13 @@
   sops.secrets."wg-private".mode = "0440";
   sops.secrets."wg-private".owner = config.users.users.aria2.name;
   containers.aria2 = {
-    forwardPorts = {
-      hostPort = 6969;
-      protocol = "tcp";
-    };
+    system.stateVersion = "23.11";
+    forwardPorts = [
+      {
+        hostPort = 6969;
+        protocol = "tcp";
+      }
+    ];
     bindMounts = {
       "/var/lib/media" = {
         hostPath = "/var/lib/media";
