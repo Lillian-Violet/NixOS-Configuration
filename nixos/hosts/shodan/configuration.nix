@@ -16,7 +16,7 @@
         builtins.fetchTarball {
           url = "https://github.com/Jovian-Experiments/Jovian-NixOS/archive/${revision}.tar.gz";
           # Update the hash as needed:
-          sha256 = "sha256:1bj0vm734jllsl7kyicdjlcpm30q6syzavr3im89m0f5bpnzkj7l";
+          sha256 = "sha256:1iicb42dy4k440ddarysbb82bc7k5dv94xhg38jfcwh0wpq0rbdc";
         }
         + "/modules"
     )
