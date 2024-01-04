@@ -12,6 +12,7 @@
   containers.aria2 = {
     forwardPorts = [
       {
+        containerPort = 6969;
         hostPort = 6969;
         protocol = "tcp";
       }
@@ -36,6 +37,7 @@
       ...
     }: {
       system.stateVersion = "23.11";
+      networking.firewall.allowedTCPPorts = [6969];
       users.users = {
         aria2.extraGroups = ["jellyfin" "nextcloud"];
       };
