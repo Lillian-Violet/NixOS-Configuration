@@ -12,8 +12,8 @@
   };
 
   users.users = {
-    radarr.extraGroups = ["aria2"];
-    sonarr.extraGroups = ["aria2"];
+    radarr.extraGroups = ["aria2" "nextcloud"];
+    sonarr.extraGroups = ["aria2" "nextcloud"];
   };
   #uses port 7878
   services.radarr = {
