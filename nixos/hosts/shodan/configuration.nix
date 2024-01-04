@@ -11,7 +11,7 @@
     (
       # Put the most recent revision here:
       let
-        revision = "4d24d2ff927a8b8a698bbacdb1966045bcadf872";
+        revision = "1962ff3135b1468ae473a196da01d0ebf38c144e";
       in
         builtins.fetchTarball {
           url = "https://github.com/Jovian-Experiments/Jovian-NixOS/archive/${revision}.tar.gz";
