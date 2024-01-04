@@ -10,7 +10,7 @@
       hostPort = 6969;
       protocol = "tcp";
     };
-    bindmounts = {
+    bindMounts = {
       "/var/lib/media" = {
         hostPath = "/var/lib/media";
         isReadOnly = false;
