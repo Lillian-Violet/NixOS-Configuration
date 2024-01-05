@@ -116,7 +116,7 @@
     libportal-qt5
 
     #Gaming:
-    heroic-unwrapped
+    heroic
     legendary-gl
     rare
   ];
