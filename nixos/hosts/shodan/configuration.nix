@@ -99,6 +99,7 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
+    qtvirtualkeyboard
     rsync
     wget
     zsh
