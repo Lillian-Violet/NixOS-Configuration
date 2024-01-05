@@ -99,7 +99,6 @@
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
     oh-my-zsh
-    qtvirtualkeyboard
     rsync
     wget
     zsh
@@ -114,6 +113,7 @@
     libsForQt5.krunner-ssh
     libsForQt5.krunner-symbols
     libsForQt5.packagekit-qt
+    libsForQt5.qt5.qtvirtualkeyboard
     libportal-qt5
 
     #Gaming:
