@@ -117,6 +117,7 @@
 
     #Gaming:
     heroic-unwrapped
+    legendary-gl
   ];
 
   #Enable steam deck steam interface
