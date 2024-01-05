@@ -118,6 +118,7 @@
     #Gaming:
     heroic-unwrapped
     legendary-gl
+    rare
   ];
 
   #Enable steam deck steam interface
