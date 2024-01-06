@@ -38,7 +38,7 @@
       pkgs,
       ...
     }: {
-      system.stateVersion = "23.11";
+      system.stateVersion = "unstable";
       networking.firewall.allowedTCPPorts = [6969];
       users.users = {
         aria2.extraGroups = ["jellyfin" "nextcloud"];
