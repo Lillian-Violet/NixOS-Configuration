@@ -16,7 +16,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./hardware-configuration.nix
-    ../../server/package-configs/akkoma/configuration.nix
+    #../../server/package-configs/akkoma/configuration.nix
     ../../server/package-configs/forgejo/configuration.nix
     ../../server/package-configs/gotosocial/configuration.nix
     ../../server/package-configs/mail-server/configuration.nix
