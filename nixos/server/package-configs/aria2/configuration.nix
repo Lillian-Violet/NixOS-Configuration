@@ -40,7 +40,7 @@
     }: {
       system.stateVersion = "unstable";
       networking.firewall.allowedTCPPorts = [6969];
-      networking.firewall.allowedUDPPorts = [6969];
+      networking.firewall.allowedUDPPorts = [6969 51820];
       users.users = {
         aria2.extraGroups = ["jellyfin" "nextcloud"];
       };
@@ -51,6 +51,41 @@
       };
       networking.wg-quick.interfaces = {
         wg0 = {
+          postUp = ''
+            # Mark packets on the wg0 interface
+            wg set wg0 fwmark 51820
+
+            # Forbid anything else which doesn't go through wireguard VPN on
+            # ipV4 and ipV6
+            ${pkgs.iptables}/bin/iptables -A OUTPUT \
+              ! -d 192.168.0.0/16 \
+              ! -o wg0 \
+              -m mark ! --mark $(wg show wg0 fwmark) \
+              -m addrtype ! --dst-type LOCAL \
+              -j REJECT
+            ${pkgs.iptables}/bin/ip6tables -A OUTPUT \
+              ! -o wg0 \
+              -m mark ! --mark $(wg show wg0 fwmark) \
+              -m addrtype ! --dst-type LOCAL \
+              -j REJECT
+            ${pkgs.iptables}/bin/iptables -I OUTPUT -o lo -p tcp \
+              --dport 8112 -m state --state NEW,ESTABLISHED -j ACCEPT
+            ${pkgs.iptables}/bin/iptables -I OUTPUT -s 192.168.100.10/24 -d 192.168.100.11/24 \
+              -j ACCEPT
+          '';
+          postDown = ''
+            ${pkgs.iptables}/bin/iptables -D OUTPUT \
+              ! -o wg0 \
+              -m mark ! --mark $(wg show wg0 fwmark) \
+              -m addrtype ! --dst-type LOCAL \
+              -j REJECT
+            ${pkgs.iptables}/bin/ip6tables -D OUTPUT \
+              ! -o wg0 -m mark \
+              ! --mark $(wg show wg0 fwmark) \
+              -m addrtype ! --dst-type LOCAL \
+              -j REJECT
+          '';
+
           address = ["10.2.0.2/32"];
           dns = ["10.2.0.1"];
           privateKeyFile = "/var/lib/wg/private-key";
