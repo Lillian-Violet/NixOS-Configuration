@@ -61,7 +61,7 @@
     kate
 
     # Chat applications:
-    element-desktop
+    schildichat-desktop-wayland
     signal-desktop
     webcord-vencord
 
