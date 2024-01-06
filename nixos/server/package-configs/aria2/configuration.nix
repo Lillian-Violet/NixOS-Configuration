@@ -69,7 +69,7 @@
               -m addrtype ! --dst-type LOCAL \
               -j REJECT
             ${pkgs.iptables}/bin/iptables -I OUTPUT -o lo -p tcp \
-              --dport 8112 -m state --state NEW,ESTABLISHED -j ACCEPT
+              --dport 6969 -m state --state NEW,ESTABLISHED -j ACCEPT
             ${pkgs.iptables}/bin/iptables -I OUTPUT -s 192.168.100.10/24 -d 192.168.100.11/24 \
               -j ACCEPT
           '';
