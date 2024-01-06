@@ -14,7 +14,7 @@
       {
         containerPort = 6969;
         hostPort = 6969;
-        protocol = "tcp";
+        protocol = "udp";
       }
     ];
     bindMounts = {
