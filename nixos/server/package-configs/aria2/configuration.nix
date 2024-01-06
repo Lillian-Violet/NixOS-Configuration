@@ -40,6 +40,7 @@
     }: {
       system.stateVersion = "unstable";
       networking.firewall.allowedTCPPorts = [6969];
+      networking.firewall.allowedUDPPorts = [6969];
       users.users = {
         aria2.extraGroups = ["jellyfin" "nextcloud"];
       };
