@@ -13,6 +13,7 @@
   users.users = {
     nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
     aria2.extraGroups = ["nextcloud"];
+    onlyoffice.extraGroups = ["nextcloud"];
   };
 
   # Enable Nginx
