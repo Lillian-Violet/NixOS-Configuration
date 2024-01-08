@@ -103,5 +103,15 @@
         ];
       };
     };
+    nixosConfigurations = {
+      wheatley = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # > Our main nixos configuration file <
+          ./nixos/hosts/GLaDOS/configuration.nix
+          sops-nix.nixosModules.sops
+        ];
+      };
+    };
   };
 }
