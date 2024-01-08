@@ -14,13 +14,63 @@
   nix.binaryCachePublicKeys = ["cache.armv7l.xyz-1:kBY/eGnBAYiqYfg0fy0inWhshUo+pGFM3Pj7kIkmlBk="];
 
   # nixos-generate-config should normally set up file systems correctly
-  imports = [./hardware-configuration.nix];
+  imports = [
+    inputs.home-manager.nixosModules.home-manager
+
+    ./hardware-configuration.nix
+  ];
+
+  nixpkgs = {
+    # You can add overlays here
+    overlays = [
+      # Add overlays your own flake exports (from overlays and pkgs dir):
+      outputs.overlays.additions
+      outputs.overlays.modifications
+      outputs.overlays.unstable-packages
+
+      # You can also add overlays exported from other flakes:
+      # neovim-nightly-overlay.overlays.default
+
+      # Or define it inline, for example:
+      # (final: prev: {
+      #   hi = final.hello.overrideAttrs (oldAttrs: {
+      #     patches = [ ./change-hello-to-hi.patch ];
+      #   });
+      # })
+    ];
+    # Configure your nixpkgs instance
+    config = {
+      # Disable if you don't want unfree packages
+      allowUnfree = true;
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     age
     git
   ];
 
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+    # This will add each flake input as a registry
+    # To make nix3 commands consistent with your flake
+    registry = lib.mapAttrs (_: value: {flake = value;}) inputs;
+
+    # This will additionally add your inputs to the system's legacy channels
+    # Making legacy nix commands consistent as well, awesome!
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
+
+    settings = {
+      # Enable flakes and new 'nix' command
+      experimental-features = "nix-command flakes";
+      # Deduplicate and optimize nix store
+      auto-optimise-store = true;
+    };
+  };
   virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers.pihole = {
     image = "pihole/pihole:2024.01.0";
@@ -105,12 +155,6 @@
     # Prevent silencing of build output
     flags = lib.mkForce [];
   };
-
-  nix.gc = {
-    automatic = true;
-    options = "-d";
-  };
-  nix.autoOptimiseStore = true;
 
   # Enable networking
   networking.networkmanager.enable = true;
