@@ -148,14 +148,6 @@
     enable = true;
   };
 
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-
-    # Prevent silencing of build output
-    flags = lib.mkForce [];
-  };
-
   # Enable networking
   networking.networkmanager.enable = true;
 
