@@ -15,7 +15,7 @@
 
   # nixos-generate-config should normally set up file systems correctly
   imports = [
-    inputs.home-manager.nixosModules.home-manager
+    #inputs.home-manager.nixosModules.home-manager
 
     ./hardware-configuration.nix
   ];
