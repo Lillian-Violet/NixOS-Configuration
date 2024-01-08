@@ -106,7 +106,7 @@
     LC_NUMERIC = "nl_NL.UTF-8";
     LC_PAPER = "nl_NL.UTF-8";
     LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "nl_NL.UTF-8";
+    LC_TIME = "en_DK.UTF-8";
   };
 
   # Enable the X11 windowing system.
