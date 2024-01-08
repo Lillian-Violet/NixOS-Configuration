@@ -111,7 +111,7 @@
         modules = [
           # > Our main nixos configuration file <
           ./nixos/hosts/GLaDOS/configuration.nix
-          sops-nix.nixosModules.sops
+          #sops-nix.nixosModules.sops
         ];
       };
     };
