@@ -7,7 +7,7 @@
   # NixOS wants to enable GRUB by default
   boot.loader.grub.enable = false;
   # Enables the generation of /boot/extlinux/extlinux.conf
-  #boot.loader.generic-extlinux-compatible.enable = true;
+  boot.loader.generic-extlinux-compatible.enable = true;
 
   # nixos-generate-config should normally set up file systems correctly
   imports = [
