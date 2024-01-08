@@ -107,6 +107,7 @@
     };
     nixosConfigurations = {
       wheatley = nixpkgs.lib.nixosSystem {
+        system = "armv7l-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
