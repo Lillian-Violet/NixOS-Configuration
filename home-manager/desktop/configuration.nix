@@ -120,7 +120,7 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    userEmail = "info@lillianviolet.dev";
+    userEmail = "git@lillianviolet.dev";
     userName = "Lillian-Violet";
   };
 
