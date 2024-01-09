@@ -53,12 +53,21 @@
   };
 
   environment.systemPackages = with pkgs; [
+    # System tools
     age
     alejandra
     docker
     docker-compose
     git-filter-repo
     home-manager
+    oh-my-zsh
+    pciutils
+    rsync
+    sqlfluff
+    wget
+    zsh
+
+    # KDE/QT
     krunner-translator
     libsForQt5.discover
     libsForQt5.kcalc
@@ -69,16 +78,14 @@
     libsForQt5.krunner-symbols
     libsForQt5.packagekit-qt
     libportal-qt5
+
+    # System libraries
     noto-fonts
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji
+
+    # User tools
     noisetorch
-    oh-my-zsh
-    pciutils
-    rsync
-    sqlfluff
-    wget
-    zsh
   ];
 
   # Enable networking
