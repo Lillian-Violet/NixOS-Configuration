@@ -26,6 +26,9 @@
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
 
+    # Import the locale settings
+    ../../shared/locale/configuration.nix
+
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ./hardware-configuration.nix
@@ -174,21 +177,6 @@
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "nl_NL.UTF-8";
-    LC_IDENTIFICATION = "nl_NL.UTF-8";
-    LC_MEASUREMENT = "nl_NL.UTF-8";
-    LC_MONETARY = "nl_NL.UTF-8";
-    LC_NAME = "nl_NL.UTF-8";
-    LC_NUMERIC = "nl_NL.UTF-8";
-    LC_PAPER = "nl_NL.UTF-8";
-    LC_TELEPHONE = "nl_NL.UTF-8";
-    LC_TIME = "en_DK.UTF8";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
