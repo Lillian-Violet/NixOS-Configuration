@@ -31,7 +31,6 @@
     ../../server/package-configs/jellyfin/configuration.nix
     ../../server/package-configs/ombi/configuration.nix
     ../../server/package-configs/aria2/configuration.nix
-    ../../server/package-configs/vscode-server/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -111,7 +110,6 @@
     noto-fonts-emoji
     oh-my-zsh
     onlyoffice-documentserver
-    openvscode-server
     postgresql_16
     python3
     rsync

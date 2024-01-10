@@ -118,9 +118,10 @@
   services.packagekit.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
     xkbVariant = "";
+    options = "terminate:ctrl_alt_bksp,compose:caps_toggle";
   };
 
   # Enable CUPS to print documents.
