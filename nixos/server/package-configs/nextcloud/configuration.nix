@@ -61,8 +61,6 @@
     configureRedis = true;
     maxUploadSize = "16G";
 
-    defaultPhoneRegion = "NL";
-
     #Increase opcache string buffer
     phpOptions."opcache.interned_strings_buffer" = "23";
     # Further forces Nextcloud to use HTTPS
@@ -85,6 +83,7 @@
       dbname = "nextcloud";
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
+      defaultPhoneRegion = "NL";
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
       adminuser = "GLaDTheresCake";
     };
