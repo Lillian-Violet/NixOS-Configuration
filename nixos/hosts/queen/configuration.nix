@@ -31,6 +31,7 @@
     ../../server/package-configs/jellyfin/configuration.nix
     ../../server/package-configs/ombi/configuration.nix
     ../../server/package-configs/aria2/configuration.nix
+    ../../server/package-configs/vscode-server/configuration.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
