@@ -111,6 +111,7 @@
     noto-fonts-emoji
     oh-my-zsh
     onlyoffice-documentserver
+    openvscode-server
     postgresql_16
     python3
     rsync

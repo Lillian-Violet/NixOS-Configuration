@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  services.openvscode = {
+  services.openvscode-server = {
     enable = true;
     port = 7773;
     telemetryLevel = "off";
