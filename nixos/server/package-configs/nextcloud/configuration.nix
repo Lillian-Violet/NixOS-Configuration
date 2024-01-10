@@ -66,6 +66,7 @@
     # Further forces Nextcloud to use HTTPS
     extraOptions = {
       overwriteprotocol = "https";
+      default_phone_region = "NL";
     };
     appstoreEnable = true;
     extraAppsEnable = true;
@@ -83,7 +84,6 @@
       dbname = "nextcloud";
       dbpassFile = config.sops.secrets."nextclouddb".path;
 
-      defaultPhoneRegion = "NL";
       adminpassFile = config.sops.secrets."nextcloudadmin".path;
       adminuser = "GLaDTheresCake";
     };
