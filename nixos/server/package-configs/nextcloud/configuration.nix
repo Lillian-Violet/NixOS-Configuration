@@ -61,11 +61,12 @@
     configureRedis = true;
     maxUploadSize = "16G";
 
+    defaultPhoneRegion = "NL";
+
     #Increase opcache string buffer
     phpOptions."opcache.interned_strings_buffer" = "23";
     # Further forces Nextcloud to use HTTPS
     extraOptions = {
-      defaultPhoneRegion = "NL";
       overwriteprotocol = "https";
     };
     appstoreEnable = true;
