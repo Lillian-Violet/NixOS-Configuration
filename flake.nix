@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
+    plasma-manager.url = "github:pjones/plasma-manager/trunk";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -27,6 +28,7 @@
     home-manager,
     sops-nix,
     simple-nixos-mailserver,
+    plasma-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
