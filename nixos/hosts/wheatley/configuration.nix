@@ -182,7 +182,6 @@
     };
   };
 
-  programs.home-manager.enable = true;
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
