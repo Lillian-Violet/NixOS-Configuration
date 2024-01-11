@@ -120,7 +120,7 @@
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
     options = "terminate:ctrl_alt_bksp,compose:caps_toggle";
   };
 
