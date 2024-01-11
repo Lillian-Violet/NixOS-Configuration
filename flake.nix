@@ -6,7 +6,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
-    plasma-manager.url = "github:pjones/plasma-manager/trunk";
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -55,6 +57,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
+          plasma-manager.homeManagerModules.plasma-manager
         ];
       };
     };
