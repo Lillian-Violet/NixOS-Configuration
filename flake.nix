@@ -58,6 +58,12 @@
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
           plasma-manager.homeManagerModules.plasma-manager
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = {inherit inputs;}; # Pass flake input to home-manager
+            home-manager.users.USERNAME.imports = [./home-manager/home.nix];
+            home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+          }
         ];
       };
     };
@@ -92,7 +98,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/hosts/GLaDOS/configuration.nix
+          ./nixos/hosts/wheatley/configuration.nix
           sops-nix.nixosModules.sops
         ];
       };
