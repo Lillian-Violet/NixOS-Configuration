@@ -8,18 +8,7 @@
 }: {
   imports = [
     #Jovian Nixos
-    (
-      # Put the most recent revision here:
-      let
-        revision = "1962ff3135b1468ae473a196da01d0ebf38c144e";
-      in
-        builtins.fetchTarball {
-          url = "https://github.com/Jovian-Experiments/Jovian-NixOS/archive/${revision}.tar.gz";
-          # Update the hash as needed:
-          sha256 = "sha256:1iicb42dy4k440ddarysbb82bc7k5dv94xhg38jfcwh0wpq0rbdc";
-        }
-        + "/modules"
-    )
+    inputs.jovian.nixosModules.jovian
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
     inputs.home-manager.nixosModules.home-manager
