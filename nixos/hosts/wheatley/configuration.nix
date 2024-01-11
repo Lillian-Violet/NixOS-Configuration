@@ -19,11 +19,11 @@
   boot.loader.generic-extlinux-compatible.enable = true;
   boot.loader.grub.enable = false;
 
-  boot.extraModulePackages = [
-    (pkgs.callPackage ./rtl8189es.nix {
-      kernel = config.boot.kernelPackages.kernel;
-    })
-  ];
+  # boot.extraModulePackages = [
+  #   (pkgs.callPackage ./rtl8189es.nix {
+  #     kernel = config.boot.kernelPackages.kernel;
+  #   })
+  # ];
   nixpkgs = {
     # You can add overlays here
     overlays = [
