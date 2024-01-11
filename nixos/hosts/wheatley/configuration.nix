@@ -1,23 +1,26 @@
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
+# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
-  lib,
   ...
 }: {
-  # NixOS wants to enable GRUB by default
-  boot.loader.grub.enable = false;
-  # Enables the generation of /boot/extlinux/extlinux.conf
-  boot.loader.generic-extlinux-compatible.enable = true;
-
-  # nixos-generate-config should normally set up file systems correctly
   imports = [
-    inputs.home-manager.nixosModules.home-manager
-    # Import locale settings
-    ../../shared/locale/configuration.nix
-
     ./hardware-configuration.nix
+    ../../shared/locale/configuration.nix
   ];
 
+  boot.loader.generic-extlinux-compatible.enable = true;
+  boot.loader.grub.enable = false;
+
+  boot.kernelPackages = pkgs.linuxPackages_5_15;
+
+  boot.extraModulePackages = [
+    (pkgs.callPackage ./rtl8189es.nix {
+      kernel = config.boot.kernelPackages.kernel;
+    })
+  ];
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -43,6 +46,10 @@
     git
   ];
 
+  boot.kernelParams = [
+    "console=ttyS0,115200n8"
+  ];
+
   nix = {
     gc = {
       automatic = true;
@@ -64,6 +71,7 @@
       auto-optimise-store = true;
     };
   };
+
   virtualisation.oci-containers.backend = "podman";
   virtualisation.oci-containers.containers.pihole = {
     image = "pihole/pihole:2024.01.0";
@@ -179,8 +187,16 @@
     };
   };
 
-  networking.hostName = "wheatley";
+  networking.hostName = "wheatley"; # Define your hostname
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
-  system.stateVersion = "unstable";
+  networking.wireless.interfaces = ["wlan0"];
+
+  # powerManagement.cpuFreqGovernor = "powersave";
+  powerManagement.cpufreq.max = 648000;
+
+  # This value determines the NixOS release with which your system is to be
+  # compatible, in order to avoid breaking some software such as database
+  # servers. You should change this only after NixOS release notes say you
+  # should.
+  system.stateVersion = "unstable"; # Did you read the comment?
 }
