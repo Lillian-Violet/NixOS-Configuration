@@ -99,10 +99,6 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/shodan/configuration.nix
           sops-nix.nixosModules.sops
-
-          # make the module declared by the linger flake available to our config
-          linger.nixosModules.${system}.default
-          pihole.nixosModules.${system}.default
         ];
       };
     };
@@ -111,6 +107,10 @@
         system = "armv7l-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
+          # make the module declared by the linger flake available to our config
+          linger.nixosModules.${system}.default
+          pihole.nixosModules.${system}.default
+
           # > Our main nixos configuration file <
           ./nixos/hosts/wheatley/configuration.nix
           sops-nix.nixosModules.sops
