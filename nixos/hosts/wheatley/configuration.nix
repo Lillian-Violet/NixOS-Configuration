@@ -45,6 +45,12 @@
     };
   };
 
+  sops.defaultSopsFile = ./secrets/sops.yaml;
+  sops.age.keyFile = ../../../../../var/secrets/keys.txt;
+
+  sops.secrets."wireless.env".mode = "0440";
+  sops.secrets."wireless.env".owner = config.users.users.root.name;
+
   environment.systemPackages = with pkgs; [
     age
     git
@@ -101,6 +107,16 @@
       virtualHost = "pi.hole";
       password = "password";
     };
+  };
+
+  networking.wireless.enable = true;
+  networking.wireless.environmentFile = config.sops.secrets."wireless.env".path;
+  networking.wireless.networks."KPNAA6306" = {
+    hidden = true;
+    auth = ''
+      key_mgmt=WPA
+      password="@PSK_HOME@"
+    '';
   };
 
   networking.firewall.enable = true;
