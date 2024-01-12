@@ -22,6 +22,19 @@
     extest.url = "github:chaorace/extest-nix";
     # Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
+
+    # Required for making sure that Pi-hole continues running if the executing user has no active session.
+    linger = {
+      url = "github:mindsbackyard/linger-flake";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+
+    pihole = {
+      url = "github:mindsbackyard/pihole-flake";
+      inputs.nixpkgs.follow = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.linger.follows = "linger";
+    };
   };
 
   outputs = {
@@ -31,6 +44,8 @@
     sops-nix,
     simple-nixos-mailserver,
     plasma-manager,
+    linger,
+    pihole,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -84,6 +99,10 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/shodan/configuration.nix
           sops-nix.nixosModules.sops
+
+          # make the module declared by the linger flake available to our config
+          linger.nixosModules.${system}.default
+          pihole.nixosModules.${system}.default
         ];
       };
     };
