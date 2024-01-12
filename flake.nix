@@ -108,8 +108,8 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # make the module declared by the linger flake available to our config
-          linger.nixosModules.${system}.default
-          pihole.nixosModules.${system}.default
+          linger.nixosModules."armv7l-linux".default
+          pihole.nixosModules."armv7l-linux".default
 
           # > Our main nixos configuration file <
           ./nixos/hosts/wheatley/configuration.nix
