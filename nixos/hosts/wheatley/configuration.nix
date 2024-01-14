@@ -82,33 +82,6 @@
     };
   };
 
-  services.pihole = {
-    enable = true;
-    hostConfig = {
-      # define the service user for running the rootless Pi-hole container
-      user = "pihole";
-      enableLingeringForUser = true;
-
-      # we want to persist change to the Pi-hole configuration & logs across service restarts
-      # check the option descriptions for more information
-      persistVolumes = true;
-
-      # expose DNS & the web interface on unpriviledged ports on all IP addresses of the host
-      # check the option descriptions for more information
-      dnsPort = 5335;
-      webProt = 8080;
-    };
-    piholeConfig.ftl = {
-      # assuming that the host has this (fixed) IP and should resolve "pi.hole" to this address
-      # check the option description & the FTLDNS documentation for more information
-      LOCAL_IPV4 = "192.168.0.2";
-    };
-    piholeCOnfig.web = {
-      virtualHost = "pi.hole";
-      password = "password";
-    };
-  };
-
   networking.wireless.enable = true;
   networking.wireless.environmentFile = config.sops.secrets."wireless.env".path;
   networking.wireless.networks."KPNAA6306" = {
@@ -158,7 +131,7 @@
 
   networking.hostName = "wheatley"; # Define your hostname
 
-  networking.wireless.interfaces = ["wlan0"];
+  networking.wireless.interfaces = ["enu1u1"];
 
   # powerManagement.cpuFreqGovernor = "powersave";
   powerManagement.cpufreq.max = 648000;

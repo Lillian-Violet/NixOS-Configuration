@@ -17,9 +17,20 @@
   boot.kernelModules = [];
   boot.extraModulePackages = [];
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/44444444-4444-4444-8888-888888888888";
-    fsType = "ext4";
+  fileSystems = {
+    # Prior to 19.09, the boot partition was hosted on the smaller first partition
+    # Starting with 19.09, the /boot folder is on the main bigger partition.
+    # The following is to be used only with older images. Note such old images should not be considered supported anymore whatsoever, but if you installed back then, this might be needed
+
+    "/boot" = {
+      device = "/dev/disk/by-label/FIRMWARE";
+      fsType = "vfat";
+    };
+
+    "/" = {
+      device = "/dev/disk/by-label/NIXOS_SD";
+      fsType = "ext4";
+    };
   };
 
   swapDevices = [{device = "/dev/disk/by-uuid/4c9c8850-5e2e-4b4b-8ebb-4d7306012535";}];
@@ -35,4 +46,6 @@
   # networking.interfaces.wlan0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "armv7l-linux";
+
+  powerManagement.cpuFreqGovernor = lib.mkDefault "ondemand";
 }
