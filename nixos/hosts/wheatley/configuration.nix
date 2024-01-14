@@ -18,7 +18,7 @@
 
   boot.loader.generic-extlinux-compatible.enable = true;
   boot.loader.grub.enable = false;
-  boot.cleanTmpDir = true;
+  boot.tmp.cleanOnBoot = true;
 
   # boot.extraModulePackages = [
   #   (pkgs.callPackage ./rtl8189es.nix {
