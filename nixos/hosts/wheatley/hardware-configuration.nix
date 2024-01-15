@@ -22,10 +22,10 @@
     # Starting with 19.09, the /boot folder is on the main bigger partition.
     # The following is to be used only with older images. Note such old images should not be considered supported anymore whatsoever, but if you installed back then, this might be needed
 
-    "/boot" = {
-      device = "/dev/disk/by-label/FIRMWARE";
-      fsType = "vfat";
-    };
+    # "/boot" = {
+    #   device = "/dev/disk/by-label/FIRMWARE";
+    #   fsType = "vfat";
+    # };
 
     "/" = {
       device = "/dev/disk/by-label/NIXOS_SD";
@@ -33,7 +33,7 @@
     };
   };
 
-  swapDevices = [{device = "/dev/disk/by-uuid/4c9c8850-5e2e-4b4b-8ebb-4d7306012535";}];
+  swapDevices = [{device = "/dev/disk/by-uuid/b299ad0d-37a0-43d6-9647-5f717aca7b3";}];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
