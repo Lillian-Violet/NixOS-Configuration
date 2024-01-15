@@ -12,6 +12,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
 
+    ./armv7l.nix
     ./hardware-configuration.nix
     ../../shared/locale/configuration.nix
   ];
