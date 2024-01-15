@@ -88,7 +88,7 @@
   networking.wireless.networks."KPNAA6306" = {
     hidden = true;
     auth = ''
-      key_mgmt=WPA
+      key_mgmt=WPA-PSK
       password="@PSK_HOME@"
     '';
   };
