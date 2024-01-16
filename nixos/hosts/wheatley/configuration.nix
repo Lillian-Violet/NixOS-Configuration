@@ -55,6 +55,7 @@
   environment.systemPackages = with pkgs; [
     age
     git
+    htop
   ];
 
   boot.kernelParams = [

@@ -100,6 +100,7 @@
     aria2
     git-filter-repo
     home-manager
+    htop
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
