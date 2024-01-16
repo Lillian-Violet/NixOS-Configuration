@@ -18,6 +18,7 @@
   ];
 
   boot.loader.generic-extlinux-compatible.enable = true;
+  boot.loader.generic-extlinux-compatible.configurationLimit = 5;
   boot.loader.grub.enable = false;
   boot.tmp.cleanOnBoot = true;
 
