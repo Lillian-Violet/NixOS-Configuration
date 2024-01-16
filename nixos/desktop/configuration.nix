@@ -63,6 +63,7 @@
     docker-compose
     git-filter-repo
     home-manager
+    htop
     oh-my-zsh
     pciutils
     rsync
