@@ -61,6 +61,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/EDI/configuration.nix
           sops-nix.nixosModules.sops
+          plasma-manager.homeManagerModules.plasma-manager
         ];
       };
     };
@@ -73,7 +74,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
-          #plasma-manager.homeManagerModules.plasma-manager
+          plasma-manager.homeManagerModules.plasma-manager
           home-manager.nixosModules.home-manager
         ];
       };
