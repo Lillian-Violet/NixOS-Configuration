@@ -67,7 +67,6 @@
     oh-my-zsh
     pciutils
     rsync
-    sqlfluff
     wget
     zsh
 
