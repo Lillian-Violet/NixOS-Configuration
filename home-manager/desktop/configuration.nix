@@ -106,6 +106,7 @@
       kamadorueda.alejandra
       ms-toolsai.jupyter
       ms-pyright.pyright
+      ms-python.black-formatter
       #ms-python.python
       ms-python.vscode-pylance
       #ms-vscode-remote.remote-containers
