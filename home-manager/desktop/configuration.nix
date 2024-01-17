@@ -123,6 +123,11 @@
     enable = true;
     userEmail = "git@lillianviolet.dev";
     userName = "Lillian-Violet";
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+    };
   };
 
   # Nicely reload system units when changing configs
