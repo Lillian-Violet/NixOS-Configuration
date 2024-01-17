@@ -61,7 +61,12 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/EDI/configuration.nix
           sops-nix.nixosModules.sops
-          plasma-manager.homeManagerModules.plasma-manager
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+          }
         ];
       };
     };
@@ -74,8 +79,12 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
-          plasma-manager.homeManagerModules.plasma-manager
           home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+          }
         ];
       };
     };
