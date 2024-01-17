@@ -59,6 +59,7 @@
     # System tools
     age
     alejandra
+    direnv
     docker
     docker-compose
     git-filter-repo
@@ -89,7 +90,34 @@
 
     # User tools
     noisetorch
+
+    writeShellApplication
+    {
+      name = "dvd";
+
+      runtimeInputs = [echo direnv];
+
+      text = ''
+              echo "use flake \"github:the-nix-way/dev-templates?dir=$1\"" >> .envrc
+        direnv allow
+      '';
+    }
+    writeShellApplication
+    {
+      name = "dvt";
+
+      runtimeInputs = [direnv nix];
+
+      text = ''
+                    nix flake init -t "github:the-nix-way/dev-templates#$1"
+        direnv allow
+      '';
+    }
   ];
+
+  programs.direnv = {
+    enable = true;
+  };
 
   # Enable networking
   networking.networkmanager.enable = true;
