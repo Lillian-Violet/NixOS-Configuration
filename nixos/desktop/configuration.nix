@@ -55,6 +55,31 @@
     };
   };
 
+  pkgs = [
+    writeShellApplication
+    {
+      name = "dvd";
+
+      runtimeInputs = [echo direnv];
+
+      text = ''
+        echo "use flake \"github:the-nix-way/dev-templates?dir=$1\"" >> .envrc
+        direnv allow
+      '';
+    }
+    writeShellApplication
+    {
+      name = "dvt";
+
+      runtimeInputs = [direnv nix];
+
+      text = ''
+        nix flake init -t "github:the-nix-way/dev-templates#$1"
+        direnv allow
+      '';
+    }
+  ];
+
   environment.systemPackages = with pkgs; [
     # System tools
     age
@@ -91,28 +116,8 @@
     # User tools
     noisetorch
 
-    writeShellApplication
-    {
-      name = "dvd";
-
-      runtimeInputs = [echo direnv];
-
-      text = ''
-              echo "use flake \"github:the-nix-way/dev-templates?dir=$1\"" >> .envrc
-        direnv allow
-      '';
-    }
-    writeShellApplication
-    {
-      name = "dvt";
-
-      runtimeInputs = [direnv nix];
-
-      text = ''
-                    nix flake init -t "github:the-nix-way/dev-templates#$1"
-        direnv allow
-      '';
-    }
+    (callPackage ../shared/scripts/dvd.nix {})
+    (callPackage ../shared/scripts/dvt.nix {})
   ];
 
   programs.direnv = {
