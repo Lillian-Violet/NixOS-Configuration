@@ -19,7 +19,7 @@
   sops.secrets."mailpassunhash".mode = "0440";
   sops.secrets."mailpassunhash".owner = config.users.users.virtualMail.name;
 
-  networking.firewall.allowedTCPPorts = [3218];
+  networking.firewall.allowedTCPPorts = [2228];
 
 
   services.forgejo = {
@@ -63,7 +63,7 @@
         HTTP_PORT = 3218;
         DISABLE_SSH = false;
         START_SSH_SERVER = true;
-        SSH_DOMAIN = "git.lillianviolet.dev";
+        SSH_DOMAIN = "git.lillianviolet.dev:2228";
       };
     };
   };
