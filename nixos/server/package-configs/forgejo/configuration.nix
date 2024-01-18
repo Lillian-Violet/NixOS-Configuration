@@ -19,6 +19,9 @@
   sops.secrets."mailpassunhash".mode = "0440";
   sops.secrets."mailpassunhash".owner = config.users.users.virtualMail.name;
 
+  networking.firewall.allowedTCPPorts = [3218];
+
+
   services.forgejo = {
     enable = true;
     user = "gitea";
