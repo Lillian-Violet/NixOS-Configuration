@@ -32,8 +32,8 @@
     #TODO: different mail passwords for different services
     mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
     database = {
-      user = "gitea";
-      name = "gitea";
+      #user = "gitea";
+      #name = "gitea";
       type = "postgres";
     };
     settings = {
