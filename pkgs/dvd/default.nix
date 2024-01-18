@@ -4,7 +4,7 @@
   direnv,
   writeShellApplication,
 }:
-stdenv.writeShellApplication
+writeShellApplication
 {
   name = "dvd";
 
