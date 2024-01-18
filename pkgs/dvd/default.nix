@@ -8,7 +8,7 @@ stdenv.writeShellApplication
 {
   name = "dvd";
 
-  runtimeInputs = [echo direnv];
+  runtimeInputs = [direnv];
 
   text = ''
     echo "use flake \"github:the-nix-way/dev-templates?dir=$1\"" >> .envrc

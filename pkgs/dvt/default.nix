@@ -8,7 +8,7 @@ stdenv.writeShellApplication
 {
   name = "dvt";
 
-  runtimeInputs = [direnv nix];
+  runtimeInputs = [direnv];
 
   text = ''
     nix flake init -t "github:the-nix-way/dev-templates#$1"
