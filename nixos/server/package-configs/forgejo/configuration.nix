@@ -61,6 +61,8 @@
         DOMAIN = "git.lillianviolet.dev";
         ROOT_URL = "https://git.lillianviolet.dev/";
         HTTP_PORT = 3218;
+        DISABLE_SSH = false;
+        START_SSH_SERVER = true;
         SSH_DOMAIN = "git.lillianviolet.dev";
       };
     };
