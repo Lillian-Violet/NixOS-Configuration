@@ -11,7 +11,7 @@ writeShellApplication
   runtimeInputs = [direnv];
 
   text = ''
-    echo "use flake \"github:the-nix-way/dev-templates?dir=$1\"" >> .envrc
+    echo "use flake \"git+https://git.lillianviolet.dev/Lillian-Violet/dev-templates?dir=$1\"" >> .envrc
     direnv allow
   '';
 }
