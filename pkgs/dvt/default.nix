@@ -4,7 +4,7 @@
   direnv,
   writeShellApplication,
 }:
-writeShellApplication
+stdenv.writeShellApplication
 {
   name = "dvt";
 
