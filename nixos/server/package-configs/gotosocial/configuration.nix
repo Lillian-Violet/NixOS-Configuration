@@ -35,11 +35,11 @@
       media-image-max-size = 41943040;
       media-video-max-size = 209715200;
       media-description-max-chars = 2000;
-      smtp-host = "localhost";
-      smtp-port = 587;
-      smtp-username = "no-reply@social.gladtherescake.eu";
-      smtp-password = config.sops.secrets."mailpassunhash".path;
-      smtp-from = "no-reply@social.gladtherescake.eu";
+      #smtp-host = "localhost";
+      #smtp-port = 587;
+      #smtp-username = "no-reply@social.gladtherescake.eu";
+      #smtp-password = config.sops.secrets."mailpassunhash".path;
+      #smtp-from = "no-reply@social.gladtherescake.eu";
     };
   };
 
