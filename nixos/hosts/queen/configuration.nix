@@ -85,7 +85,7 @@
     };
   };
 
-  environment.systemPackages = with nixpkgs-stable; [
+  environment.systemPackages = with pkgs; [
     akkoma
     age
     fzf
