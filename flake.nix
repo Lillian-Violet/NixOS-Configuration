@@ -107,7 +107,7 @@
     nixosConfigurations = {
       queen = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit inputs outputs nixpkgs-stable;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/hosts/queen/configuration.nix
