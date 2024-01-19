@@ -20,7 +20,7 @@
   #    extraGroups = ["virtualMail"];
   #  };
   #};
-  
+
   #sops.secrets."mailpassunhash".mode = "0440";
   #sops.secrets."mailpassunhash".owner = config.users.users.virtualMail.name;
 
@@ -30,7 +30,7 @@
     #group = "gitea";
     stateDir = "/var/lib/gitea";
     #TODO: different mail passwords for different services
-    mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
+    #mailerPasswordFile = config.sops.secrets."mailpassunhash".path;
     database = {
       #user = "gitea";
       #name = "gitea";
