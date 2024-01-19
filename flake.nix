@@ -41,6 +41,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     sops-nix,
     simple-nixos-mailserver,
