@@ -4,6 +4,7 @@
   lib,
   config,
   pkgs,
+  nixpkgs-stable,
   ...
 }: {
   imports = [
@@ -84,7 +85,7 @@
     };
   };
 
-  environment.systemPackages = with pkgs.stable; [
+  environment.systemPackages = with nixpkgs-stable; [
     akkoma
     age
     fzf
