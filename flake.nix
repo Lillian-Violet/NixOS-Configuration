@@ -5,14 +5,14 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     sops-nix.url = "github:Mic92/sops-nix";
-    simple-nixos-mailserver.url = "gitlab:dotlambda/nixos-mailserver/sieve-fix";
+    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
     flake-utils.url = "github:numtide/flake-utils";
     plasma-manager.url = "github:pjones/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
@@ -41,7 +41,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
     home-manager,
     sops-nix,
     simple-nixos-mailserver,
@@ -107,7 +106,7 @@
     nixosConfigurations = {
       queen = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs outputs nixpkgs-stable;};
+        specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
           ./nixos/hosts/queen/configuration.nix
