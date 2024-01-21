@@ -97,11 +97,6 @@ in {
         extraConfig = ''
           merge_slashes off;
         '';
-      };
-
-      "${server_name}" = {
-        forceSSL = true;
-        enableACME = true;
 
         locations."=/.well-known/matrix/server" = {
           # Use the contents of the derivation built previously
