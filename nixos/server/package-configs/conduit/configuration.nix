@@ -69,17 +69,7 @@ in {
             ssl = true;
           }
           {
-            addr = "[::]";
-            port = 443;
-            ssl = true;
-          }
-          {
             addr = "0.0.0.0";
-            port = 8448;
-            ssl = true;
-          }
-          {
-            addr = "[::]";
             port = 8448;
             ssl = true;
           }
@@ -126,7 +116,7 @@ in {
     upstreams = {
       "backend_conduit" = {
         servers = {
-          "[::1]:${toString config.services.matrix-conduit.settings.global.port}" = {};
+          "[0.0.0.0]:${toString config.services.matrix-conduit.settings.global.port}" = {};
         };
       };
     };
