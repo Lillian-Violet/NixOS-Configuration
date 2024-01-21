@@ -112,14 +112,6 @@ in {
         };
       };
     };
-
-    upstreams = {
-      "backend_conduit" = {
-        servers = {
-          "[62.171.160.195]:${toString config.services.matrix-conduit.settings.global.port}" = {};
-        };
-      };
-    };
   };
 
   # Open firewall ports for HTTP, HTTPS, and Matrix federation
