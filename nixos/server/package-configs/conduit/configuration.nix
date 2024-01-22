@@ -74,42 +74,6 @@ in {
             ssl = true;
           }
         ];
-
-        locations."/_matrix/" = {
-          proxyPass = "http://backend_conduit$request_uri";
-          proxyWebsockets = true;
-          extraConfig = ''
-            proxy_set_header Host $host;
-            proxy_buffering off;
-          '';
-        };
-
-        extraConfig = ''
-          merge_slashes off;
-        '';
-
-        locations."=/.well-known/matrix/server" = {
-          # Use the contents of the derivation built previously
-          alias = "${well_known_server}";
-
-          extraConfig = ''
-            # Set the header since by default NGINX thinks it's just bytes
-            default_type application/json;
-          '';
-        };
-
-        locations."=/.well-known/matrix/client" = {
-          # Use the contents of the derivation built previously
-          alias = "${well_known_client}";
-
-          extraConfig = ''
-            # Set the header since by default NGINX thinks it's just bytes
-            default_type application/json;
-
-            # https://matrix.org/docs/spec/client_server/r0.4.0#web-browser-clients
-            add_header Access-Control-Allow-Origin "*";
-          '';
-        };
       };
     };
   };
