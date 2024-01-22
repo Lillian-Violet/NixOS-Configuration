@@ -17,22 +17,6 @@
   # root domain. This configuration also assumes this is all running on a single
   # machine, some tweaks will need to be made if this is not the case.
   matrix_hostname = "${server_name}";
-
-  # Build a dervation that stores the content of `${server_name}/.well-known/matrix/server`
-  well_known_server = pkgs.writeText "well-known-matrix-server" ''
-    {
-      "m.server": "${matrix_hostname}"
-    }
-  '';
-
-  # Build a dervation that stores the content of `${server_name}/.well-known/matrix/client`
-  well_known_client = pkgs.writeText "well-known-matrix-client" ''
-    {
-      "m.homeserver": {
-        "base_url": "https://${matrix_hostname}"
-      }
-    }
-  '';
 in {
   # Configure Conduit itself
   services.matrix-conduit = {
