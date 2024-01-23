@@ -128,6 +128,10 @@
         defaultBranch = "main";
       };
     };
+    ignores = [
+      ".direnv"
+      ".vscode"
+    ];
   };
 
   # Nicely reload system units when changing configs
