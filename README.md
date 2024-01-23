@@ -1,3 +1,5 @@
+Original source: https://git.lillianviolet.dev/Lillian-Violet/dev-templates
+
 # NixOS-Config
 
 The configuration of different NixOS hosts using flakes and home-manager. It is assumed you have already installed NixOS and git to your system (note: git is not installed by default with the NixOS image, you can grab it with ``nix-shell -p git``), this configuration does not have image artifacts nor can it create them.
