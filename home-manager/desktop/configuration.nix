@@ -129,8 +129,8 @@
       };
     };
     ignores = [
-      ".direnv"
-      ".vscode"
+      "*.direnv"
+      "*.vscode"
     ];
   };
 
