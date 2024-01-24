@@ -51,6 +51,7 @@
     # Coding:
     direnv
     git
+    ruff
     kate
 
     # Chat applications:
