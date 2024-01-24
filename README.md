@@ -1,4 +1,4 @@
-Original source: https://git.lillianviolet.dev/Lillian-Violet/dev-templates
+Original source: https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config
 
 # NixOS-Config
 
