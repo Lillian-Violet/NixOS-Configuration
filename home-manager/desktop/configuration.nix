@@ -104,6 +104,7 @@
       github.vscode-pull-request-github
       jnoortheen.nix-ide
       kamadorueda.alejandra
+      mkhl.direnv
       ms-toolsai.jupyter
       ms-pyright.pyright
       ms-python.black-formatter
