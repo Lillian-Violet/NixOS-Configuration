@@ -41,4 +41,4 @@ The secrets are managed in sops files within the hosts folders, there is only on
 
 ``nix-shell -p sops --run "sops ./nixos/hosts/<hostname>/secrets/sops.yaml"``
 
-This requires your system to have the keyfile available for sops to use, by default sops looks in the sops/age folder in your user folder for a keys.txt file with the private key. You can change this behaviour by setting the **$SOPS_AGE_KEY_FILE** environment variable, or setting the **SOPS_AGE_KEY** environment variable to the key itself.
+This requires your system to have the keyfile available for sops to use, by default sops looks in the sops/age folder in your user folder for a keys.txt file with the private key. You can change this behaviour by setting the **\$SOPS_AGE_KEY_FILE** environment variable, or setting the **\$SOPS_AGE_KEY** environment variable to the key itself.
