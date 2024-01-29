@@ -76,6 +76,7 @@
     pciutils
     rsync
     wget
+    waydroid
     zsh
 
     # KDE/QT
@@ -98,6 +99,8 @@
     # User tools
     noisetorch
   ];
+
+  virtualisation.waydroid.enable = true;
 
   programs.direnv = {
     enable = true;
