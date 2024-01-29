@@ -101,7 +101,7 @@
     noisetorch
   ];
 
-  virtualisation.waydroid.enable = true;
+  virtualisation.waydroid.enable = false;
 
   programs.direnv = {
     enable = true;
