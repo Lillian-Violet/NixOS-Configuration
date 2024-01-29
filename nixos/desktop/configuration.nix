@@ -77,6 +77,7 @@
     rsync
     wget
     waydroid
+    xwaylandvideobridge
     zsh
 
     # KDE/QT
