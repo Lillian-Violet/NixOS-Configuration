@@ -85,7 +85,6 @@
     sops
     virtualbox
     watchmate
-    waydroid
     qbittorrent
     zsh
 
@@ -94,8 +93,6 @@
     librewolf
     ungoogled-chromium
   ];
-
-  virtualisation.waydroid.enable = true;
 
   programs.vscode = {
     enable = true;
