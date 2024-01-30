@@ -9,6 +9,7 @@
   environment.systemPackages = with pkgs; [
     # System tools
     age
+    alejandra
     git
     git-filter-repo
     home-manager
