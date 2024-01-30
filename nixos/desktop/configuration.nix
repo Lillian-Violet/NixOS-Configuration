@@ -9,7 +9,11 @@
   ...
 }: {
   imports = [
+    # Import locale settings
     ../shared/locale/configuration.nix
+
+    # Import shared packages
+    ../../shared/packages/configuration.nix
   ];
   nixpkgs = {
     # You can add overlays here
@@ -59,23 +63,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # Custom tools
-    dvd
-    dvt
-
     # System tools
-    age
-    alejandra
     direnv
     docker
     docker-compose
     git-filter-repo
-    home-manager
-    htop
-    oh-my-zsh
     pciutils
-    rsync
-    wget
     waydroid
     xwaylandvideobridge
     zsh
@@ -91,11 +84,6 @@
     libsForQt5.krunner-symbols
     libsForQt5.packagekit-qt
     libportal-qt5
-
-    # System libraries
-    noto-fonts
-    noto-fonts-emoji-blob-bin
-    noto-fonts-emoji
 
     # User tools
     noisetorch
