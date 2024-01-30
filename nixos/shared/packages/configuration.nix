@@ -7,10 +7,6 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    # Custom tools
-    dvd
-    dvt
-
     # System tools
     age
     git
