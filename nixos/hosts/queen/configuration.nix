@@ -21,6 +21,9 @@
     # Import locale settings
     ../../shared/locale/configuration.nix
 
+    # Import shared packages
+    ../../shared/packages/configuration.nix
+
     #../../server/package-configs/akkoma/configuration.nix
     ../../server/package-configs/forgejo/configuration.nix
     ../../server/package-configs/gotosocial/configuration.nix
@@ -88,12 +91,10 @@
 
   environment.systemPackages = with pkgs; [
     akkoma
-    age
     fzf
     matrix-conduit
     docker
     docker-compose
-    git
     gitea
     gotosocial
     alejandra
@@ -101,22 +102,14 @@
     imagemagick
     ffmpeg
     aria2
-    git-filter-repo
-    home-manager
-    htop
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
     nextcloud28
     nginx
-    noto-fonts
-    noto-fonts-emoji-blob-bin
-    noto-fonts-emoji
-    oh-my-zsh
     onlyoffice-documentserver
     postgresql_16
     python3
-    rsync
     rabbitmq-server
     roundcube
     roundcubePlugins.contextmenu
@@ -125,8 +118,6 @@
     roundcubePlugins.persistent_login
     roundcubePlugins.thunderbird_labels
     youtube-dl
-    wget
-    zsh
   ];
 
   # Enable networking
