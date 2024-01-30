@@ -13,7 +13,7 @@
     ../shared/locale/configuration.nix
 
     # Import shared packages
-    ../../shared/packages/configuration.nix
+    ../shared/packages/configuration.nix
   ];
   nixpkgs = {
     # You can add overlays here
