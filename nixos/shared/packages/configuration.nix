@@ -17,6 +17,7 @@
     neofetch
     oh-my-zsh
     rsync
+    spacevim
     wget
     zsh
 
