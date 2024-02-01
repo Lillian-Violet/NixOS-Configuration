@@ -15,6 +15,10 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
+    # Lanzaboot (secure boot)
+    #lanzaboote.url = "github:nix-community/lanzaboote";
+
+    # Jovian nixos (steam deck)
     jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
 
     # Home manager
@@ -79,6 +83,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/EDI/configuration.nix
           sops-nix.nixosModules.sops
+          #lanzaboote.nixosModules.lanzaboote
           home-manager.nixosModules.home-manager
           {
             home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
@@ -95,6 +100,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
+          #lanzaboote.nixosModules.lanzaboote
           home-manager.nixosModules.home-manager
           {
             home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
