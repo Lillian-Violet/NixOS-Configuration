@@ -34,7 +34,7 @@
                 content = {
                   root = {
                     name = "root";
-                    end = "-1G";
+                    end = "-2G";
                     content = {
                       type = "filesystem";
                       format = "bcachefs";
@@ -42,7 +42,7 @@
                     };
                   };
                   encryptedSwap = {
-                    size = "10M";
+                    size = "20M";
                     content = {
                       type = "swap";
                       randomEncryption = true;
