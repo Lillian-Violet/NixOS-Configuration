@@ -71,10 +71,12 @@
     direnv
     docker
     docker-compose
+    gcc-wrapper
     git-filter-repo
     pciutils
     waydroid
     xwaylandvideobridge
+    yubikey-personalization
     zsh
 
     # KDE/QT
@@ -164,6 +166,8 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.bootspec.enable = true;
+  boot.supportedFilesystems = ["bcachefs"];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   users.users = {
     lillian = {
