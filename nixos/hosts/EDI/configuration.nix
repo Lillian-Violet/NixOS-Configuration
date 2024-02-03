@@ -39,7 +39,13 @@
   networking.hostName = "EDI";
 
   boot.bootspec.enable = true;
-
+  boot = {
+    loader.systemd-boot.enable = lib.mkForce false;
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/etc/secureboot";
+    };
+  };
   # Enable bluetooth hardware
   hardware.bluetooth.enable = true;
 
