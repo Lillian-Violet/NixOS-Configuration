@@ -32,7 +32,7 @@
 
   swapDevices = [
     {
-      device = "dev/disk/by-uuid/2b4f0e94-65b4-4e98-8744-0c671954e524";
+      device = "/dev/disk/by-path/pci-0000:71:00.0-nvme-1-part2";
       randomEncryption.enable = true;
     }
   ];
