@@ -39,6 +39,8 @@
   networking.hostName = "EDI";
 
   boot.bootspec.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = ["bcachefs"];
   boot = {
     loader.systemd-boot.enable = lib.mkForce false;
     lanzaboote = {
