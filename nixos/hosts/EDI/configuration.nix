@@ -38,6 +38,8 @@
 
   networking.hostName = "EDI";
 
+  boot.bootspec.enable = true;
+
   # Enable bluetooth hardware
   hardware.bluetooth.enable = true;
 
