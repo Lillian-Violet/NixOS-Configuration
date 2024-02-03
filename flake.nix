@@ -51,6 +51,7 @@
     plasma-manager,
     linger,
     pihole,
+    lanzaboote,
     ...
   } @ inputs: let
     inherit (self) outputs;
