@@ -19,6 +19,20 @@
                 ];
               };
             };
+            encryptedSwap = {
+              size = "20M";
+              content = {
+                type = "swap";
+                randomEncryption = true;
+              };
+            };
+            plainSwap = {
+              size = "4G";
+              content = {
+                type = "swap";
+                resumeDevice = true; # resume from hiberation from this device
+              };
+            };
             luks = {
               size = "100%";
               content = {
@@ -28,33 +42,14 @@
                 #passwordFile = "/tmp/secret.key"; # Interactive
                 settings = {
                   allowDiscards = true;
-                  keyFile = "/tmp/secret.key";
+                  #keyFile = "/tmp/secret.key";
                 };
                 #additionalKeyFiles = ["/tmp/additionalSecret.key"];
-                content = {
-                  root = {
-                    name = "root";
-                    end = "-2G";
                     content = {
                       type = "filesystem";
                       format = "bcachefs";
                       mountpoint = "/";
                     };
-                  };
-                  encryptedSwap = {
-                    size = "20M";
-                    content = {
-                      type = "swap";
-                      randomEncryption = true;
-                    };
-                  };
-                  plainSwap = {
-                    size = "100%";
-                    content = {
-                      type = "swap";
-                      resumeDevice = true; # resume from hiberation from this device
-                    };
-                  };
                 };
               };
             };
@@ -62,5 +57,4 @@
         };
       };
     };
-  };
 }
