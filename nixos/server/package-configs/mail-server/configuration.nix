@@ -88,6 +88,7 @@
       "mail.lillianviolet.dev"
       "pop3.lillianviolet.dev"
       "lillianviolet.dev"
+      "mail.gladtherescake.eu"
     ];
   };
 }
