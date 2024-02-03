@@ -71,7 +71,6 @@
     direnv
     docker
     docker-compose
-    gcc-wrapper
     git-filter-repo
     pciutils
     waydroid
