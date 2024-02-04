@@ -24,6 +24,7 @@
 
   home.packages = with pkgs; [
     heroic
+    r2modman
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
