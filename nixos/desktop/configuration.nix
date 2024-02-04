@@ -9,7 +9,11 @@
   ...
 }: {
   imports = [
+    # Import locale settings
     ../shared/locale/configuration.nix
+
+    # Import shared packages
+    ../shared/packages/configuration.nix
   ];
   nixpkgs = {
     # You can add overlays here
@@ -17,7 +21,7 @@
       # Add overlays your own flake exports (from overlays and pkgs dir):
       outputs.overlays.additions
       outputs.overlays.modifications
-      outputs.overlays.unstable-packages
+      #outputs.overlays.unstable-packages
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
@@ -64,18 +68,14 @@
     dvt
 
     # System tools
-    age
-    alejandra
     direnv
     docker
     docker-compose
     git-filter-repo
-    home-manager
-    htop
-    oh-my-zsh
     pciutils
-    rsync
-    wget
+    waydroid
+    xwaylandvideobridge
+    yubikey-personalization
     zsh
 
     # KDE/QT
@@ -90,14 +90,11 @@
     libsForQt5.packagekit-qt
     libportal-qt5
 
-    # System libraries
-    noto-fonts
-    noto-fonts-emoji-blob-bin
-    noto-fonts-emoji
-
     # User tools
     noisetorch
   ];
+
+  virtualisation.waydroid.enable = false;
 
   programs.direnv = {
     enable = true;
@@ -163,10 +160,6 @@
   programs.zsh = {
     enable = true;
   };
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 3;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   users.users = {
     lillian = {

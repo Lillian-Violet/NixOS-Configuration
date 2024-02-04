@@ -51,6 +51,7 @@
     # Coding:
     direnv
     git
+    ruff
     kate
 
     # Chat applications:
@@ -99,11 +100,13 @@
     extensions = with pkgs.vscode-extensions; [
       arrterian.nix-env-selector
       #ban.spellright
+      #charliermarsh.ruff
       dracula-theme.theme-dracula
       eamodio.gitlens
       github.vscode-pull-request-github
       jnoortheen.nix-ide
       kamadorueda.alejandra
+      mkhl.direnv
       ms-toolsai.jupyter
       ms-pyright.pyright
       ms-python.black-formatter
@@ -128,6 +131,10 @@
         defaultBranch = "main";
       };
     };
+    ignores = [
+      "*.direnv"
+      "*.vscode"
+    ];
   };
 
   # Nicely reload system units when changing configs

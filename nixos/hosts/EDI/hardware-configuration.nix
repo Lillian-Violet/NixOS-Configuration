@@ -12,23 +12,30 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.kernel.sysctl."net.ipv4.icmp_echo_ignore_broadcasts" = 1;
-  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/f930d7c6-2798-4e25-abc1-81d02e9abf35";
-    fsType = "ext4";
+    device = "UUID=88cd54d3-b644-4bae-96e9-51d2db3c5628";
+    fsType = "bcachefs";
   };
+
+  boot.initrd.luks.devices."crypted".device = "/dev/disk/by-uuid/91da75e7-52bc-4a50-9293-7e5e431040e0";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/42ED-068B";
+    device = "/dev/disk/by-uuid/01B2-909E";
     fsType = "vfat";
+    options = ["fmask=0077" "dmask=0077" "defaults"];
   };
 
-  swapDevices = [];
+  swapDevices = [
+    {
+      device = "/dev/disk/by-path/pci-0000:71:00.0-nvme-1-part2";
+      randomEncryption.enable = true;
+    }
+  ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -39,6 +46,5 @@
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

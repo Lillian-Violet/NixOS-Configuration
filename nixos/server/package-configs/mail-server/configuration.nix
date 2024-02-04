@@ -9,6 +9,9 @@
   sops.secrets."mailpass".mode = "0440";
   sops.secrets."mailpass".owner = config.users.users.virtualMail.name;
 
+  #Fix for the dovecot update
+  services.dovecot2.sieve.extensions = ["fileinto"];
+
   mailserver = {
     enable = true;
     enableImap = true;
@@ -85,6 +88,7 @@
       "mail.lillianviolet.dev"
       "pop3.lillianviolet.dev"
       "lillianviolet.dev"
+      "mail.gladtherescake.eu"
     ];
   };
 }

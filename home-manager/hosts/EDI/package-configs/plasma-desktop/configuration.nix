@@ -258,6 +258,7 @@
       "dolphinrc"."ExtractDialog"."1536x864 screen: Height" = 560;
       "dolphinrc"."ExtractDialog"."1536x864 screen: Width" = 1024;
       "dolphinrc"."ExtractDialog"."DirHistory[$e]" = "/home/";
+      "dolphinrc"."IconsMode"."PreviewSize" = 80;
       "dolphinrc"."KFileDialog Settings"."Places Icons Auto-resize" = false;
       "dolphinrc"."KFileDialog Settings"."Places Icons Static Size" = 22;
       "dolphinrc"."KFileDialog Settings"."detailViewIconSize" = 16;
@@ -270,6 +271,7 @@
       "kded5rc"."Module-browserintegrationreminder"."autoload" = false;
       "kded5rc"."Module-device_automounter"."autoload" = false;
       "kded5rc"."PlasmaBrowserIntegration"."shownCount" = 1;
+      "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
       "kdeglobals"."General"."BrowserApplication" = "firefox.desktop";
       "kdeglobals"."KDE"."AnimationDurationFactor" = 0.7071067811865475;
       "kdeglobals"."KDE"."SingleClick" = false;
@@ -590,7 +592,7 @@
       "khotkeysrc"."Data_3Conditions0"."Type" = "ACTIVE_WINDOW";
       "khotkeysrc"."Data_3Conditions0Window"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window"."WindowsCount" = 1;
-      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konqueror\s";
+      "khotkeysrc"."Data_3Conditions0Window0"."Class" = "^konquerors";
       "khotkeysrc"."Data_3Conditions0Window0"."ClassType" = 3;
       "khotkeysrc"."Data_3Conditions0Window0"."Comment" = "Konqueror";
       "khotkeysrc"."Data_3Conditions0Window0"."Role" = "konqueror-mainwindow#1";
@@ -799,6 +801,7 @@
       "khotkeysrc"."Data_3_9Triggers"."TriggersCount" = 1;
       "khotkeysrc"."Data_3_9Triggers0"."GesturePointData" = "0,0.0625,-0.5,0.5,1,0.0625,0.0625,-0.5,0.5,0.875,0.125,0.0625,-0.5,0.5,0.75,0.1875,0.0625,-0.5,0.5,0.625,0.25,0.0625,-0.5,0.5,0.5,0.3125,0.0625,-0.5,0.5,0.375,0.375,0.0625,-0.5,0.5,0.25,0.4375,0.0625,-0.5,0.5,0.125,0.5,0.0625,0.5,0.5,0,0.5625,0.0625,0.5,0.5,0.125,0.625,0.0625,0.5,0.5,0.25,0.6875,0.0625,0.5,0.5,0.375,0.75,0.0625,0.5,0.5,0.5,0.8125,0.0625,0.5,0.5,0.625,0.875,0.0625,0.5,0.5,0.75,0.9375,0.0625,0.5,0.5,0.875,1,0,0,0.5,1";
       "khotkeysrc"."Data_3_9Triggers0"."Type" = "GESTURE";
+      "khotkeysrc"."General"."AllowKDEAppsToRememberWindowPositions[$d]" = "";
       "khotkeysrc"."General"."BrowserApplication[$d]" = "";
       "khotkeysrc"."General"."ColorSchemeHash[$d]" = "";
       "khotkeysrc"."General"."ColorScheme[$d]" = "";
