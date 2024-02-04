@@ -28,6 +28,12 @@
     ./hardware-configuration.nix
   ];
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = ["bcachefs"];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
