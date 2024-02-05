@@ -131,6 +131,10 @@
   #Enable auto updates for the BIOS and controller firmware
   jovian.devices.steamdeck.autoUpdate = true;
 
+  jovian.decky-loader.enable = true;
+
+  jovian.hardware.has.amd.gpu = true;
+
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
