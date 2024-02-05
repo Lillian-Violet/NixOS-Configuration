@@ -64,7 +64,7 @@
     #Increase opcache string buffer
     phpOptions."opcache.interned_strings_buffer" = "23";
     # Further forces Nextcloud to use HTTPS
-    extraOptions = {
+    settings = {
       overwriteprotocol = "https";
       default_phone_region = "NL";
     };
