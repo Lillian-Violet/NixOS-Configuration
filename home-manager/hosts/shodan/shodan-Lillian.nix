@@ -51,6 +51,7 @@
 
     #Gaming:
     prismlauncher
+    r2modman
 
     # Multimedia:
     freetube
