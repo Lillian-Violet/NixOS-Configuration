@@ -92,8 +92,6 @@
     noisetorch
   ];
 
-  virtualisation.waydroid.enable = false;
-
   programs.direnv = {
     enable = true;
   };
@@ -162,7 +160,7 @@
   users.users = {
     lillian = {
       isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
+      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
       shell = pkgs.zsh;
     };
   };
