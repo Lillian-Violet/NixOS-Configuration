@@ -43,7 +43,10 @@
 
   virtualisation.docker = {
     enable = true;
-    rootless.enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
   };
 
   networking.hostName = "EDI";
