@@ -45,11 +45,10 @@
                   #keyFile = "/tmp/secret.key";
                 };
                 #additionalKeyFiles = ["/tmp/additionalSecret.key"];
-                    content = {
-                      type = "filesystem";
-                      format = "bcachefs";
-                      mountpoint = "/";
-                    };
+                content = {
+                  type = "filesystem";
+                  format = "bcachefs";
+                  mountpoint = "/";
                 };
               };
             };
@@ -57,4 +56,5 @@
         };
       };
     };
+  };
 }
