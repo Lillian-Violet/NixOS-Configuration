@@ -152,6 +152,13 @@
   services.xserver.desktopManager.plasma5.enable = true;
   programs.kdeconnect.enable = true;
 
+  services.xserver.displayManager.sddm.settings = {
+    Autologin = {
+      Session = "plasma.desktop";
+      User = "lillian";
+    };
+  };
+
   # Enable flatpak support
   services.flatpak.enable = true;
   services.packagekit.enable = true;
