@@ -37,16 +37,13 @@
   };
 
   environment.systemPackages = with pkgs; [
-    docker
-    docker-compose
+    podman
+    podman-compose
   ];
 
-  virtualisation.docker = {
+  virtualisation.podman = {
     enable = true;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
+    dockerCompat = true;
   };
 
   networking.hostName = "EDI";
