@@ -69,8 +69,6 @@
 
     # System tools
     direnv
-    docker
-    docker-compose
     git-filter-repo
     pciutils
     waydroid
