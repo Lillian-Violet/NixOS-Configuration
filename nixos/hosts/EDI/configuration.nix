@@ -36,6 +36,16 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    docker
+    docker-compose
+  ];
+
+  virtualisation.docker = {
+    enable = true;
+    rootless.enable = true;
+  };
+
   networking.hostName = "EDI";
 
   boot.bootspec.enable = true;
