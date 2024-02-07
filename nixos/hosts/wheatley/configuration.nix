@@ -133,7 +133,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      lillian = import ../../../home-manager/hosts/wheatley/wheatley-Lillian.nix;
+      lillian = import ../../../home-manager/hosts/wheatley;
     };
   };
 

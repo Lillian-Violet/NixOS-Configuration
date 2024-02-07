@@ -154,7 +154,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      lillian = import ../../../home-manager/hosts/queen/queen-Lillian.nix;
+      lillian = import ../../../home-manager/hosts/queen;
     };
   };
 
