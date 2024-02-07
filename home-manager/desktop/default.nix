@@ -137,6 +137,17 @@
     ];
   };
 
+  programs.gpg.settings = {
+    default-key = "0d43 5407 034c 2ad9 2d42 799d 280e 061d ff60 0f0d";
+    default-recipient-self = true;
+    auto-key-locate = "local,wkd,keyserver";
+    keyserver = "hkps://keys.openpgp.org";
+    auto-key-retrieve = true;
+    auto-key-import = true;
+    keyserver-options = "honor-keyserver-url";
+    no-autostart = true;
+  };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 }
