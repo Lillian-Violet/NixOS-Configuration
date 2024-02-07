@@ -16,10 +16,10 @@
     ./hardware-configuration.nix
 
     # Import locale settings
-    ../../shared/locale/configuration.nix
+    ../../shared/locale
 
     # Import shared packages
-    ../../shared/packages/configuration.nix
+    ../../shared/packages
   ];
 
   boot.loader.generic-extlinux-compatible.enable = true;

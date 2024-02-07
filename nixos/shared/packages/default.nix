@@ -20,6 +20,7 @@
     spacevim
     wget
     zsh
+    tldr
 
     # System libraries
     noto-fonts

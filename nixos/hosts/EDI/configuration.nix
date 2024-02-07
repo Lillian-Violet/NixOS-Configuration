@@ -22,7 +22,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    ../../desktop/configuration.nix
+    ../../desktop
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -32,7 +32,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      lillian = import ../../../home-manager/hosts/EDI/EDI-Lillian.nix;
+      lillian = import ../../../home-manager/hosts/EDI;
     };
   };
 

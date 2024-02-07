@@ -9,11 +9,8 @@
   ...
 }: {
   imports = [
-    # Import locale settings
-    ../shared/locale/configuration.nix
-
     # Import shared packages
-    ../shared/packages/configuration.nix
+    ../shared
   ];
   nixpkgs = {
     # You can add overlays here

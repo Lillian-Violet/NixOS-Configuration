@@ -18,24 +18,11 @@
     # ./nvim.nix
     ./hardware-configuration.nix
 
-    # Import locale settings
-    ../../shared/locale/configuration.nix
-
-    # Import shared packages
-    ../../shared/packages/configuration.nix
+    # Import shared settings
+    ../../shared
 
     #../../server/package-configs/akkoma/configuration.nix
-    ../../server/package-configs/forgejo/configuration.nix
-    ../../server/package-configs/gotosocial/configuration.nix
-    ../../server/package-configs/mail-server/configuration.nix
-    ../../server/package-configs/nextcloud/configuration.nix
-    ../../server/package-configs/postgres/configuration.nix
-    ../../server/package-configs/postgres/upgrade.nix
-    ../../server/package-configs/roundcube/configuration.nix
-    ../../server/package-configs/jellyfin/configuration.nix
-    ../../server/package-configs/ombi/configuration.nix
-    ../../server/package-configs/aria2/configuration.nix
-    ../../server/package-configs/conduit/configuration.nix
+    ../../server
   ];
 
   boot.tmp.cleanOnBoot = true;

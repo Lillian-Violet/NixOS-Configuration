@@ -18,13 +18,11 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
-    ../../desktop/configuration.nix
-    ./package-configs/plasma-desktop/configuration.nix
+    ../../desktop
+    ./package-configs/plasma-desktop
   ];
 
   home.packages = with pkgs; [
-    heroic
-    r2modman
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

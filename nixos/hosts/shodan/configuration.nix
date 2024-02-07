@@ -16,7 +16,7 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # Import the locale settings
-    ../../shared/locale/configuration.nix
+    ../../shared
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
