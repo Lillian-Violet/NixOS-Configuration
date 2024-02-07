@@ -137,6 +137,7 @@
     ];
   };
 
+  programs.gpg.enable = true;
   programs.gpg.settings = {
     default-key = "0d43 5407 034c 2ad9 2d42 799d 280e 061d ff60 0f0d";
     default-recipient-self = true;
