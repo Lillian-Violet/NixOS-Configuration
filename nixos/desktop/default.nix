@@ -67,6 +67,7 @@
     # System tools
     direnv
     git-filter-repo
+    gnupg
     pciutils
     waydroid
     xwaylandvideobridge
