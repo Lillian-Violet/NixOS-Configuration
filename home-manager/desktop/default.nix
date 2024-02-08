@@ -134,6 +134,7 @@
     ignores = [
       "*.direnv"
       "*.vscode"
+      ".envrc"
     ];
   };
 
