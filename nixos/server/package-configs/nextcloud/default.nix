@@ -67,6 +67,7 @@
     settings = {
       overwriteprotocol = "https";
       default_phone_region = "NL";
+      maintainance_window_start = 3;
     };
     appstoreEnable = true;
     extraAppsEnable = true;
