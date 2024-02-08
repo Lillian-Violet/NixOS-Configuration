@@ -9,7 +9,6 @@
   imports = [
     ./aria2
     ./conduit
-    ./dex
     ./forgejo
     ./gotosocial
     ./jellyfin
