@@ -13,7 +13,7 @@
   sops.secrets."rpcSecret".owner = config.users.users.aria2.name;
 
   services.aria2 = {
-    enable = false;
+    enable = true;
     downloadDir = "/var/lib/media";
     rpcListenPort = 6969;
     rpcSecretFile = config.sops.secrets."rpcSecret".path;
