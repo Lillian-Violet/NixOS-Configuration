@@ -11,7 +11,7 @@
   sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
 
   users.users = {
-    nextcloud.extraGroups = [config.users.groups.keys.name "aria2" "onlyoffice"];
+    nextcloud.extraGroups = [config.users.groups.keys.name "onlyoffice"];
     aria2.extraGroups = ["nextcloud"];
     onlyoffice.extraGroups = ["nextcloud"];
   };
