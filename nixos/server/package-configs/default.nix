@@ -10,7 +10,6 @@
     ./conduit
     ./forgejo
     ./gotosocial
-    ./jellyfin
     ./mail-server
     ./nextcloud
     ./postgres
