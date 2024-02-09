@@ -88,10 +88,10 @@
     exiftool
     imagemagick
     ffmpeg
-    aria2
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
+    #aria2
+    #jellyfin
+    #jellyfin-web
+    #jellyfin-ffmpeg
     nextcloud28
     nginx
     onlyoffice-documentserver
