@@ -7,7 +7,7 @@
     ombi.extraGroups = ["radarr" "sonarr" "aria2" "nextcloud"];
   };
   services.ombi = {
-    enable = true;
+    enable = false;
     port = 2368;
   };
 
