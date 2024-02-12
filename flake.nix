@@ -121,6 +121,7 @@
     # ISO for EDI, can be built using nix build .#EDIISO
     EDIISO = nixos-generators.nixosGenerate {
       system = "x86_64-linux";
+      specialArgs = {inherit inputs outputs;};
       modules = [
         ./nixos/hosts/EDI/configuration.nix
         sops-nix.nixosModules.sops
