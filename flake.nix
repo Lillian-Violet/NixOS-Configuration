@@ -4,12 +4,24 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Disko for declaratively setting disk formatting
+    inputs.disko.url = "github:nix-community/disko";
+
+    # Secret management with sops
     sops-nix.url = "github:Mic92/sops-nix";
+
+    # Simple mail server
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
+
+    # Extra utils for flakes
     flake-utils.url = "github:numtide/flake-utils";
+
+    # Manage KDE plasma desktop configuration
     plasma-manager.url = "github:pjones/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
+
     # You can access packages and modules from different nixpkgs revs
     # at the same time. Here's an working example:
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -24,7 +36,10 @@
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Fix for steam cursor not being visible under wayland
     extest.url = "github:chaorace/extest-nix";
+
     # Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
 
@@ -85,6 +100,7 @@
           ./nixos/hosts/EDI/configuration.nix
           sops-nix.nixosModules.sops
           lanzaboote.nixosModules.lanzaboote
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
@@ -102,6 +118,7 @@
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
           #lanzaboote.nixosModules.lanzaboote
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
@@ -118,6 +135,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/queen/configuration.nix
           sops-nix.nixosModules.sops
+          disko.nixosModules.disko
           simple-nixos-mailserver.nixosModule
         ];
       };
@@ -142,7 +160,7 @@
           # make the module declared by the linger flake available to our config
           #linger.nixosModules."armv7l-linux".default
           #pihole.nixosModules."armv7l-linux".default
-
+          disko.nixosModules.disko
           # > Our main nixos configuration file <
           ./nixos/hosts/wheatley/configuration.nix
           sops-nix.nixosModules.sops
