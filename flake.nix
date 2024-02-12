@@ -7,6 +7,7 @@
 
     # Disko for declaratively setting disk formatting
     inputs.disko.url = "github:nix-community/disko";
+    inputs.disko.inputs.nixpkgs.follows = "nixpkgs";
 
     # Nixos generators for creating ISOs
     nixos-generators = {
