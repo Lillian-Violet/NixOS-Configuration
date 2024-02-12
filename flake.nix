@@ -67,6 +67,7 @@
     self,
     nixpkgs,
     nixos-generators,
+    disko,
     home-manager,
     sops-nix,
     simple-nixos-mailserver,
