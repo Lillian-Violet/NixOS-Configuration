@@ -88,7 +88,6 @@
 
     # User tools
     noisetorch
-    nixos-generators
   ];
 
   programs.direnv = {

@@ -8,6 +8,12 @@
     # Disko for declaratively setting disk formatting
     inputs.disko.url = "github:nix-community/disko";
 
+    # Nixos generators for creating ISOs
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Secret management with sops
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -60,6 +66,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixos-generators,
     home-manager,
     sops-nix,
     simple-nixos-mailserver,
@@ -107,6 +114,22 @@
           }
         ];
       };
+    };
+
+    # ISO for EDI, can be built using nix build .#EDIISO
+    EDIISO = nixos-generators.nixosGenerate {
+      system = "x86_64-linux";
+      modules = [
+        ./nixos/hosts/EDI/configuration.nix
+        sops-nix.nixosModules.sops
+        lanzaboote.nixosModules.lanzaboote
+        disko.nixosModules.disko
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+        }
+      ];
+      format = "iso";
     };
 
     nixosConfigurations = {
