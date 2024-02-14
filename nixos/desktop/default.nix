@@ -63,6 +63,7 @@
     # Custom tools
     dvd
     dvt
+    servo
 
     # System tools
     direnv
