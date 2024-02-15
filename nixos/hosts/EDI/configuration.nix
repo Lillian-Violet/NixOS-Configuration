@@ -24,7 +24,7 @@
 
     ../../desktop
 
-    ../../../disko/EDI
+    ../../../disko/EDI/lvm.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -41,6 +41,7 @@
   environment.systemPackages = with pkgs; [
     podman
     podman-compose
+    sbctl
   ];
 
   virtualisation.podman = {
@@ -53,13 +54,25 @@
   boot.bootspec.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = ["bcachefs"];
-  boot = {
-    loader.systemd-boot.enable = lib.mkForce false;
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/etc/secureboot";
-    };
+
+  # Lanzaboote currently replaces the systemd-boot module.
+  # This setting is usually set to true in configuration.nix
+  # generated at installation time. So we force it to false
+  # for now.
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  
+  boot.lanzaboote = {
+     enable = true;
+     pkiBundle = "/etc/secureboot";
   };
+
+  #boot = {
+    #loader.systemd-boot.enable = lib.mkForce false;
+    #lanzaboote = {
+      #enable = true;
+      #pkiBundle = "/etc/secureboot";
+    #};
+  #};
   # Enable bluetooth hardware
   hardware.bluetooth.enable = true;
 

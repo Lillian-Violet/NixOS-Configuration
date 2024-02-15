@@ -47,9 +47,10 @@
         type = "lvm_vg";
         lvs = {
           swap = {
-            size = "4G";
+            size = "8G";
             content = {
               type = "swap";
+              resumeDevice = true; # resume from hiberation from this device
             };
           };
           root = {
