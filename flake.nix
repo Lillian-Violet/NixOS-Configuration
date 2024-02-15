@@ -143,7 +143,7 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/GLaDOS/configuration.nix
           sops-nix.nixosModules.sops
-          #lanzaboote.nixosModules.lanzaboote
+          lanzaboote.nixosModules.lanzaboote
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
