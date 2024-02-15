@@ -24,11 +24,25 @@
 
     ../../desktop
 
+    ../../../disko/GLaDOS
+
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
+
+  # Lanzaboote currently replaces the systemd-boot module.
+  # This setting is usually set to true in configuration.nix
+  # generated at installation time. So we force it to false
+  # for now.
+  # boot.loader.systemd-boot.enable = lib.mkForce false;
+
+  # boot.lanzaboote = {
+  #   enable = true;
+  #   pkiBundle = "/etc/secureboot";
+  # };
+
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = ["bcachefs"];
