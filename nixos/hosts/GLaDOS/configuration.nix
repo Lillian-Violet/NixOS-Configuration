@@ -30,6 +30,12 @@
     ./hardware-configuration.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    podman
+    podman-compose
+    sbctl
+  ];
+
   boot.loader.systemd-boot.enable = lib.mkForce false;
 
   boot.lanzaboote = {
