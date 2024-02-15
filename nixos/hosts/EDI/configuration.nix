@@ -60,19 +60,12 @@
   # generated at installation time. So we force it to false
   # for now.
   boot.loader.systemd-boot.enable = lib.mkForce false;
-  
+
   boot.lanzaboote = {
-     enable = true;
-     pkiBundle = "/etc/secureboot";
+    enable = true;
+    pkiBundle = "/etc/secureboot";
   };
 
-  #boot = {
-    #loader.systemd-boot.enable = lib.mkForce false;
-    #lanzaboote = {
-      #enable = true;
-      #pkiBundle = "/etc/secureboot";
-    #};
-  #};
   # Enable bluetooth hardware
   hardware.bluetooth.enable = true;
 
