@@ -36,6 +36,17 @@
     sbctl
   ];
 
+  services.xserver.videoDrivers = ["amdgpu"];
+
+  # Add vulkan support to GPU
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+  # For 32 bit applications
+  hardware.opengl.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
+  ];
+
   boot.loader.systemd-boot.enable = lib.mkForce false;
 
   boot.lanzaboote = {
