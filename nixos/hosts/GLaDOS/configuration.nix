@@ -34,6 +34,7 @@
     podman
     podman-compose
     sbctl
+    linuxKernel.packages.linux_latest_libre.v4l2loopback
   ];
 
   boot.loader.systemd-boot.enable = lib.mkForce false;
