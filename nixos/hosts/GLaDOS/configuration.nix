@@ -34,7 +34,6 @@
     podman
     podman-compose
     sbctl
-    linuxKernel.packages.linux_latest_libre.v4l2loopback
   ];
 
   boot.loader.systemd-boot.enable = lib.mkForce false;
@@ -47,6 +46,7 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.supportedFilesystems = ["bcachefs"];
+  boot.kernelModules = ["hid-nintendo" "v4l2loopback"];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   home-manager = {
