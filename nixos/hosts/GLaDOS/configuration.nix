@@ -34,6 +34,7 @@
     podman
     podman-compose
     sbctl
+    qjackctl
   ];
 
   services.xserver.videoDrivers = ["amdgpu"];
