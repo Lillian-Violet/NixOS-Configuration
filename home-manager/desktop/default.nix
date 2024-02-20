@@ -65,7 +65,6 @@
 
     # Multimedia:
     freetube
-    obs-studio
     vlc
 
     # Office applications:
@@ -117,6 +116,15 @@
       oderwat.indent-rainbow
       rust-lang.rust-analyzer
       yzhang.markdown-all-in-one
+    ];
+  };
+
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      obs-backgroundremoval
+      obs-pipewire-audio-capture
     ];
   };
 

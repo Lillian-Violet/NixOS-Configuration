@@ -89,6 +89,7 @@
 
     # User tools
     noisetorch
+    wireplumber
   ];
 
   programs.direnv = {
@@ -146,6 +147,8 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    jack.enable = true;
+    wireplumber.enable = true;
   };
 
   programs.noisetorch = {
