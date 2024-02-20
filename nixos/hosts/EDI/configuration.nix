@@ -67,8 +67,6 @@
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
-  boot.loader.systemd-boot.configurationLimit = 3;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable bluetooth hardware
   hardware.bluetooth.enable = true;
