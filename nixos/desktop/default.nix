@@ -168,9 +168,6 @@
     dockerCompat = true;
   };
 
-  sops.defaultSopsFile = ./secrets/sops.yaml;
-  sops.age.keyFile = ../../../../../../var/secrets/keys.txt;
-
   sops.secrets."lillian-password".neededForUsers = true;
 
   users.users.lillian = {

@@ -30,6 +30,9 @@
     ./hardware-configuration.nix
   ];
 
+  sops.defaultSopsFile = ./secrets/sops.yaml;
+  sops.age.keyFile = ../../../../../../var/secrets/keys.txt;
+
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
