@@ -24,7 +24,7 @@
 
     ../../desktop
 
-    ../../../disko/EDI/lvm.nix
+    ../../../disko/EDI
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
