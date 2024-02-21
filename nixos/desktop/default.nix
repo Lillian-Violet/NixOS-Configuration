@@ -159,7 +159,7 @@
     enable = true;
   };
 
-  users.mutableuUsers = false;
+  users.mutableUsers = false;
 
   users.users = {
     root = {
