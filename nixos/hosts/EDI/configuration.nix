@@ -37,6 +37,7 @@
 
   users.users.lillian = {
     hashedPasswordFile = config.sops.secrets."lillian-password".path;
+    extraGroups = ["docker"];
   };
 
   home-manager = {
@@ -79,8 +80,6 @@
 
   # Enable bluetooth hardware
   hardware.bluetooth.enable = true;
-
-  users.users.lillian.extraGroups = ["docker"];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "unstable";
