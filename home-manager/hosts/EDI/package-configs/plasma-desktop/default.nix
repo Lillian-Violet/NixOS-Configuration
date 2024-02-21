@@ -1,11 +1,4 @@
 {
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
   programs.plasma = {
     enable = true;
     shortcuts = {
@@ -258,10 +251,12 @@
       "dolphinrc"."ExtractDialog"."1536x864 screen: Height" = 560;
       "dolphinrc"."ExtractDialog"."1536x864 screen: Width" = 1024;
       "dolphinrc"."ExtractDialog"."DirHistory[$e]" = "/home/";
+      "dolphinrc"."General"."RememberOpenedTabs" = false;
       "dolphinrc"."IconsMode"."PreviewSize" = 80;
       "dolphinrc"."KFileDialog Settings"."Places Icons Auto-resize" = false;
       "dolphinrc"."KFileDialog Settings"."Places Icons Static Size" = 22;
       "dolphinrc"."KFileDialog Settings"."detailViewIconSize" = 16;
+      "dolphinrc"."PreviewSettings"."Plugins" = "mobithumbnail,fontthumbnail,ebookthumbnail,kraorathumbnail,jpegthumbnail,windowsexethumbnail,comicbookthumbnail,djvuthumbnail,opendocumentthumbnail,windowsimagethumbnail,exrthumbnail,audiothumbnail,cursorthumbnail,svgthumbnail,blenderthumbnail,gsthumbnail,rawthumbnail,ffmpegthumbs,imagethumbnail,directorythumbnail";
       "kactivitymanagerdrc"."activities"."a2cd7f51-1f1f-47a8-9544-a4c401f57a12" = "Default";
       "kactivitymanagerdrc"."main"."currentActivity" = "a2cd7f51-1f1f-47a8-9544-a4c401f57a12";
       "kcminputrc"."Libinput.1739.30383.CUST0001:00 06CB:76AF Touchpad"."MiddleButtonEmulation" = true;
@@ -294,6 +289,7 @@
       "kdeglobals"."KFileDialog Settings"."Speedbar Width" = 138;
       "kdeglobals"."KFileDialog Settings"."View Style" = "DetailTree";
       "kdeglobals"."KShortcutsDialog Settings"."Dialog Size" = "600,480";
+      "kdeglobals"."PreviewSettings"."MaximumRemoteSize" = 0;
       "kdeglobals"."WM"."activeBackground" = "49,54,59";
       "kdeglobals"."WM"."activeBlend" = "252,252,252";
       "kdeglobals"."WM"."activeForeground" = "252,252,252";
@@ -836,6 +832,7 @@
       "khotkeysrc"."KShortcutsDialog Settings"."Dialog Size[$d]" = "";
       "khotkeysrc"."Main"."AlreadyImported" = "defaults,kde32b1,konqueror_gestures_kde321";
       "khotkeysrc"."Main"."Disabled" = false;
+      "khotkeysrc"."PreviewSettings"."MaximumRemoteSize[$d]" = "";
       "khotkeysrc"."Voice"."Shortcut" = "";
       "khotkeysrc"."WM"."activeBackground[$d]" = "";
       "khotkeysrc"."WM"."activeBlend[$d]" = "";
@@ -844,6 +841,9 @@
       "khotkeysrc"."WM"."inactiveBlend[$d]" = "";
       "khotkeysrc"."WM"."inactiveForeground[$d]" = "";
       "kiorc"."Confirmations"."ConfirmDelete" = true;
+      "kiorc"."Confirmations"."ConfirmEmptyTrash" = true;
+      "kiorc"."Confirmations"."ConfirmTrash" = false;
+      "kiorc"."Executable scripts"."behaviourOnLaunch" = "alwaysAsk";
       "krunnerrc"."Plugins"."baloosearchEnabled" = false;
       "krunnerrc"."Plugins"."locationsEnabled" = true;
       "krunnerrc"."Plugins"."placesEnabled" = true;
