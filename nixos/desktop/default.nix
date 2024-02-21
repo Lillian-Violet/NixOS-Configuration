@@ -70,6 +70,9 @@
     git-filter-repo
     gnupg
     pciutils
+    podman
+    podman-compose
+    sbctl
     waydroid
     xwaylandvideobridge
     yubikey-personalization
@@ -89,6 +92,7 @@
 
     # User tools
     noisetorch
+    qjackctl
     wireplumber
   ];
 
@@ -159,18 +163,48 @@
     enable = true;
   };
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
+
+  sops.defaultSopsFile = ./secrets/sops.yaml;
+  sops.age.keyFile = ../../../../../../var/secrets/keys.txt;
+
+  sops.secrets."lillian-password".neededForUsers = true;
+
+  users.users.lillian = {
+    isNormalUser = true;
+    extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
+    shell = pkgs.zsh;
+    hashedPasswordFile = config.sops.secrets."lillian-password".path;
+  };
+
   users.mutableUsers = false;
 
-  users.users = {
-    root = {
-      hashedPassword = "*";
-    };
-    lillian = {
-      isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
-      shell = pkgs.zsh;
-    };
+  users.users.root = {
+    hashedPassword = "*";
   };
+
+  boot.bootspec.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = ["bcachefs"];
+  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
+  boot.kernelModules = [
+    # Virtual Camera
+    "v4l2loopback"
+    # Virtual Microphone, built-in
+    "snd-aloop"
+  ];
+  # Set initial kernel module settings
+  boot.extraModprobeConfig = ''
+    # exclusive_caps: Skype, Zoom, Teams etc. will only show device when actually streaming
+    # card_label: Name of virtual camera, how it'll show up in Skype, Zoom, Teams
+    # https://github.com/umlaeute/v4l2loopback
+    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+  '';
+  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];

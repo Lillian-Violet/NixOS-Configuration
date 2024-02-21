@@ -30,16 +30,6 @@
     ./hardware-configuration.nix
   ];
 
-  sops.defaultSopsFile = ./secrets/sops.yaml;
-  sops.age.keyFile = ../../../../../../var/secrets/keys.txt;
-
-  sops.secrets."lillian-password".neededForUsers = true;
-
-  users.users.lillian = {
-    hashedPasswordFile = config.sops.secrets."lillian-password".path;
-    extraGroups = ["docker"];
-  };
-
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
@@ -49,37 +39,20 @@
   };
 
   environment.systemPackages = with pkgs; [
-    podman
-    podman-compose
-    sbctl
   ];
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
   networking.hostName = "EDI";
-
-  boot.bootspec.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = ["bcachefs"];
 
   # Lanzaboote currently replaces the systemd-boot module.
   # This setting is usually set to true in configuration.nix
   # generated at installation time. So we force it to false
   # for now.
   boot.loader.systemd-boot.enable = lib.mkForce false;
-  boot.loader.systemd-boot.configurationLimit = 3;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   boot.lanzaboote = {
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
-
-  # Enable bluetooth hardware
-  hardware.bluetooth.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "unstable";
