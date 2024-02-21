@@ -159,7 +159,12 @@
     enable = true;
   };
 
+  users.mutableuUsers = false;
+
   users.users = {
+    root = {
+      hashedPassword = "*";
+    };
     lillian = {
       isNormalUser = true;
       extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
