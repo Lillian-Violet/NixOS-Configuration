@@ -12,7 +12,7 @@ If you do not have my private age key, the first step is to add your age keyfile
 
 **Note: make sure this key is not readable by normal users, I made it owned by root, and gave the file 400 (read only for user) permissions. eg: ``chown 400 /var/secrets/keys.txt``**
 
-if you don't want to use [Sops](https://github.com/Mic92/sops-nix) secret management remove the import from the configuration files; the import can be found under
+if you don't want to use [sops](https://github.com/Mic92/sops-nix) secret management remove the import from the configuration files; the import can be found under
 ``hosts/shared/default.nix``
 
 Upon any of the above changes; also remove/replace the secret files, they can be found under the host configuration folders in
