@@ -20,9 +20,9 @@ Upon any of the above changes; also remove/replace the secret files, they can be
 
 For the hosts EDI and GLaDOS, [lanzaboot](https://github.com/nix-community/lanzaboote) has to be disabled (and re-enabled if you want secure boot after install). You can first replace enabling lanzaboot with systemd-boot. You can do this by commenting out the lanzaboot configuration, and replace the line
 
- ``boot.loader.systemd-boot.enable = lib.mkForce false;`` with ``boot.loader.systemd-boot.enable = true``
+``boot.loader.systemd-boot.enable = lib.mkForce false;`` with ``boot.loader.systemd-boot.enable = true``
 
- To turn secure boot back on again you can look at the [lanzaboot](https://github.com/nix-community/lanzaboote) repository and follow the install steps.
+To turn secure boot back on again you can look at the [lanzaboot](https://github.com/nix-community/lanzaboote) repository and follow the install steps.
 
 Then run this command with your cloned github repo (I put mine in /etc/nixos):
 
