@@ -6,10 +6,18 @@ The configuration of different NixOS hosts using flakes and home-manager. It is 
 
 ## Building and deploying the configuration
 
-The first step is to add your age keyfile to the /nix/var/secrets folder with the name "keys.txt" (if you don't have one, remove the imports from the configuration files; the import can be found under
-``hosts/<hostname>/configuration.nix``).
+The first step is to add your age keyfile to the /var/secrets folder with the name "keys.txt", in my case an age private key. If you don't have have an age private key you can generate one with the command
+``age-keygen -o /var/secrets/keys.txt``
 
-Then run this command within your cloned github repo (I put mine in /etc/nixos):
+**Note: make sure this key is not readable by normal users, I made it owned by root, and gave the file 400 (read only for user) permissions. eg: ``chown 400 /var/secrets/keys.txt``**
+
+if you don't want to use sops remove the import from the configuration files; the import can be found under
+``hosts/shared/default.nix``
+
+Upon any of the above changes; also remove/replace the secret files, they can be found under the host configuration folders in
+``hosts/<hostname>/secrets/sops.yaml``
+
+Then run this command with your cloned github repo (I put mine in /etc/nixos):
 
 ``sudo nixos-rebuild --flake .#<hostname> switch``
 
@@ -33,10 +41,10 @@ Note: this does not build the full configuration, and errors might still happen 
 
 ## Technical details
 
-### Home manager
+### Home manager[https://github.com/nix-community/home-manager]
 Home manager is imported as a module within the global configuration, it is therefor not needed to build home-manager packages separately in this configuration. On multi user systems it might be useful to pull the home-manager configurations from separate repos for different users, so you don't have to give your users access to the global configuration.
 
-### Sops
+### Sops[https://github.com/Mic92/sops-nix]
 The secrets are managed in sops files within the hosts folders, there is only one sops file per host, but this can be changed quite easily. The command to edit the sops file is as follows:
 
 ``nix-shell -p sops --run "sops ./nixos/hosts/<hostname>/secrets/sops.yaml"``
