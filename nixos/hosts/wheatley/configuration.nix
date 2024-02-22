@@ -15,11 +15,8 @@
     ./armv7l.nix
     ./hardware-configuration.nix
 
-    # Import locale settings
-    ../../shared/locale
-
-    # Import shared packages
-    ../../shared/packages
+    # Import shared configurations
+    ../../shared
   ];
 
   boot.loader.generic-extlinux-compatible.enable = true;
