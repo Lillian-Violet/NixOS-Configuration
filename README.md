@@ -17,6 +17,12 @@ if you don't want to use sops remove the import from the configuration files; th
 Upon any of the above changes; also remove/replace the secret files, they can be found under the host configuration folders in
 ``hosts/<hostname>/secrets/sops.yaml``
 
+For the hosts EDI and GLaDOS, [lanzaboot](https://github.com/nix-community/lanzaboote) has to be disabled (and re-enabled if you want secure boot after install). You can first replace enabling lanzaboot with systemd-boot. You can do this by commenting out the lanzaboot configuration, and replace the line
+
+ ``boot.loader.systemd-boot.enable = lib.mkForce false;`` with ``boot.loader.systemd-boot.enable = true``
+
+ To turn secure boot back on again you can look at the [lanzaboot](https://github.com/nix-community/lanzaboote) repository and follow the install steps.
+
 Then run this command with your cloned github repo (I put mine in /etc/nixos):
 
 ``sudo nixos-rebuild --flake .#<hostname> switch``
@@ -41,10 +47,10 @@ Note: this does not build the full configuration, and errors might still happen 
 
 ## Technical details
 
-### Home manager[https://github.com/nix-community/home-manager]
+### [Home manager](https://github.com/nix-community/home-manager)
 Home manager is imported as a module within the global configuration, it is therefor not needed to build home-manager packages separately in this configuration. On multi user systems it might be useful to pull the home-manager configurations from separate repos for different users, so you don't have to give your users access to the global configuration.
 
-### Sops[https://github.com/Mic92/sops-nix]
+### [Sops](https://github.com/Mic92/sops-nix)
 The secrets are managed in sops files within the hosts folders, there is only one sops file per host, but this can be changed quite easily. The command to edit the sops file is as follows:
 
 ``nix-shell -p sops --run "sops ./nixos/hosts/<hostname>/secrets/sops.yaml"``
