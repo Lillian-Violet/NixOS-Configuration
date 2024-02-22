@@ -6,7 +6,7 @@ The configuration of different NixOS hosts using flakes and home-manager. It is 
 
 ## Building and deploying the configuration
 
-The first step is to add your age keyfile to the /var/secrets folder with the name "keys.txt", in my case an age private key. If you don't have have an age private key you can generate one with the command
+If you do not have my private age key, the first step is to add your age keyfile to the /var/secrets folder with the name "keys.txt", in my case an age private key. If you don't have have an age private key you can generate one with the command
 ``age-keygen -o /var/secrets/keys.txt``
 
 **Note: make sure this key is not readable by normal users, I made it owned by root, and gave the file 400 (read only for user) permissions. eg: ``chown 400 /var/secrets/keys.txt``**
