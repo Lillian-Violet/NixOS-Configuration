@@ -21,7 +21,7 @@
     # Import shared settings
     ../../shared
 
-    #../../server/package-configs/akkoma/configuration.nix
+    # Import server settings
     ../../server
   ];
 
