@@ -73,6 +73,7 @@
     podman
     podman-compose
     sbctl
+    tpm2-tools
     waydroid
     xwaylandvideobridge
     yubikey-personalization
