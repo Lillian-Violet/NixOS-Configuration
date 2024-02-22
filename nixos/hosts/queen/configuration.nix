@@ -52,7 +52,6 @@
 
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
   sops.defaultSopsFile = ./secrets/sops.yaml;
-  sops.age.keyFile = ../../../../../var/secrets/keys.txt;
 
   nix = {
     gc = {

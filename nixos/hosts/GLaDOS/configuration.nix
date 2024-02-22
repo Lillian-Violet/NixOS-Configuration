@@ -31,7 +31,6 @@
   ];
 
   sops.defaultSopsFile = ./secrets/sops.yaml;
-  sops.age.keyFile = ../../../../../../var/secrets/keys.txt;
 
   environment.systemPackages = with pkgs; [
   ];

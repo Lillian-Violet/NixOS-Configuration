@@ -53,7 +53,6 @@
   };
 
   sops.defaultSopsFile = ./secrets/sops.yaml;
-  sops.age.keyFile = ../../../../../var/secrets/keys.txt;
 
   sops.secrets."wireless.env".mode = "0440";
   sops.secrets."wireless.env".owner = config.users.users.root.name;
