@@ -168,21 +168,6 @@
     dockerCompat = true;
   };
 
-  sops.secrets."lillian-password".neededForUsers = true;
-
-  users.users.lillian = {
-    isNormalUser = true;
-    extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf" "docker"];
-    shell = pkgs.zsh;
-    hashedPasswordFile = config.sops.secrets."lillian-password".path;
-  };
-
-  users.mutableUsers = false;
-
-  users.users.root = {
-    hashedPassword = "*";
-  };
-
   boot.bootspec.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = ["bcachefs"];
