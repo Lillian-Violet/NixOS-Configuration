@@ -114,6 +114,7 @@
       #ms-vscode-remote.remote-containers
       ms-vscode-remote.remote-ssh
       oderwat.indent-rainbow
+      redhat.java
       rust-lang.rust-analyzer
       yzhang.markdown-all-in-one
     ];
