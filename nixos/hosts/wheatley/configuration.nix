@@ -15,11 +15,8 @@
     ./armv7l.nix
     ./hardware-configuration.nix
 
-    # Import locale settings
-    ../../shared/locale
-
-    # Import shared packages
-    ../../shared/packages
+    # Import shared configurations
+    ../../shared
   ];
 
   boot.loader.generic-extlinux-compatible.enable = true;
@@ -53,7 +50,6 @@
   };
 
   sops.defaultSopsFile = ./secrets/sops.yaml;
-  sops.age.keyFile = ../../../../../var/secrets/keys.txt;
 
   sops.secrets."wireless.env".mode = "0440";
   sops.secrets."wireless.env".owner = config.users.users.root.name;
@@ -115,18 +111,6 @@
 
   programs.git = {
     enable = true;
-  };
-
-  users.users = {
-    lillian = {
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGatnsrKMoZSW24Lw4meb6BAgHgeyN/8rUib4nZVT+CB lillian@EDI"
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC7+LEQnC/nlYp7nQ4p6hUCqaGiqfsA3Mg8bSy+zA8Fj lillian@GLaDOS"
-      ];
-      isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
-      shell = pkgs.zsh;
-    };
   };
 
   home-manager = {

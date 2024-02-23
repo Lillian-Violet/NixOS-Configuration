@@ -24,11 +24,13 @@
 
     ../../desktop
 
-    ../../../disko/EDI/lvm.nix
+    ../../../disko/EDI
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
   ];
+
+  sops.defaultSopsFile = ./secrets/sops.yaml;
 
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
@@ -39,21 +41,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    podman
-    podman-compose
-    sbctl
   ];
 
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
   networking.hostName = "EDI";
-
-  boot.bootspec.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.supportedFilesystems = ["bcachefs"];
 
   # Lanzaboote currently replaces the systemd-boot module.
   # This setting is usually set to true in configuration.nix
@@ -65,13 +55,6 @@
     enable = true;
     pkiBundle = "/etc/secureboot";
   };
-  boot.loader.systemd-boot.configurationLimit = 3;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  # Enable bluetooth hardware
-  hardware.bluetooth.enable = true;
-
-  users.users.lillian.extraGroups = ["docker"];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "unstable";

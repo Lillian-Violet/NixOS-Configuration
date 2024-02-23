@@ -70,6 +70,11 @@
     git-filter-repo
     gnupg
     pciutils
+    podman
+    podman-compose
+    sbctl
+    tpm2-tools
+    tpm2-tss
     waydroid
     xwaylandvideobridge
     yubikey-personalization
@@ -89,6 +94,7 @@
 
     # User tools
     noisetorch
+    qjackctl
     wireplumber
   ];
 
@@ -159,13 +165,35 @@
     enable = true;
   };
 
-  users.users = {
-    lillian = {
-      isNormalUser = true;
-      extraGroups = ["sudo" "networkmanager" "wheel" "vboxsf"];
-      shell = pkgs.zsh;
-    };
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
   };
+
+  security.tpm2.enable = true;
+  security.tpm2.pkcs11.enable = true; # expose /run/current-system/sw/lib/libtpm2_pkcs11.so
+  security.tpm2.tctiEnvironment.enable = true; # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables
+  users.users.lillian.extraGroups = ["tss"]; # tss group has access to TPM devices
+
+  boot.bootspec.enable = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = ["bcachefs"];
+  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
+  boot.kernelModules = [
+    # Virtual Camera
+    "v4l2loopback"
+    # Virtual Microphone, built-in
+    "snd-aloop"
+  ];
+  # Set initial kernel module settings
+  boot.extraModprobeConfig = ''
+    # exclusive_caps: Skype, Zoom, Teams etc. will only show device when actually streaming
+    # card_label: Name of virtual camera, how it'll show up in Skype, Zoom, Teams
+    # https://github.com/umlaeute/v4l2loopback
+    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+  '';
+  boot.loader.systemd-boot.configurationLimit = 3;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
