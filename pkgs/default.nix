@@ -4,4 +4,5 @@ pkgs: {
   dvd = pkgs.callPackage ./dvd {};
   dvt = pkgs.callPackage ./dvt {};
   servo = pkgs.callPackage ./servo {};
+  rebuild = pkgs.callPackage ./rebuild {};
 }
