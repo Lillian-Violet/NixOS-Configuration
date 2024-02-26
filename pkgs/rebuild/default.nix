@@ -14,7 +14,7 @@ writeShellApplication
     set -e
     pushd /tmp
     git clone forgejo@git.lillianviolet.dev:Lillian-Violet/NixOS-Config.git ./rebuild
-    $hostname=$(hostname)
+    hostname=$(hostname)
     pushd ./rebuild
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch --flake #$hostname &>nixos-switch.log || (cat nixos-switch.log | grep --color error && false)
