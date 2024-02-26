@@ -26,6 +26,7 @@
     git-filter-repo
     home-manager
     htop
+    libnotify
     neofetch
     oh-my-zsh
     rsync
