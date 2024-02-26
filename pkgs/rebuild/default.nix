@@ -16,7 +16,7 @@ writeShellApplication
     git clone forgejo@git.lillianviolet.dev:Lillian-Violet/NixOS-Config.git ./rebuild
     pushd ./rebuild
     echo "NixOS Rebuilding..."
-    sudo nixos-rebuild switch --flake .# &>nixos-switch.log || (cat nixos-switch.log | grep --color error && false)
+    sudo nixos-rebuild switch --flake .#
     popd
     echo "Cleaning up repository in tmp..."
     rm -rf ./rebuild
