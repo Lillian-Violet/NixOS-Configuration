@@ -5,4 +5,5 @@ pkgs: {
   dvt = pkgs.callPackage ./dvt {};
   servo = pkgs.callPackage ./servo {};
   rebuild = pkgs.callPackage ./rebuild {};
+  install-nix = pkgs.callPackage ./install-nix {};
 }
