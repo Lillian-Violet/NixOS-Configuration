@@ -38,10 +38,10 @@
     # System libraries
   ];
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-emoji-blob-bin
-    noto-fonts-emoji
-    (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
-  ];
+  # fonts.packages = with pkgs; [
+  #   noto-fonts
+  #   noto-fonts-emoji-blob-bin
+  #   noto-fonts-emoji
+  #   (nerdfonts.override {fonts = ["FiraCode" "DroidSansMono"];})
+  # ];
 }
