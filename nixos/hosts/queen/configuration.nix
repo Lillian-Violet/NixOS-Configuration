@@ -102,6 +102,7 @@
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["ve-+"];
   networking.nat.externalInterface = "ens18";
+  networking.enableIPv6 = lib.mkForce true;
 
   networking.firewall.enable = true;
 
