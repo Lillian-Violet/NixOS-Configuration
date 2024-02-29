@@ -19,13 +19,13 @@ writeShellApplication
     i=1
     for d in */
     do
-      dirs[i++]="$\{d%/}"
+      dirs[i++]="${d%/}"
     done
-    select dir in "$\{dirs[@]}"; do echo "you selected $\{dir}"; break; done
+    select dir in "${dirs[@]}"; do echo "you selected ${dir}"; break; done
     popd
     pushd ./install
     echo "NixOS Installing..."
-    sudo nixos-install --flake .#$\{dir}
+    sudo nixos-install --flake .#${dir}
     popd
     echo "Cleaning up repository in tmp..."
     rm -rf ./install
