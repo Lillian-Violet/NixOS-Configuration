@@ -31,87 +31,6 @@ in {
     };
   };
 
-  systemd.services.heisenbridge = let
-    replaceSecretBin = "${pkgs.replace-secret}/bin/replace-secret";
-    registrationFile = builtins.toFile "heisenbridge-registration.yaml" (builtins.toJSON {
-      id = "heisenbridge";
-      url = "http://127.0.0.1:9898";
-      as_token = "@AS_TOKEN@";
-      hs_token = "@HS_TOKEN@";
-      rate_limited = false;
-      sender_localpart = "heisenbridge";
-      namespaces = {
-        users = [
-          {
-            regex = "@irc_.*";
-            exclusive = true;
-          }
-          {
-            regex = "@heisenbridge:.*";
-            exclusive = true;
-          }
-        ];
-        aliases = [];
-        rooms = [];
-      };
-    });
-
-    # TODO(tlater): Starting with systemd 253 it will become possible
-    # to do the credential setup as part of ExecStartPre/preStart
-    # instead.
-    #
-    # This will also make it possible to actually set caps on the
-    # heisenbridge process using systemd, so that we can run the
-    # identd process.
-    execScript = pkgs.writeShellScript "heisenbridge" ''
-      cp ${registrationFile} "$RUNTIME_DIRECTORY/heisenbridge-registration.yaml"
-      chmod 600 $RUNTIME_DIRECTORY/heisenbridge-registration.yaml
-      ${replaceSecretBin} '@AS_TOKEN@' "$CREDENTIALS_DIRECTORY/heisenbridge_as-token" "$RUNTIME_DIRECTORY/heisenbridge-registration.yaml"
-      ${replaceSecretBin} '@HS_TOKEN@' "$CREDENTIALS_DIRECTORY/heisenbridge_hs-token" "$RUNTIME_DIRECTORY/heisenbridge-registration.yaml"
-      chmod 400 $RUNTIME_DIRECTORY/heisenbridge-registration.yaml
-
-      ${pkgs.heisenbridge}/bin/heisenbridge \
-          --config $RUNTIME_DIRECTORY/heisenbridge-registration.yaml \
-          --owner @tlater:matrix.tlater.net \
-          'http://localhost:${toString cfg.settings.global.port}'
-    '';
-  in {
-    description = "Matrix<->IRC bridge";
-    wantedBy = ["multi-user.target"];
-    after = ["conduit.service"];
-
-    serviceConfig = {
-      Type = "simple";
-
-      LoadCredential = "heisenbridge:/run/secrets/heisenbridge";
-
-      ExecStart = execScript;
-
-      DynamicUser = true;
-      RuntimeDirectory = "heisenbridge";
-      RuntimeDirectoryMode = "0700";
-
-      RestrictNamespaces = true;
-      PrivateUsers = true;
-      ProtectHostname = true;
-      ProtectClock = true;
-      ProtectKernelTunables = true;
-      ProtectKernelModules = true;
-      ProtectKernelLogs = true;
-      ProtectControlGroups = true;
-      RestrictAddressFamilies = ["AF_INET AF_INET6"];
-      LockPersonality = true;
-      RestrictRealtime = true;
-      ProtectProc = "invisible";
-      ProcSubset = "pid";
-      UMask = 0077;
-
-      # For the identd port
-      # CapabilityBoundingSet = ["CAP_NET_BIND_SERVICE"];
-      # AmbientCapabilities = ["CAP_NET_BIND_SERVICE"];
-    };
-  };
-
   # Pass in the TURN secret via EnvironmentFile, not supported by
   # upstream module currently.
   #
@@ -243,14 +162,4 @@ in {
       };
     };
   };
-
-  # services.backups.conduit = {
-  #   user = "root";
-  #   paths = [
-  #     "/var/lib/private/matrix-conduit/"
-  #   ];
-  #   # Other services store their data in conduit, so no other services
-  #   # need to be shut down currently.
-  #   pauseServices = ["conduit.service"];
-  # };
 }
