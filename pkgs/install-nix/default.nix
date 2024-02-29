@@ -25,7 +25,7 @@ writeShellApplication
     popd
     pushd ./install
     echo "NixOS Installing..."
-    sudo nixos-install --flake .#\"''${dir}\"
+    sudo nixos-install --flake .#"''${dir}"
     popd
     echo "Cleaning up repository in tmp..."
     rm -rf ./install
