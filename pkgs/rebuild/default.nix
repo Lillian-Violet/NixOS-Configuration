@@ -13,6 +13,7 @@ writeShellApplication
     # A rebuild script for NixOS
     set -e
     pushd /tmp
+    rm -rf ./rebuild
     git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./rebuild
     pushd ./rebuild
     echo "NixOS Rebuilding..."
