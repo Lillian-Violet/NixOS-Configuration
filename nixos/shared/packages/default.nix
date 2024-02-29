@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     # Custom tools
     rebuild
+    install-nix
 
     # System tools
     age
