@@ -12,16 +12,16 @@ writeShellApplication
   text = ''
     # A rebuild script for NixOS
     set -e
-    pushd /tmp
+    pushd /tmp > /dev/null
     rm -rf ./rebuild
     git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./rebuild
-    pushd ./rebuild
+    pushd ./rebuild > /dev/null
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch --flake .#
-    popd
-    echo "Cleaning up repository in tmp..."
+    popd > /dev/null
+    echo "Cleaning up repository in /tmp..."
     rm -rf ./rebuild
-    popd
+    popd > /dev/null
     notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
   '';
 }
