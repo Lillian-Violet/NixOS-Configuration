@@ -31,7 +31,7 @@
     neofetch
     oh-my-zsh
     rsync
-    spacevim
+    helix
     wget
     zsh
     tldr
