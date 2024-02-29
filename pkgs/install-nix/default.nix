@@ -28,7 +28,7 @@ writeShellApplication
     echo "NixOS Installing..."
     sudo nixos-install --flake .#"''${dir}"
     popd > /dev/null
-    echo "Cleaning up repository in tmp..."
+    echo "Cleaning up repository in '/tmp/install-nix'..."
     rm -rf ./install-nix
     popd > /dev/null
     notify-send -e "NixOS Install Succeeded!" --icon=software-update-available

@@ -19,7 +19,7 @@ writeShellApplication
     echo "NixOS Rebuilding..."
     sudo nixos-rebuild switch --flake .#
     popd > /dev/null
-    echo "Cleaning up repository in /tmp..."
+    echo "Cleaning up repository in '/tmp/rebuild'..."
     rm -rf ./rebuild
     popd > /dev/null
     notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available
