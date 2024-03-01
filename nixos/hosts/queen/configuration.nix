@@ -105,7 +105,7 @@
       ];
       script = "rebuild";
       serviceConfig = {
-        User = config.users.users.default.name;
+        User = config.users.users.root;
       };
       startAt = "weekly";
     };
