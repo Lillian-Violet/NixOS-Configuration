@@ -11,7 +11,7 @@ writeShellApplication
 
   text = ''
     # A rebuild script for NixOS
-    rebuild_function (){
+    rebuild_function () {
       set -e
       pushd /tmp > /dev/null
       rm -rf ./rebuild
@@ -25,6 +25,7 @@ writeShellApplication
       popd > /dev/null
       echo "NixOS Rebuilt OK!"
     }
+    sudo bash -c "$(declare -f rebuild_function); rebuild_function"
     sudo systemd-inhibit --who="NixOS Updater" --why="Updating system configuration" sudo -u lillian rebuild_function
   '';
 }
