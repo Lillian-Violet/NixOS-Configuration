@@ -99,7 +99,7 @@
     extensions = with pkgs.vscode-extensions; [
       #arrterian.nix-env-selector
       #ban.spellright
-      #charliermarsh.ruff
+      charliermarsh.ruff
       dracula-theme.theme-dracula
       eamodio.gitlens
       github.vscode-pull-request-github
