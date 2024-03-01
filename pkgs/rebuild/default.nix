@@ -11,17 +11,20 @@ writeShellApplication
 
   text = ''
     # A rebuild script for NixOS
-    set -e
-    pushd /tmp > /dev/null
-    rm -rf ./rebuild
-    systemd-inhibit --what=idle git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./rebuild
-    pushd ./rebuild > /dev/null
-    echo "NixOS Rebuilding..."
-    systemd-inhibit --what=idle sudo nixos-rebuild switch --flake .#
-    popd > /dev/null
-    echo "Cleaning up repository in '/tmp/rebuild'..."
-    systemd-inhibit --what=idle rm -rf ./rebuild
-    popd > /dev/null
-    echo "NixOS Rebuilt OK!"
+    rebuild_function (){
+      set -e
+      pushd /tmp > /dev/null
+      rm -rf ./rebuild
+      git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./rebuild
+      pushd ./rebuild > /dev/null
+      echo "NixOS Rebuilding..."
+      sudo nixos-rebuild switch --flake .#
+      popd > /dev/null
+      echo "Cleaning up repository in '/tmp/rebuild'..."
+      rm -rf ./rebuild
+      popd > /dev/null
+      echo "NixOS Rebuilt OK!"
+    }
+    sudo systemd-inhibit --who="NixOS Updater" --why="Updating system configuration" sudo -u lillian rebuild_function
   '';
 }
