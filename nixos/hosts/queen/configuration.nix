@@ -102,7 +102,6 @@
     flake = "git+https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git";
     dates = "daily";
     enable = true;
-    system.autoUpgrade.dates = "Sat *-*-1..7,15..21 01:00:00";
   };
 
   # Enable networking
