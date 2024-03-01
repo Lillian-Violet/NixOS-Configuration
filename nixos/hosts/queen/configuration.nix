@@ -98,20 +98,11 @@
   ];
 
   # Create an auto-update systemd service that runs every day
-  systemd.services = {
-    updater = {
-      path = [
-        pkgs.rebuild
-        pkgs.nix
-        pkgs.bash
-        pkgs.git
-        pkgs.gnutar
-        pkgs.xz.bin
-        config.nix.package.out
-      ];
-      script = "bash /run/current-system/sw/bin/systemd-rebuild";
-      startAt = "daily";
-    };
+  system.autoUpgrade = {
+    flake = "git+https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git";
+    dates = "daily";
+    enable = true;
+    system.autoUpgrade.dates = "Sat *-*-1..7,15..21 01:00:00";
   };
 
   # Enable networking
