@@ -97,6 +97,20 @@
     youtube-dl
   ];
 
+  # Create an auto-update systemd service that runs every Saturday
+  systemd.services = {
+    updater = {
+      path = [
+        pkgs.rebuild
+      ];
+      script = "rebuild";
+      serviceConfig = {
+        User = config.users.users.default.name;
+      };
+      startAt = "weekly";
+    };
+  };
+
   # Enable networking
   networking.networkmanager.enable = true;
   networking.nat.enable = true;
