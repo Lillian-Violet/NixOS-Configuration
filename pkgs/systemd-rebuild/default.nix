@@ -17,8 +17,8 @@ writeShellApplication
     cd ./rebuild
     echo "NixOS Rebuilding..."
     systemd-inhibit nixos-rebuild switch --flake .#
-    cd ..
     echo "Cleaning up repository in '/tmp/rebuild'..."
+    cd ..
     systemd-inhibit rm -rf ./rebuild
     echo "NixOS Rebuilt OK!"
   '';
