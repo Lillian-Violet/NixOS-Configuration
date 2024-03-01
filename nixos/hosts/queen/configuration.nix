@@ -105,6 +105,9 @@
         pkgs.nix
         pkgs.bash
         pkgs.git
+        pkgs.gnutar
+        pkgs.xz.bin
+        config.nix.package.out
       ];
       script = "bash /run/current-system/sw/bin/systemd-rebuild";
       startAt = "daily";
