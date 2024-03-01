@@ -19,6 +19,7 @@
     # Custom tools
     rebuild
     install-nix
+    systemd-rebuild
 
     # System tools
     age

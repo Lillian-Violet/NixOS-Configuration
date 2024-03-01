@@ -104,8 +104,9 @@
         pkgs.rebuild
         pkgs.nix
         pkgs.bash
+        pkgs.git
       ];
-      script = "bash /run/current-system/sw/bin/rebuild";
+      script = "bash /run/current-system/sw/bin/systemd-rebuild";
       startAt = "daily";
     };
   };
