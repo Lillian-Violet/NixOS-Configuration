@@ -97,17 +97,16 @@
     youtube-dl
   ];
 
-  # Create an auto-update systemd service that runs every Saturday
+  # Create an auto-update systemd service that runs every day
   systemd.services = {
     updater = {
       path = [
         pkgs.rebuild
+        pkgs.nix
+        pkgs.bash
       ];
-      script = "rebuild";
-      serviceConfig = {
-        User = config.users.users.root;
-      };
-      startAt = "weekly";
+      script = "bash /run/current-system/sw/bin/rebuild";
+      startAt = "daily";
     };
   };
 
