@@ -22,6 +22,6 @@ writeShellApplication
     echo "Cleaning up repository in '/tmp/rebuild'..."
     systemd-inhibit --what=idle rm -rf ./rebuild
     popd > /dev/null
-    notify-send -e "NixOS Rebuilt OK!" --icon=software-update-available > /dev/null
+    echo "NixOS Rebuilt OK!"
   '';
 }
