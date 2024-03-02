@@ -28,7 +28,13 @@
   boot.tmp.cleanOnBoot = true;
   zramSwap.enable = false;
   networking.domain = "";
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    # require public key authentication for better security
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+    settings.PermitRootLogin = "no";
+  };
 
   nixpkgs = {
     # You can add overlays here
