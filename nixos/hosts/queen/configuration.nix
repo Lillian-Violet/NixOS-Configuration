@@ -10,6 +10,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
+    outputs.nixosModules.contabo.wan
     inputs.home-manager.nixosModules.home-manager
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -120,6 +121,17 @@
   networking.firewall.enable = true;
 
   networking.firewall.allowedTCPPorts = [22 80 443];
+
+  networking.useNetworkd = true;
+
+  modules.contabo.wan = {
+    enable = true;
+    macAddress = "aa:bb:cc:dd:ee:ff"; # changeme
+    ipAddresses = [
+      "192.0.2.0/32"
+      "2001:db8::1/64"
+    ];
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
