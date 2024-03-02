@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     # Custom tools
     rebuild
+    rebuild-no-inhibit
     install-nix
 
     # System tools
