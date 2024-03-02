@@ -111,6 +111,7 @@
     enable = true;
   };
 
+  systemd.services.systemd-networkd.serviceConfig.Environment = "SYSTEMD_LOG_LEVEL=debug";
   # Enable networking
   networking.networkmanager.enable = true;
   networking.nat.enable = true;

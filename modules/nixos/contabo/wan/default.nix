@@ -28,10 +28,10 @@ in {
       address = cfg.ipAddresses;
       routes = [
         {routeConfig.Gateway = "fe80::1";}
-        {routeConfig = {Destination = "172.31.1.1";};}
+        {routeConfig = {Destination = "62.171.160.1";};}
         {
           routeConfig = {
-            Gateway = "172.31.1.1";
+            Gateway = "62.171.160.1";
             GatewayOnLink = true;
           };
         }
