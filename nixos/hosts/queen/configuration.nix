@@ -129,7 +129,7 @@
 
   modules.contabo.wan = {
     enable = true;
-    macAddress = "aa:bb:cc:dd:ee:ff"; # changeme
+    macAddress = "00:50:56:43:01:e2"; # changeme
     ipAddresses = [
       "192.0.2.0/32"
       "2001:db8::1/64"
