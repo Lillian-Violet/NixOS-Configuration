@@ -124,6 +124,8 @@
 
   networking.useNetworkd = true;
 
+  networking.useDHCP = false;
+
   modules.contabo.wan = {
     enable = true;
     macAddress = "aa:bb:cc:dd:ee:ff"; # changeme
