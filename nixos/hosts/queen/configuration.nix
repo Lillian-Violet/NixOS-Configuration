@@ -124,7 +124,7 @@
 
   networking.firewall.allowedTCPPorts = [22 80 443];
 
-  networking.useNetworkd = true;
+  # networking.useNetworkd = true;
 
   # networking.useDHCP = false;
 
