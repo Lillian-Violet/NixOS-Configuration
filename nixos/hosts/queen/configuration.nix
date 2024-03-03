@@ -118,6 +118,7 @@
   networking.nat.internalInterfaces = ["ve-+"];
   networking.nat.externalInterface = "ens18";
   networking.enableIPv6 = lib.mkForce true;
+  networking.nameservers = ["2a02:c207::1:53" "2a02:c207::2:53"];
 
   networking.firewall.enable = true;
 
@@ -125,16 +126,16 @@
 
   networking.useNetworkd = true;
 
-  networking.useDHCP = false;
+  # networking.useDHCP = false;
 
-  modules.contabo.wan = {
-    enable = true;
-    macAddress = "00:50:56:43:01:e2"; # changeme
-    ipAddresses = [
-      "192.0.2.0/32"
-      "2001:db8::1/64"
-    ];
-  };
+  # modules.contabo.wan = {
+  #   enable = true;
+  #   macAddress = "00:50:56:43:01:e2"; # changeme
+  #   ipAddresses = [
+  #     "192.0.2.0/32"
+  #     "2001:db8::1/64"
+  #   ];
+  # };
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
