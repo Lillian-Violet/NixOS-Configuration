@@ -107,7 +107,7 @@
   jovian.steam.autoStart = true;
 
   #What desktop to start when switching to desktop session
-  jovian.steam.desktopSession = "plasmawayland";
+  jovian.steam.desktopSession = "plasma";
 
   jovian.steam.user = "lillian";
 
