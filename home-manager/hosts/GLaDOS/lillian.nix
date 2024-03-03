@@ -27,6 +27,11 @@
     r2modman
   ];
 
+  programs.mangohud = {
+    enable = true;
+    enableSessionWide = true;
+  };
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
 }
