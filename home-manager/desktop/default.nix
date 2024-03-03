@@ -75,7 +75,6 @@
 
     # System tools:
     rage
-    discover
     flameshot
     fzf
     nextcloud-client
