@@ -74,6 +74,8 @@
     pkiBundle = "/etc/secureboot";
   };
 
+  users.users.lillian.extraGroups = ["gamemode"];
+
   home-manager = {
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
