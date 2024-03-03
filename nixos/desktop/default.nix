@@ -70,15 +70,15 @@
 
     # KDE/QT
     krunner-translator
-    libsForQt5.discover
-    libsForQt5.kcalc
-    libsForQt5.kdepim-addons
-    libsForQt5.kirigami2
-    libsForQt5.kdeconnect-kde
-    libsForQt5.krunner-ssh
-    libsForQt5.krunner-symbols
-    libsForQt5.packagekit-qt
-    libportal-qt5
+    kdePackages.discover
+    kdePackages.kcalc
+    kdePackages.kdepim-addons
+    kdePackages.kirigami
+    kdePackages.kdeconnect-kde
+    # kdePackages.krunner-ssh
+    # kdePackages.krunner-symbols
+    kdePackages.packagekit-qt
+    libportal
 
     # User tools
     noisetorch
@@ -108,8 +108,8 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.defaultSession = "plasma";
   programs.kdeconnect.enable = true;
 
   # Enable flatpak support
