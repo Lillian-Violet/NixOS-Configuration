@@ -52,6 +52,7 @@
     #Gaming:
     prismlauncher
     r2modman
+    yuzu
 
     # Multimedia:
     freetube
