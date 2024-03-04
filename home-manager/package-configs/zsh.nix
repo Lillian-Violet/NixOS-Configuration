@@ -18,7 +18,7 @@
   programs.zsh = {
     enable = true;
     shellAliases = {
-      cd = "zoxide";
+      cd = "z";
     };
     plugins = [
       {
