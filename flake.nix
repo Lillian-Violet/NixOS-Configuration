@@ -5,6 +5,8 @@
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     # Disko for declaratively setting disk formatting
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
@@ -76,6 +78,7 @@
     linger,
     pihole,
     lanzaboote,
+    nixos-hardware,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -112,6 +115,7 @@
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
         modules = [
+          nixos-hardware.nixosModules.dell-xps-13-7390
           # > Our main nixos configuration file <
           ./nixos/hosts/EDI/configuration.nix
           sops-nix.nixosModules.sops
