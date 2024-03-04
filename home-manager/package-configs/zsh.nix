@@ -11,6 +11,10 @@
     enable = true;
   };
 
+  environment.interactiveShellInit = ''
+    alias cd='z'
+  '';
+
   programs.zsh = {
     enable = true;
     plugins = [
@@ -89,6 +93,7 @@
         "web-search"
         "zsh-interactive-cd"
         "zsh-navigation-tools"
+        "z"
       ];
       theme = "jtriley";
     };
