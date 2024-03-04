@@ -11,10 +11,6 @@
     enable = true;
   };
 
-  environment.interactiveShellInit = ''
-    alias cd='z'
-  '';
-
   programs.zsh = {
     enable = true;
     plugins = [

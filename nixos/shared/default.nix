@@ -54,6 +54,10 @@
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
 
+  environment.interactiveShellInit = ''
+    alias cd='z'
+  '';
+
   users.mutableUsers = false;
 
   users.users.root = {
