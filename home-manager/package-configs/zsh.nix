@@ -17,6 +17,9 @@
 
   programs.zsh = {
     enable = true;
+    shellAliases = {
+      cd = "zoxide";
+    };
     plugins = [
       {
         name = "zsh-nix-shell";
