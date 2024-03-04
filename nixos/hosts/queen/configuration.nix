@@ -10,7 +10,7 @@
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
-    outputs.nixosModules.contabo.wan
+    # outputs.nixosModules.contabo.wan
     inputs.home-manager.nixosModules.home-manager
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -96,7 +96,9 @@
   networking.nat.internalInterfaces = ["ve-+"];
   networking.nat.externalInterface = "ens18";
   networking.enableIPv6 = lib.mkForce true;
-  networking.nameservers = ["1.1.1.1" "2a02:c207::1:53" "2a02:c207::2:53"];
+  networking.nameservers = ["1.1.1.1"];
+
+  # Contabo ipv6 nameservers: "2a02:c207::1:53" "2a02:c207::2:53"
 
   networking.firewall.enable = true;
 
