@@ -138,7 +138,7 @@
   users.users.lillian.extraGroups = ["tss"]; # tss group has access to TPM devices
 
   boot.bootspec.enable = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   boot.supportedFilesystems = ["bcachefs"];
   boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
   boot.kernelModules = [
