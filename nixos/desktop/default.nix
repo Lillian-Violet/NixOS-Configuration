@@ -127,10 +127,6 @@
     enable = true;
   };
 
-  programs.zsh = {
-    enable = true;
-  };
-
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
@@ -160,7 +156,4 @@
   '';
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # Enable completion of system packages by zsh
-  environment.pathsToLink = ["/share/zsh"];
 }

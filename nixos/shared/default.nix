@@ -47,6 +47,13 @@
     ];
   };
 
+  programs.zsh = {
+    enable = true;
+  };
+
+  # Enable completion of system packages by zsh
+  environment.pathsToLink = ["/share/zsh"];
+
   users.mutableUsers = false;
 
   users.users.root = {

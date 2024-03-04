@@ -118,10 +118,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  programs.zsh = {
-    enable = true;
-  };
-
   programs.git = {
     enable = true;
   };
