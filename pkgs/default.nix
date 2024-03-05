@@ -6,5 +6,6 @@ pkgs: {
   servo = pkgs.callPackage ./servo {};
   rebuild-no-inhibit = pkgs.callPackage ./rebuild-no-inhibit {};
   rebuild = pkgs.callPackage ./rebuild {};
+  install-nix-no-inhibit = pkgs.callPackage ./install-nix-no-inhibit {};
   install-nix = pkgs.callPackage ./install-nix {};
 }
