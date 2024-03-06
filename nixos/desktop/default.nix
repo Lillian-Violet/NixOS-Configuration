@@ -32,6 +32,7 @@
     servo
 
     # System tools
+    aha
     direnv
     git-filter-repo
     gnupg
@@ -56,6 +57,7 @@
     # kdePackages.krunner-ssh
     # kdePackages.krunner-symbols
     kdePackages.packagekit-qt
+    libportal-qt5
     libportal
 
     # User tools
