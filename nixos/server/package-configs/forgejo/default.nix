@@ -64,6 +64,13 @@
         ROOT_URL = "https://git.lillianviolet.dev/";
         HTTP_PORT = 3218;
       };
+      markup.jupyter = "
+        ENABLED = true;
+        FILE_EXTENSIONS = .ipynb
+        RENDER_COMMAND = jupyter nbconvert --stdout --to html --template full 
+        IS_INPUT_FILE = true
+        RENDER_CONTENT_MODE = no-sanitizer
+      ";
     };
   };
 

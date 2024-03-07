@@ -72,6 +72,8 @@
     onlyoffice-documentserver
     postgresql_16
     python3
+    python311Packages.nbconvert
+    jupyter
     rabbitmq-server
     roundcube
     roundcubePlugins.contextmenu
