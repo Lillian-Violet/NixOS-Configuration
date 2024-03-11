@@ -19,7 +19,6 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../../desktop
-    ./package-configs/plasma-desktop
   ];
 
   home.packages = with pkgs; [

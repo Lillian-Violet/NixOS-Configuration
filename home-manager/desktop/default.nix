@@ -17,6 +17,7 @@
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
     ../package-configs/zsh.nix
+    ./plasma-desktop
   ];
   nixpkgs = {
     # You can add overlays here
