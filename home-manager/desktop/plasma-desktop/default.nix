@@ -241,6 +241,15 @@
       "services.org.kde.spectacle.desktop"."RectangularRegionScreenShot" = ["Ctrl+@" "Meta+Shift+Print"];
       "services.org.kde.spectacle.desktop"."WindowUnderCursorScreenShot" = ["Meta+Ctrl+Print" "Ctrl+%"];
       "services.org.kde.spectacle.desktop"."_launch" = "Print";
+      "services.services.org.kde.plasma-systemmonitor.desktop"."_launch" = "Ctrl+Esc";
+      "services.services.org.kde.spectacle.desktop"."ActiveWindowScreenShot" = ["" "Meta+Print" "Ctrl+!"];
+      "services.services.org.kde.spectacle.desktop"."CurrentMonitorScreenShot" = "Ctrl+#";
+      "services.services.org.kde.spectacle.desktop"."FullScreenScreenShot" = ["" "Ctrl+$" "Shift+Print"];
+      "services.services.org.kde.spectacle.desktop"."OpenWithoutScreenshot" = "Ctrl+^";
+      "services.services.org.kde.spectacle.desktop"."RecordWindow" = [];
+      "services.services.org.kde.spectacle.desktop"."RectangularRegionScreenShot" = ["" "Ctrl+@" "Meta+Shift+Print"];
+      "services.services.org.kde.spectacle.desktop"."WindowUnderCursorScreenShot" = ["" "Meta+Ctrl+Print" "Ctrl+%"];
+      "services.services.org.kde.spectacle.desktop"."_launch" = "Print";
     };
     configFile = {
       "baloofilerc"."General"."dbVersion" = 2;
