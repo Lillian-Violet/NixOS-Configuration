@@ -20,6 +20,8 @@
     rebuild
     rebuild-no-inhibit
     install-nix
+    update
+    upgrade
 
     # System tools
     age

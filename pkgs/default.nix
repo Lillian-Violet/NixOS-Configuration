@@ -8,4 +8,6 @@ pkgs: {
   rebuild = pkgs.callPackage ./rebuild {};
   install-nix-no-inhibit = pkgs.callPackage ./install-nix-no-inhibit {};
   install-nix = pkgs.callPackage ./install-nix {};
+  update = pkgs.callPackage ./update {};
+  upgrade = pkgs.callPackage ./upgrade {};
 }
