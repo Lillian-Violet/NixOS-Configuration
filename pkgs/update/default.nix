@@ -18,6 +18,7 @@ writeShellApplication
     pushd ./update > /dev/null
     echo "Updating flake lock..."
     nix flake update
+    git add flake.lock
     git commit -m "update flake lock"
     git push
     popd > /dev/null
