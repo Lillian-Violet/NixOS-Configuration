@@ -19,6 +19,7 @@
     enable = true;
     shellAliases = {
       cd = "z";
+      code = "codium ./";
     };
     plugins = [
       {
