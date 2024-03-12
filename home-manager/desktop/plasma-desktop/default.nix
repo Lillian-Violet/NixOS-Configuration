@@ -104,7 +104,7 @@
       "kwin"."Walk Through Windows (Reverse)" = "Alt+Shift+Backtab";
       "kwin"."Walk Through Windows Alternative" = [];
       "kwin"."Walk Through Windows Alternative (Reverse)" = [];
-      "kwin"."Walk Through Windows of Current Application" = "Alt+`";
+      "kwin"."Walk Through Windows of Current Application" = [];
       "kwin"."Walk Through Windows of Current Application (Reverse)" = "Alt+~";
       "kwin"."Walk Through Windows of Current Application Alternative" = [];
       "kwin"."Walk Through Windows of Current Application Alternative (Reverse)" = [];
