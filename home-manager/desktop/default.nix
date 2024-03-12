@@ -71,7 +71,7 @@
     # Office applications:
     onlyoffice-bin
     teams-for-linux
-    gimp-with-plugins
+    gimp
     thunderbird
 
     # System tools:
