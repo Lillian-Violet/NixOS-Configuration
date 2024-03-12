@@ -5,7 +5,7 @@
 }:
 writeShellApplication
 {
-  name = "rebuild";
+  name = "upgrade";
 
   runtimeInputs = [];
 
