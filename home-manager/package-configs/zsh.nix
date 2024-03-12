@@ -20,6 +20,7 @@
     shellAliases = {
       cd = "z";
       code = "codium ./";
+      lh = "ls -lah";
     };
     plugins = [
       {
