@@ -14,7 +14,7 @@ writeShellApplication
     set -e
     pushd /tmp > /dev/null
     rm -rf ./update
-    git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./update
+    git clone forgejo@git.lillianviolet.dev:Lillian-Violet/NixOS-Config.git ./update
     pushd ./update > /dev/null
     echo "Updating flake lock..."
     nix flake update
