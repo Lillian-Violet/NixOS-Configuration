@@ -139,13 +139,14 @@
   security.tpm2.tctiEnvironment.enable = true; # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables
   users.users.lillian.extraGroups = ["tss"]; # tss group has access to TPM devices
 
+  # FIXME: re-enable virtual camera loopback when it build again.
   boot.bootspec.enable = true;
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   boot.supportedFilesystems = ["bcachefs"];
-  boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [v4l2loopback.out];
   boot.kernelModules = [
     # Virtual Camera
-    "v4l2loopback"
+    # "v4l2loopback"
     # Virtual Microphone, built-in
     "snd-aloop"
   ];
@@ -154,7 +155,7 @@
     # exclusive_caps: Skype, Zoom, Teams etc. will only show device when actually streaming
     # card_label: Name of virtual camera, how it'll show up in Skype, Zoom, Teams
     # https://github.com/umlaeute/v4l2loopback
-    options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
+    # options v4l2loopback exclusive_caps=1 card_label="Virtual Camera"
   '';
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.efi.canTouchEfiVariables = true;
