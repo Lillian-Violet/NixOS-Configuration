@@ -82,6 +82,8 @@
     roundcubePlugins.persistent_login
     roundcubePlugins.thunderbird_labels
     youtube-dl
+    sqlite
+    rocksdb
   ];
 
   # Create an auto-update systemd service that runs every day
