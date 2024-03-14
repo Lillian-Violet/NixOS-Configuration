@@ -40,8 +40,6 @@ in {
 
     settings.global = {
       inherit server_name;
-      database_path = lib.mkForce "/var/lib/conduwuit";
-      database_backend = "sqlite";
     };
   };
 
