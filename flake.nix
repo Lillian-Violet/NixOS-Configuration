@@ -17,6 +17,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Conduit fork without all the fuss and drama
+    conduit = {
+      url = "github:girlbossceo/conduwuit";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Secret management with sops
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -79,6 +85,7 @@
     pihole,
     lanzaboote,
     nixos-hardware,
+    conduit,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -123,27 +130,10 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
-            home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
         ];
       };
-    };
-
-    # ISO for EDI, can be built using nix build .#EDIISO
-    EDIISO = nixos-generators.nixosGenerate {
-      system = "x86_64-linux";
-      specialArgs = {inherit inputs outputs;};
-      modules = [
-        ./nixos/hosts/EDI/configuration.nix
-        sops-nix.nixosModules.sops
-        lanzaboote.nixosModules.lanzaboote
-        disko.nixosModules.disko
-        home-manager.nixosModules.home-manager
-        {
-          home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
-        }
-      ];
-      format = "iso";
     };
 
     nixosConfigurations = {
@@ -158,7 +148,7 @@
           disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
-            home-manager.sharedModules = [plasma-manager.homeManagerModules.plasma-manager];
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
         ];
       };
@@ -186,9 +176,14 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/shodan/configuration.nix
           sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+          }
         ];
       };
     };
+
     nixosConfigurations = {
       wheatley = nixpkgs.lib.nixosSystem {
         system = "armv7l-linux";
