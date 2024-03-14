@@ -10,4 +10,5 @@ pkgs: {
   install-nix = pkgs.callPackage ./install-nix {};
   update = pkgs.callPackage ./update {};
   upgrade = pkgs.callPackage ./upgrade {};
+  restart = pkgs.callPackage ./restart {};
 }

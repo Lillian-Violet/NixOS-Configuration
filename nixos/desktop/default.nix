@@ -30,6 +30,7 @@
     dvd
     dvt
     servo
+    restart
 
     # System tools
     aha
