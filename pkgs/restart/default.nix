@@ -7,7 +7,7 @@ writeShellApplication
 {
   name = "restart";
 
-  runtimeInputs = [killall];
+  runtimeInputs = [];
 
   text = ''
     # Restart script for kde
