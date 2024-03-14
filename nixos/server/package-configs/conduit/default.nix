@@ -39,6 +39,8 @@ in {
 
     settings.global = {
       inherit server_name;
+      database_path = "/var/lib/conduwuit";
+      database_backend = "sqlite";
     };
   };
 
