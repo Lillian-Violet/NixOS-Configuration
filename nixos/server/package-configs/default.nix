@@ -7,7 +7,7 @@
   ...
 }: {
   imports = [
-    # ./conduit
+    ./conduit
     ./forgejo
     ./gotosocial
     ./mail-server

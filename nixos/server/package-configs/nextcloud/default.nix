@@ -11,9 +11,9 @@
   sops.secrets."local.json".owner = config.users.users.onlyoffice.name;
 
   users.users = {
-    nextcloud.extraGroups = [config.users.groups.keys.name "onlyoffice"];
+    nextcloud.extraGroups = [config.users.groups.keys.name config.users.users.onlyoffice.name];
     #aria2.extraGroups = ["nextcloud"];
-    onlyoffice.extraGroups = ["nextcloud"];
+    onlyoffice.extraGroups = [config.users.users.nextcloud.name];
   };
 
   # Enable Nginx
@@ -91,6 +91,7 @@
   };
 
   services.onlyoffice = {
+    port = 16783;
     enable = true;
     hostname = "onlyoffice.gladtherescake.eu";
     #postgresHost = "/run/postgesql";
