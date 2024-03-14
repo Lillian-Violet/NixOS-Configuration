@@ -12,7 +12,7 @@ writeShellApplication
   text = ''
     # Restart script for kde
 
-    killall plasmashell
-    kstart plasmashell
+    killall .plasmashell-wr
+    kstart plasmashell&
   '';
 }
