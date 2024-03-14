@@ -9,7 +9,7 @@
   server_name = "matrix.gladtherescake.eu";
 
   # An admin email for TLS certificate notifications
-  admin_email = "admin@gladtherescake.eu";
+  admin_email = "letsencrypt@gladtherescake.eu";
 
   # These ones you can leave alone
 
