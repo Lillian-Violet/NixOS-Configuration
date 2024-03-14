@@ -8,23 +8,15 @@
   # The hostname that will appear in your user and room IDs
   server_name = "matrix.gladtherescake.eu";
 
-  # The hostname that Conduit actually runs on
-  #
-  # This can be the same as `server_name` if you want. This is only necessary
-  # when Conduit is running on a different machine than the one hosting your
-  # root domain. This configuration also assumes this is all running on a single
-  # machine, some tweaks will need to be made if this is not the case.
-  matrix_hostname = "${server_name}";
-
   # An admin email for TLS certificate notifications
-  admin_email = "admin@${server_name}";
+  admin_email = "admin@gladtherescake.eu";
 
   # These ones you can leave alone
 
   # Build a dervation that stores the content of `${server_name}/.well-known/matrix/server`
   well_known_server = pkgs.writeText "well-known-matrix-server" ''
     {
-      "m.server": "${matrix_hostname}"
+      "m.server": "${server_name}"
     }
   '';
 
@@ -32,7 +24,7 @@
   well_known_client = pkgs.writeText "well-known-matrix-client" ''
     {
       "m.homeserver": {
-        "base_url": "https://${matrix_hostname}"
+        "base_url": "https://${server_name}"
       }
     }
   '';
@@ -69,7 +61,7 @@ in {
     recommendedProxySettings = true;
 
     virtualHosts = {
-      "${matrix_hostname}" = {
+      "${server_name}" = {
         forceSSL = true;
         enableACME = true;
 
