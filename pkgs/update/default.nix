@@ -19,6 +19,7 @@ writeShellApplication
     echo "Updating flake lock..."
     nix flake update
     git add flake.lock
+    sudo nix flake check
     git commit -m "update flake lock"
     git push
     popd > /dev/null
