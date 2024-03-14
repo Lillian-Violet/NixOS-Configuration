@@ -40,6 +40,7 @@ in {
 
     settings.global = {
       inherit server_name;
+      database_backend = "sqlite";
     };
   };
 
