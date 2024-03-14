@@ -64,6 +64,7 @@
     noisetorch
     qjackctl
     wireplumber
+    rustdesk
   ];
 
   programs.direnv = {

@@ -56,6 +56,7 @@
     noto-fonts-emoji
     oh-my-zsh
     rsync
+    rustdesk
     wget
     zsh
 
