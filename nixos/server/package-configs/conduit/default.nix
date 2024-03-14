@@ -104,16 +104,6 @@ in {
             proxy_buffering off;
           '';
         };
-
-        extraConfig = ''
-          merge_slashes off;
-        '';
-      };
-
-      "${server_name}" = {
-        forceSSL = true;
-        enableACME = true;
-
         locations."=/.well-known/matrix/server" = {
           # Use the contents of the derivation built previously
           alias = "${well_known_server}";
@@ -136,6 +126,10 @@ in {
             add_header Access-Control-Allow-Origin "*";
           '';
         };
+
+        extraConfig = ''
+          merge_slashes off;
+        '';
       };
     };
 
