@@ -30,6 +30,7 @@
     git-filter-repo
     home-manager
     htop
+    killall
     libnotify
     neofetch
     oh-my-zsh
