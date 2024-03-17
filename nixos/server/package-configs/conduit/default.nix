@@ -41,7 +41,7 @@ in {
     settings.global = {
       inherit server_name;
       database_backend = "sqlite";
-      allow_registration = true;
+      allow_registration = false;
     };
   };
 
