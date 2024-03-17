@@ -27,6 +27,11 @@
     fsType = "vfat";
   };
 
+  fileSystems."/home/lillian/sd" = {
+    device = "/dev/mmcblk0p1";
+    fsType = "exfat";
+  };
+
   swapDevices = [
     {device = "/dev/disk/by-uuid/c0c87d80-b6be-444a-a76f-b32d35c38994";}
   ];
