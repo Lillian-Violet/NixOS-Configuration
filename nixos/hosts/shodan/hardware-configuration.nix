@@ -27,7 +27,7 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home/lillian/sd" = {
+  fileSystems."/run/media/lillian/SD" = {
     device = "/dev/mmcblk0p1";
     fsType = "exfat";
   };
