@@ -144,6 +144,10 @@
 
   networking.firewall.allowedTCPPorts = [22];
 
+  # Enable automounting of removable media
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
