@@ -52,17 +52,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1710602287,
-        "narHash": "sha256-6hjHSfH3jfTDxD6hELL7RGoqv2pnyVAtS81H5Le6qkk=",
-        "owner": "girlbossceo",
-        "repo": "conduwuit",
-        "rev": "930bf3891c5a1279b23e16f3f10ce02c47b9b4cb",
-        "type": "github"
+        "lastModified": 1710648418,
+        "narHash": "sha256-DW8l1iofy9lYeZaHLX89Wvvry2mzp2R2Yk4cM5pjB8g=",
+        "owner": "famedly",
+        "repo": "conduit",
+        "rev": "a8da61e5b7152da0925f9f9f25056144d24fe4a6",
+        "type": "gitlab"
       },
       "original": {
-        "owner": "girlbossceo",
-        "repo": "conduwuit",
-        "type": "github"
+        "owner": "famedly",
+        "repo": "conduit",
+        "type": "gitlab"
       }
     },
     "crane": {
@@ -638,11 +638,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1710637405,
-        "narHash": "sha256-w/woLwnFyhOeJWPjSWFtMNI2/RZTaAtHySIfm43Chos=",
+        "lastModified": 1710669607,
+        "narHash": "sha256-kNj0Ka1/rkQRcigYTa1c5B6IcFuxDgM3s9jYuKUhxyM=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "299d4668ba61600311553920d9fd9c102145b2cb",
+        "rev": "6af7e814afb3b62171eee1edc31989ee61528d25",
         "type": "github"
       },
       "original": {
