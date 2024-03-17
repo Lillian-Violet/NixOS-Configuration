@@ -179,7 +179,7 @@
     enable = true;
   };
 
-  users.users.lillian.extraGroups = ["decky"];
+  users.users.lillian.extraGroups = ["decky" "storage"];
 
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
