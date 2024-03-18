@@ -58,6 +58,9 @@
     # kdePackages.krunner-ssh
     # kdePackages.krunner-symbols
     kdePackages.packagekit-qt
+    kdePackages.plasma-pa
+    kdePackages.sddm-kcm
+    kdePackages.dolphin-plugins
     libportal-qt5
     libportal
 
