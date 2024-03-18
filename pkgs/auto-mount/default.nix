@@ -192,7 +192,8 @@ writeShellApplication
 
     do_unmount()
     {
-        local mount_point=$(findmnt -fno TARGET "''${DEVICE}" || true)
+        local mount_point
+        mount_point=$(findmnt -fno TARGET "''${DEVICE}" || true)
         if [[ -n $mount_point ]]; then
             # Remove symlink to the mount point that we're unmounting
             find /run/media -maxdepth 1 -xdev -type l -lname "''${mount_point}" -exec rm -- {} \;
@@ -204,7 +205,8 @@ writeShellApplication
 
     do_retrigger()
     {
-        local mount_point=$(findmnt -fno TARGET "''${DEVICE}" || true)
+        local mount_point
+        mount_point=$(findmnt -fno TARGET "''${DEVICE}" || true)
         [[ -n $mount_point ]] || return 0
 
         # In retrigger mode, we want to wait a bit for steam as the common pattern is starting in parallel with a retrigger
