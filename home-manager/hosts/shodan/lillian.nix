@@ -78,6 +78,8 @@
     ungoogled-chromium
   ];
 
+  programs.bashmount.enable = true;
+
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {
