@@ -13,8 +13,6 @@ writeShellApplication
   runtimeInputs = [];
 
   text = ''
-        #!/bin/bash
-
     set -euo pipefail
 
     # Originally from https://serverfault.com/a/767079

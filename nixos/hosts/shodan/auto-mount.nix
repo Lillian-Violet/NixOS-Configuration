@@ -9,12 +9,12 @@
   environment.systemPackages = with pkgs; [auto-mount];
 
   services.udev.extraRules = ''
-    KERNEL=="sd[a-z]|sd[a-z][0-9]", ACTION=="add", RUN+="/bin/systemctl start --no-block external-drive-mount@%k.service"
-    KERNEL=="sd[a-z]|sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/systemctl stop --no-block external-drive-mount@%k.service"
-    KERNEL=="mmcblk0|mmcblk0p[0-9]", ACTION=="add", RUN+="/bin/systemctl start --no-block external-drive-mount@%k.service"
-    KERNEL=="mmcblk0|mmcblk0p[0-9]", ACTION=="remove", RUN+="/bin/systemctl stop --no-block external-drive-mount@%k.service"
-    KERNEL=="nvme0n1p9|nvme0n1p1[0-9]", ACTION=="add", RUN+="/bin/systemctl start --no-block external-drive-mount@%k.service"
-    KERNEL=="nvme0n1p9|nvme0n1p1[0-9]", ACTION=="remove", RUN+="/bin/systemctl stop --no-block external-drive-mount@%k.service"
+    KERNEL=="sd[a-z]|sd[a-z][0-9]", ACTION=="add", RUN+="/run/current-system/sw/bin/systemctl start --no-block external-drive-mount@%k.service"
+    KERNEL=="sd[a-z]|sd[a-z][0-9]", ACTION=="remove", RUN+="/run/current-system/sw/bin/systemctl stop --no-block external-drive-mount@%k.service"
+    KERNEL=="mmcblk0|mmcblk0p[0-9]", ACTION=="add", RUN+="/run/current-system/sw/bin/systemctl start --no-block external-drive-mount@%k.service"
+    KERNEL=="mmcblk0|mmcblk0p[0-9]", ACTION=="remove", RUN+="/run/current-system/sw/bin/systemctl stop --no-block external-drive-mount@%k.service"
+    KERNEL=="nvme0n1p9|nvme0n1p1[0-9]", ACTION=="add", RUN+="/run/current-system/sw/bin/systemctl start --no-block external-drive-mount@%k.service"
+    KERNEL=="nvme0n1p9|nvme0n1p1[0-9]", ACTION=="remove", RUN+="/run/current-system/sw/bin/systemctl stop --no-block external-drive-mount@%k.service"
   '';
   systemd.services.auto-mount = {
     enable = true;
