@@ -36,7 +36,7 @@ writeShellApplication
 
     # Shared between this and the auto-mount script to ensure we're not double-triggering nor automounting while formatting
     # or vice-versa.
-    MOUNT_LOCK="/var/run/jupiter-automount-''${DEVBASE//\/_}.lock"
+    MOUNT_LOCK="/home/lillian/lock/jupiter-automount-''${DEVBASE//\/_}.lock"
 
     # Obtain lock
     exec 9<>"$MOUNT_LOCK"
@@ -60,20 +60,20 @@ writeShellApplication
 
     send_steam_url()
     {
-      local command
-      command="$1"
-      local arg
-      arg="$2"
-      local encoded
-      encoded=$(urlencode "$arg")
-      if pgrep -x "steam" > /dev/null; then
-          # TODO use -ifrunning and check return value - if there was a steam process and it returns -1, the message wasn't sent
-          # need to retry until either steam process is gone or -ifrunning returns 0, or timeout i guess
-          systemd-run -M 1000@ --user --collect --wait sh -c "./.steam/root/ubuntu12_32/steam steam://''${command}/''${encoded@Q}"
-          echo "Sent URL to steam: steam://''${command}/''${arg} (steam://''${command}/''${encoded})"
-      else
-          echo "Could not send steam URL steam://''${command}/''${arg} (steam://''${command}/''${encoded}) -- steam not running"
-      fi
+        local command
+        command="$1"
+        local arg
+        arg="$2"
+        local encoded
+        encoded=$(urlencode "$arg")
+        if pgrep -x "steam" > /dev/null; then
+            # TODO use -ifrunning and check return value - if there was a steam process and it returns -1, the message wasn't sent
+            # need to retry until either steam process is gone or -ifrunning returns 0, or timeout i guess
+            systemd-run -M 1000@ --user --collect --wait sh -c "./.steam/root/ubuntu12_32/steam steam://''${command}/''${encoded@Q}"
+            echo "Sent URL to steam: steam://''${command}/''${arg} (steam://''${command}/''${encoded})"
+        else
+            echo "Could not send steam URL steam://''${command}/''${arg} (steam://''${command}/''${encoded}) -- steam not running"
+        fi
     }
 
     # From https://gist.github.com/HazCod/da9ec610c3d50ebff7dd5e7cac76de05
@@ -106,25 +106,25 @@ writeShellApplication
 
             case "''${ID_FS_TYPE}" in
                     "ntfs")
-              echo "FSType is NTFS"
-              #Extra Opts don't seem necessary anymore? add if required
-              #OPTS+=""
+                echo "FSType is NTFS"
+                #Extra Opts don't seem necessary anymore? add if required
+                #OPTS+=""
                         ;;
                     "exfat")
-              echo "FSType is exFat"
+                echo "FSType is exFat"
                         #OPTS+=",users,gid=100,umask=000,shortname=mixed,utf8=1,flush"
                         ;;
                     "btrfs")
-              echo "FSType is btrfs"
+                echo "FSType is btrfs"
                         ;;
             "ext4")
                         echo "FSType is ext4"
-              #exit 2
-              ;;
+                #exit 2
+                ;;
                     *)
                         echo "Error mounting ''${DEVICE}: unsupported fstype: ''${ID_FS_TYPE} - ''${dev_json}"
-              rm "''${MOUNT_LOCK}"
-              exit 2
+                rm "''${MOUNT_LOCK}"
+                exit 2
                         ;;
             esac
 
@@ -143,9 +143,9 @@ writeShellApplication
                     /org/freedesktop/UDisks2/block_devices/"''${DEVBASE}"                                \
                     org.freedesktop.UDisks2.Filesystem                                                 \
                     Mount 'a{sv}' 3                                                                    \
-                      as-user s lillian                                                                   \
-                      auth.no_user_interaction b true                                                  \
-                      options                  s "$OPTS") || ret=$?
+                        as-user s lillian                                                                   \
+                        auth.no_user_interaction b true                                                  \
+                        options                  s "$OPTS") || ret=$?
 
         if (( ret != 0 )); then
             send_steam_url "system/devicemountresult" "''${DEVBASE}/''${MOUNT_ERROR}"
