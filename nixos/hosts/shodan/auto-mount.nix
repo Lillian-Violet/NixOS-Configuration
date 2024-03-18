@@ -6,6 +6,8 @@
   pkgs,
   ...
 }: {
+  environment.systemPackages = with pkgs; [auto-mount];
+
   services.udev.extraRules = ''
     KERNEL=="sd[a-z]|sd[a-z][0-9]", ACTION=="add", RUN+="/bin/systemctl start --no-block external-drive-mount@%k.service"
     KERNEL=="sd[a-z]|sd[a-z][0-9]", ACTION=="remove", RUN+="/bin/systemctl stop --no-block external-drive-mount@%k.service"

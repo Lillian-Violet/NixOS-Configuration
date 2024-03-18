@@ -6,6 +6,8 @@
 }:
 writeShellApplication
 {
+  # Originally from: https://github.com/scawp/Steam-Deck.Mount-External-Drive/
+
   name = "auto-mount";
 
   runtimeInputs = [];
