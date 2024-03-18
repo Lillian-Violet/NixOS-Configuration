@@ -146,11 +146,11 @@
 
   networking.firewall.allowedTCPPorts = [22];
 
-  # Enable automounting of removable media
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
-  services.gvfs.enable = true;
-  environment.variables.GIO_EXTRA_MODULES = lib.mkForce ["${pkgs.gvfs}/lib/gio/modules"];
+  # # Enable automounting of removable media
+  # services.udisks2.enable = true;
+  # services.devmon.enable = true;
+  # services.gvfs.enable = true;
+  # environment.variables.GIO_EXTRA_MODULES = lib.mkForce ["${pkgs.gvfs}/lib/gio/modules"];
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
@@ -183,7 +183,7 @@
     enable = true;
   };
 
-  users.users.lillian.extraGroups = ["decky" "storage"];
+  users.users.lillian.extraGroups = ["decky"];
 
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
