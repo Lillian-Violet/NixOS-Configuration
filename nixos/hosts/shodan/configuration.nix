@@ -53,6 +53,7 @@
     git-filter-repo
     home-manager
     htop
+    jq
     noto-fonts
     noto-fonts-emoji-blob-bin
     noto-fonts-emoji

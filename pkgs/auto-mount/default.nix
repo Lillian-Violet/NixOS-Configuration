@@ -1,7 +1,7 @@
 {
   lib,
   stdenv,
-  direnv,
+  jq,
   writeShellApplication,
 }:
 writeShellApplication
@@ -10,7 +10,7 @@ writeShellApplication
 
   name = "auto-mount";
 
-  runtimeInputs = [];
+  runtimeInputs = [jq];
 
   text = ''
     set -euo pipefail
