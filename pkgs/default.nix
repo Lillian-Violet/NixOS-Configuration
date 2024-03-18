@@ -11,4 +11,5 @@ pkgs: {
   update = pkgs.callPackage ./update {};
   upgrade = pkgs.callPackage ./upgrade {};
   restart = pkgs.callPackage ./restart {};
+  auto-mount = pkgs.callPackage ./auto-mount {};
 }
