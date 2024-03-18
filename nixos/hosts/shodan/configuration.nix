@@ -147,6 +147,8 @@
   # Enable automounting of removable media
   services.udisks2.enable = true;
   services.devmon.enable = true;
+  services.gvfs.enable = true;
+  environment.variables.GIO_EXTRA_MODULES = ["${pkgs.gvfs}/lib/gio/modules"];
 
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
