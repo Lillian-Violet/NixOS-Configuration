@@ -78,7 +78,9 @@
     ungoogled-chromium
   ];
 
+  # Automount services for user
   programs.bashmount.enable = true;
+  services.udiskie.enable = true;
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
