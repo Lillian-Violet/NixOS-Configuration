@@ -176,6 +176,8 @@
           # > Our main nixos configuration file <
           ./nixos/hosts/shodan/configuration.nix
           sops-nix.nixosModules.sops
+          lanzaboote.nixosModules.lanzaboote
+          disko.nixosModules.disko
           home-manager.nixosModules.home-manager
           {
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];

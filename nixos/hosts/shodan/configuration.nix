@@ -22,6 +22,8 @@
     # ./nvim.nix
     ./hardware-configuration.nix
 
+    ../../../disko/EDI
+
     ./auto-mount.nix
   ];
 
@@ -184,7 +186,7 @@
     enable = true;
   };
 
-  users.users.lillian.extraGroups = ["decky"];
+  users.users.lillian.extraGroups = ["decky" "tss"];
 
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
@@ -199,6 +201,13 @@
 
   networking.hostName = "shodan";
 
+  security.tpm2.enable = true;
+  security.tpm2.pkcs11.enable = true; # expose /run/current-system/sw/lib/libtpm2_pkcs11.so
+  security.tpm2.tctiEnvironment.enable = true; # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables
+  # tss group has access to TPM devices
+
+  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = ["bcachefs"];
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.timeout = 0;
