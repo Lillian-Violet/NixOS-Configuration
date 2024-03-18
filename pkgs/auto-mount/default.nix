@@ -60,9 +60,12 @@ writeShellApplication
 
     send_steam_url()
     {
-      local command="$1"
-      local arg="$2"
-      local encoded=$(urlencode "$arg")
+      local command
+      command="$1"
+      local arg
+      arg="$2"
+      local encoded
+      encoded=$(urlencode "$arg")
       if pgrep -x "steam" > /dev/null; then
           # TODO use -ifrunning and check return value - if there was a steam process and it returns -1, the message wasn't sent
           # need to retry until either steam process is gone or -ifrunning returns 0, or timeout i guess
@@ -83,7 +86,9 @@ writeShellApplication
     {
         declare -i ret
         # NOTE: these values are ABI, since they are sent to the Steam client
+        # shellcheck disable=SC2034
         readonly FSCK_ERROR=1
+        # shellcheck disable=SC2034
         readonly MOUNT_ERROR=2
 
         # Get info for this drive: $ID_FS_LABEL, and $ID_FS_TYPE
