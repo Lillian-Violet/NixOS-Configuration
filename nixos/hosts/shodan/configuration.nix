@@ -208,7 +208,17 @@
 
   boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   boot.supportedFilesystems = ["bcachefs"];
-  boot.loader.systemd-boot.enable = true;
+  # Lanzaboote currently replaces the systemd-boot module.
+  # This setting is usually set to true in configuration.nix
+  # generated at installation time. So we force it to false
+  # for now.
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+  boot.initrd.systemd.enable = true;
+
+  boot.lanzaboote = {
+    enable = true;
+    pkiBundle = "/etc/secureboot";
+  };
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.timeout = 0;
   boot.loader.efi.canTouchEfiVariables = true;
