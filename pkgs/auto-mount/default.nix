@@ -2,6 +2,8 @@
   lib,
   stdenv,
   jq,
+  coreutils,
+  udisks,
   writeShellApplication,
 }:
 writeShellApplication
@@ -10,7 +12,7 @@ writeShellApplication
 
   name = "auto-mount";
 
-  runtimeInputs = [jq];
+  runtimeInputs = [jq coreutils udisks];
 
   text = ''
     set -euo pipefail
