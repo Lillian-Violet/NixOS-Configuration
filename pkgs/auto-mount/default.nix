@@ -190,7 +190,7 @@ writeShellApplication
         else
             #TODO check permissions are 1000  when creating new SteamLibrary
             mkdir -p "''${mount_point}/SteamLibrary"
-            chown lillian:lillian "''${mount_point}/SteamLibrary"
+            chown lillian:users "''${mount_point}/SteamLibrary"
             send_steam_url "addlibraryfolder" "''${mount_point}/SteamLibrary"
         fi
     }
