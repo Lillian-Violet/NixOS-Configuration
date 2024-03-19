@@ -206,7 +206,6 @@
   security.tpm2.tctiEnvironment.enable = true; # TPM2TOOLS_TCTI and TPM2_PKCS11_TCTI env variables
   # tss group has access to TPM devices
 
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
   boot.supportedFilesystems = ["bcachefs"];
   # Lanzaboote currently replaces the systemd-boot module.
   # This setting is usually set to true in configuration.nix
