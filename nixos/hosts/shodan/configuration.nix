@@ -212,9 +212,9 @@
   boot.loader.systemd-boot.configurationLimit = 3;
   boot.loader.timeout = 0;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.consoleLogLevel = 0;
-  boot.kernelParams = ["quiet" "udev.log_priority=0" "fbcon=vc:2-6" "console=tty0"];
-  boot.plymouth.enable = true;
+  #boot.consoleLogLevel = 0;
+  #boot.kernelParams = ["quiet" "udev.log_priority=0" "fbcon=vc:2-6" "console=tty0"];
+  #boot.plymouth.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "unstable";
