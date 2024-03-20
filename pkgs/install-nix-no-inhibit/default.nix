@@ -7,7 +7,7 @@ writeShellApplication
 {
   name = "install-nix-no-inhibit";
 
-  runtimeInputs = [];
+  runtimeInputs = [git gum];
 
   text = ''
     # An install script for NixOS installation to /tmp
@@ -25,6 +25,16 @@ writeShellApplication
     select dir in "''${dirs[@]}"; do echo "you selected ''${dir}"; break; done
     popd > /dev/null
     pushd ./install-nix > /dev/null
+    gum confirm  --default=false \
+        "🔥 🔥 🔥 WARNING!!!! This will ERASE ALL DATA on the disk for ''${dir}. Are you sure you want to continue?"
+
+        echo "Partitioning Disks"
+        sudo nix run github:nix-community/disko \
+        --extra-experimental-features "nix-command flakes" \
+        --no-write-lock-file \
+        -- \
+        --mode zap_create_mount \
+        "./disko/''${dir}/default.nix"
     echo "NixOS Installing..."
     systemd-inhibit --what=idle sudo nixos-install --flake .#"''${dir}"
     popd > /dev/null
