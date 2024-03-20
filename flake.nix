@@ -84,6 +84,7 @@
     linger,
     pihole,
     lanzaboote,
+    jovian,
     nixos-hardware,
     conduit,
     ...
@@ -134,9 +135,7 @@
           }
         ];
       };
-    };
 
-    nixosConfigurations = {
       GLaDOS = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
@@ -152,9 +151,7 @@
           }
         ];
       };
-    };
 
-    nixosConfigurations = {
       queen = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
@@ -166,9 +163,7 @@
           simple-nixos-mailserver.nixosModule
         ];
       };
-    };
 
-    nixosConfigurations = {
       shodan = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs outputs;};
@@ -178,15 +173,28 @@
           sops-nix.nixosModules.sops
           lanzaboote.nixosModules.lanzaboote
           disko.nixosModules.disko
+          jovian.nixosModules.jovian
           home-manager.nixosModules.home-manager
           {
             home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
           }
         ];
       };
-    };
 
-    nixosConfigurations = {
+      ISO = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares-plasma6.nix"
+          "${nixpkgs}/nixos/modules/installer/cd-dvd/channel.nix"
+          ./nixos/hosts/iso/configuration.nix
+          sops-nix.nixosModules.sops
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
+          }
+        ];
+      };
+
       wheatley = nixpkgs.lib.nixosSystem {
         system = "armv7l-linux";
         specialArgs = {inherit inputs outputs;};
