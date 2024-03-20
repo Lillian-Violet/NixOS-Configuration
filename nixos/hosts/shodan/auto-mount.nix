@@ -15,7 +15,7 @@
     KERNEL=="nvme0n1p9|nvme0n1p1[0-9]", ACTION=="remove", RUN+="${pkgs.systemd}/bin/systemctl stop --no-block external-drive-mount@%k.service"
   '';
   systemd.services."external-drive-mount@" = {
-    path = with pkgs; [jq coreutils udisks bash flock auto-mount];
+    path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
     enable = true;
     description = "Mount External Drive on %i";
     script = "auto-mount add %i";
