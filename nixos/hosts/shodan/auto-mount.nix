@@ -19,8 +19,8 @@
     enable = true;
     description = "Mount External Drive on %i";
     serviceConfig = {
-      ExecStart = "auto-mount add %i";
-      ExecStop = "auto-mount remove %i";
+      ExecStart = "${pkgs.auto-mount} add %i";
+      ExecStop = "${pkgs.auto-mount} remove %i";
       Type = "oneshot";
       RemainAfterExit = true;
     };
