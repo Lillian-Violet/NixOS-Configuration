@@ -15,14 +15,14 @@
     KERNEL=="nvme0n1p9|nvme0n1p1[0-9]", ACTION=="remove", RUN+="${pkgs.systemd}/bin/systemctl stop --no-block external-drive-mount@%k.service"
   '';
   systemd.services."external-drive-mount@" = {
-    path = with pkgs; [jq coreutils udisks bash];
+    path = with pkgs; [jq coreutils udisks bash automount];
     enable = true;
     description = "Mount External Drive on %i";
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "/run/current-system/sw/bin/automount add %i";
-      ExecStop = "/run/current-system/sw/bin/automount remove %i";
+      ExecStart = "automount add %i";
+      ExecStop = "automount remove %i";
     };
   };
 }
