@@ -22,8 +22,8 @@
     path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
     enable = true;
     description = "Mount External Drive on %i";
-    script = "auto-mount add ";
-    scriptArgs = "%i";
+    script = "auto-mount add";
+    scriptArgs = " %i";
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
@@ -34,8 +34,8 @@
     path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
     enable = true;
     description = "Mount External Drive on %i";
-    script = "auto-mount remove ";
-    scriptArgs = "%i";
+    script = "auto-mount remove";
+    scriptArgs = " %i";
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = false;
