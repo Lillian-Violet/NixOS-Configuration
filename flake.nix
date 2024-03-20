@@ -46,7 +46,7 @@
     lanzaboote.url = "github:nix-community/lanzaboote";
 
     # Jovian nixos (steam deck)
-    jovian.url = "github:Lillian-Violet/Jovian-NixOS-bcachefs";
+    jovian.url = "github:Jovian-Experiments/Jovian-NixOS";
 
     # Home manager
     home-manager.url = "github:nix-community/home-manager/master";
