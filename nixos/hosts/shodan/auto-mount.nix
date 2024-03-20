@@ -34,7 +34,7 @@
     path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
     enable = true;
     description = "Mount External Drive on %i";
-    script = "auto-mount remove";
+    script = "auto-mount remove ";
     scriptArgs = "%i";
     serviceConfig = {
       Type = "oneshot";
