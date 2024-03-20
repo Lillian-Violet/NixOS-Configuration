@@ -57,7 +57,7 @@
             size = "100%FREE";
             content = {
               type = "filesystem";
-              format = "bcachefs";
+              format = "ext4";
               mountpoint = "/";
               mountOptions = [
                 "defaults"
