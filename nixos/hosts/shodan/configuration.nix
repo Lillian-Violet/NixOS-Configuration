@@ -216,8 +216,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.initrd.systemd.enable = true;
 
-  boot.kernelPackages = lib.mkForce pkgs.linuxPackages_latest;
-
   # boot.lanzaboote = {
   #   enable = true;
   #   pkiBundle = "/etc/secureboot";
