@@ -22,7 +22,7 @@
     # ./nvim.nix
     ./hardware-configuration.nix
 
-    ../../../disko/EDI
+    ../../../disko/shodan
 
     ./auto-mount.nix
   ];
