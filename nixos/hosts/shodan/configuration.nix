@@ -48,6 +48,9 @@
   sops.defaultSopsFile = ./secrets/sops.yaml;
 
   environment.systemPackages = with pkgs; [
+    # Custom tools
+    auto-mount
+
     #System:
     alejandra
     btrfs-progs
