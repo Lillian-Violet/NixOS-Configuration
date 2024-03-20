@@ -21,8 +21,8 @@
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
-      ExecStart = "${pkgs.auto-mount} add %i";
-      ExecStop = "${pkgs.auto-mount} remove %i";
+      script = "auto-mount add %i";
+      preStop = "auto-mount remove %i";
     };
   };
 }
