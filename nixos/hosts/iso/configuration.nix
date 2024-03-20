@@ -27,7 +27,6 @@
     # require public key authentication for better security
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
-    settings.PermitRootLogin = "no";
   };
 
   nixpkgs = {
@@ -43,6 +42,8 @@
 
   #Set up sops config, and configure where the keyfile is, then set the mode for the unencrypted keys
   sops.defaultSopsFile = ./secrets/sops.yaml;
+
+  services.desktopManager.plasma6.enable = true;
 
   environment.systemPackages = with pkgs; [
     # Custom tools
