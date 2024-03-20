@@ -34,6 +34,7 @@
 
     # System tools
     aha
+    bcachefs-tools
     direnv
     git-filter-repo
     gnupg

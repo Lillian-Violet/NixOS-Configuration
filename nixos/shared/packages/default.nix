@@ -26,7 +26,6 @@
     # System tools
     age
     alejandra
-    bcachefs-tools
     e2fsprogs
     git
     git-filter-repo
