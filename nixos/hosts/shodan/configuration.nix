@@ -51,6 +51,7 @@
     #System:
     alejandra
     btrfs-progs
+    efitools
     git
     git-filter-repo
     home-manager
@@ -62,6 +63,7 @@
     oh-my-zsh
     rsync
     rustdesk
+    sbctl
     wget
     zsh
 
