@@ -4,6 +4,7 @@
   jq,
   coreutils,
   udisks,
+  flock,
   writeShellApplication,
 }:
 writeShellApplication
@@ -12,7 +13,7 @@ writeShellApplication
 
   name = "auto-mount";
 
-  runtimeInputs = [jq coreutils udisks];
+  runtimeInputs = [jq coreutils udisks flock];
 
   text = ''
     set -euo pipefail

@@ -55,6 +55,7 @@
     alejandra
     btrfs-progs
     efitools
+    flock
     git
     git-filter-repo
     home-manager
