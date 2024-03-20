@@ -21,8 +21,7 @@
   systemd.services."external-drive-mount@" = {
     path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
     enable = true;
-    description = "Mount External Drive on %i";
-    script = "echo auto-mount add $1 && auto-mount add $1";
+    script = "echo auto-mount add $@ && auto-mount add $@";
     serviceConfig = {
       Type = "oneshot";
       RemainAfterExit = true;
@@ -32,7 +31,6 @@
   systemd.services."external-drive-unmount@" = {
     path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
     enable = true;
-    description = "Mount External Drive on %i";
     script = "auto-mount remove $1";
     serviceConfig = {
       Type = "oneshot";
