@@ -4,6 +4,7 @@
   jq,
   coreutils,
   udisks,
+  toybox,
   util-linux,
   writeShellApplication,
 }:
