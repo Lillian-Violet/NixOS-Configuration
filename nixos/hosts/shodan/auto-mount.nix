@@ -19,7 +19,7 @@
   '';
 
   systemd.services."external-drive-mount@" = {
-    path = with pkgs; [jq coreutils udisks bash util-linux auto-mount];
+    path = with pkgs; [jq coreutils udisks bash util-linux toybox auto-mount];
     enable = true;
     script = "auto-mount add $@";
     preStop = "auto-mount remove $@";
