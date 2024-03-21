@@ -192,6 +192,7 @@ writeShellApplication
         echo "**** Mounted ''${DEVICE} at ''${mount_point} ****"
 
         if [ -f "''${mount_point}/libraryfolder.vdf" ]; then
+            echo " send_steam_url \"addlibraryfolder\" \"''${mount_point}\""
             # send_steam_url "addlibraryfolder" "''${mount_point}"
         else
             #TODO check permissions are 1000  when creating new SteamLibrary
