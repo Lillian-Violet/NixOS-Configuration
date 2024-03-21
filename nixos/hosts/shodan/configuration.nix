@@ -67,6 +67,7 @@
     rsync
     rustdesk
     sbctl
+    toybox
     wget
     zsh
 
