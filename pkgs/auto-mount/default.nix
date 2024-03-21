@@ -154,7 +154,7 @@ writeShellApplication
                         options                  s "$OPTS") || ret=$?
 
         if (( ret != 0 )); then
-            send_steam_url "system/devicemountresult" "''${DEVBASE}/''${MOUNT_ERROR}"
+            # send_steam_url "system/devicemountresult" "''${DEVBASE}/''${MOUNT_ERROR}"
             echo "Error mounting ''${DEVICE} (status = $ret)"
             exit 1
         fi
@@ -192,12 +192,12 @@ writeShellApplication
         echo "**** Mounted ''${DEVICE} at ''${mount_point} ****"
 
         if [ -f "''${mount_point}/libraryfolder.vdf" ]; then
-            send_steam_url "addlibraryfolder" "''${mount_point}"
+            # send_steam_url "addlibraryfolder" "''${mount_point}"
         else
             #TODO check permissions are 1000  when creating new SteamLibrary
             mkdir -p "''${mount_point}/SteamLibrary"
             chown lillian:users "''${mount_point}/SteamLibrary"
-            send_steam_url "addlibraryfolder" "''${mount_point}/SteamLibrary"
+            # send_steam_url "addlibraryfolder" "''${mount_point}/SteamLibrary"
         fi
     }
 
@@ -225,7 +225,7 @@ writeShellApplication
         # This is a truly gnarly way to ensure steam is ready for commands.
         # TODO literally anything else
         sleep 6
-        send_steam_url "addlibraryfolder" "''${mount_point}"
+        # send_steam_url "addlibraryfolder" "''${mount_point}"
     }
 
     case "''${ACTION}" in
