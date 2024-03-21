@@ -21,10 +21,10 @@
   systemd.services."external-drive-mount@" = {
     path = with pkgs; [jq coreutils udisks bash util-linux toybox auto-mount];
     enable = true;
-    script = "auto-mount add $@";
-    postStop = "echo auto-mount remove $@";
     scriptArgs = "%i";
     serviceConfig = {
+      execStart = "echo ${pkgs.auto-mount} add $@";
+      execStop = "echo ${pkgs.auto-mount} remove $@";
       Type = "oneshot";
       RemainAfterExit = true;
     };
