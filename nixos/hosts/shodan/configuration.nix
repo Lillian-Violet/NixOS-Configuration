@@ -68,6 +68,7 @@
     rsync
     rustdesk
     sbctl
+    steam
     toybox
     udisks
     util-linux
