@@ -22,9 +22,10 @@
     path = with pkgs; [jq coreutils udisks bash util-linux toybox auto-mount];
     enable = true;
     scriptArgs = "%i";
+
     serviceConfig = {
-      execStart = "echo ${pkgs.auto-mount} add $@";
-      execStop = "echo ${pkgs.auto-mount} remove $@";
+      ExecStart = "echo ${pkgs.auto-mount} add $@";
+      ExecStop = "echo ${pkgs.auto-mount} remove $@";
       Type = "oneshot";
       RemainAfterExit = true;
     };
