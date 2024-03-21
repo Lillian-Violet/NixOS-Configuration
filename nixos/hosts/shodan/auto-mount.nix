@@ -24,8 +24,8 @@
     scriptArgs = "%i";
 
     serviceConfig = {
-      ExecStart = "echo ${pkgs.auto-mount} add $@";
-      ExecStop = "echo ${pkgs.auto-mount} remove $@";
+      ExecStart = "${pkgs.toybox}/bin/echo ${pkgs.auto-mount} add %i";
+      ExecStop = "${pkgs.toybox}/bin/echo ${pkgs.auto-mount} remove %i";
       Type = "oneshot";
       RemainAfterExit = true;
     };
