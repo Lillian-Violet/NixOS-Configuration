@@ -2,6 +2,7 @@
   lib,
   stdenv,
   steam-fsh,
+  pkgs,
   jq,
   coreutils,
   udisks,
