@@ -19,10 +19,8 @@
   '';
 
   systemd.services."external-drive-mount@" = {
-    path = with pkgs; [jq coreutils udisks bash util-linux toybox auto-mount];
+    path = with pkgs; [jq coreutils udisks bash util-linux toybox auto-mount steam];
     enable = true;
-    scriptArgs = "%i";
-
     serviceConfig = {
       ExecStart = "${pkgs.auto-mount}/bin/auto-mount add %i";
       ExecStop = "${pkgs.auto-mount}/bin/auto-mount remove %i";

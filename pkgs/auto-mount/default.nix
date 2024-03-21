@@ -1,6 +1,7 @@
 {
   lib,
   stdenv,
+  steam-fsh,
   jq,
   coreutils,
   udisks,
@@ -14,7 +15,7 @@ writeShellApplication
 
   name = "auto-mount";
 
-  runtimeInputs = [jq coreutils udisks util-linux toybox];
+  runtimeInputs = [jq coreutils udisks util-linux toybox steam];
 
   text = ''
     set -euo pipefail
@@ -73,7 +74,7 @@ writeShellApplication
         if pgrep -x "steam" > /dev/null; then
             # TODO use -ifrunning and check return value - if there was a steam process and it returns -1, the message wasn't sent
             # need to retry until either steam process is gone or -ifrunning returns 0, or timeout i guess
-            systemd-run -M 1000@ --user --collect --wait sh -c "./.steam/root/ubuntu12_32/steam steam://''${command}/''${encoded@Q}"
+            systemd-run -M 1000@ --user --collect --wait sh -c "${pkgs.steam}/bin/steam steam://''${command}/''${encoded@Q}"
             echo "Sent URL to steam: steam://''${command}/''${arg} (steam://''${command}/''${encoded})"
         else
             echo "Could not send steam URL steam://''${command}/''${arg} (steam://''${command}/''${encoded}) -- steam not running"
