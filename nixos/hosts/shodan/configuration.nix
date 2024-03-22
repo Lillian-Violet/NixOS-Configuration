@@ -54,7 +54,6 @@
     #System:
     alejandra
     btrfs-progs
-    coreutils
     efitools
     git
     git-filter-repo
@@ -69,7 +68,6 @@
     rustdesk
     sbctl
     steam
-    toybox
     udisks
     util-linux
     wget
