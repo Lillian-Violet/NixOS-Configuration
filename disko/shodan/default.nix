@@ -74,6 +74,12 @@
           "size=2G"
         ];
       };
+      "/tmp" = {
+        fsType = "tmpfs";
+        mountOptions = [
+          "size=200M"
+        ];
+      };
     };
   };
 }
