@@ -1,6 +1,8 @@
 {
   lib,
   stdenv,
+  git,
+  gum,
   writeShellApplication,
 }:
 writeShellApplication
