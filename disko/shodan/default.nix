@@ -67,5 +67,13 @@
         };
       };
     };
+    nodev = {
+      "/home/lillian/Downloads" = {
+        fsType = "tmpfs";
+        mountOptions = [
+          "size=2G"
+        ];
+      };
+    };
   };
 }
