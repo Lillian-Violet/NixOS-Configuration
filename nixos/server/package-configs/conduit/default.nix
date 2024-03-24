@@ -32,9 +32,6 @@
 in {
   # Configure Conduit itself
   services.matrix-conduit = {
-    settings = {
-      registration_token = "It's me, Lillian Violet";
-    };
     enable = true;
 
     # This causes NixOS to use the flake defined in this repository instead of
@@ -45,6 +42,7 @@ in {
       inherit server_name;
       database_backend = "rocksdb";
       allow_registration = true;
+      registration_token = "It's me, Lillian Violet";
     };
   };
 
