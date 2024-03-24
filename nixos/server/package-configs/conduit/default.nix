@@ -42,6 +42,8 @@ in {
       inherit server_name;
       database_backend = "rocksdb";
       allow_registration = false;
+      turn_uris = ["turn:turn.gladtherescake.eu.url?transport=udp" "turn:turn.gladtherescake.eu?transport=tcp"];
+      turn_secret = "cPKWEn4Fo5TAJoE7iX3xeVOaMVE4afeRN1iRGWYfbkWbkaZMxTpnmazHyH6c6yXT";
     };
   };
 
