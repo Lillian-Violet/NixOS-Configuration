@@ -71,12 +71,6 @@
       "/home/lillian/Downloads" = {
         fsType = "tmpfs";
         mountOptions = [
-          "size=2G"
-        ];
-      };
-      "/tmp" = {
-        fsType = "tmpfs";
-        mountOptions = [
           "size=4G"
         ];
       };
