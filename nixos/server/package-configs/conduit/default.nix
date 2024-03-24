@@ -41,8 +41,7 @@ in {
     settings.global = {
       inherit server_name;
       database_backend = "rocksdb";
-      allow_registration = true;
-      registration_token = "It's me, Lillian Violet";
+      allow_registration = false;
     };
   };
 
