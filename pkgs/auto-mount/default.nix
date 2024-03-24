@@ -1,6 +1,7 @@
 {
   lib,
   stdenv,
+  system,
   steam,
   pkgs,
   jq,
