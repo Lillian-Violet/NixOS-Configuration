@@ -52,17 +52,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1710785672,
-        "narHash": "sha256-tEP/amp09fSKeTBrcHWAYr/tQ0g2ZxJQlnCiZDi6qtY=",
-        "owner": "famedly",
-        "repo": "conduit",
-        "rev": "81bc1fc4e324c4798dc7b7e3cec94495a94455e0",
-        "type": "gitlab"
+        "lastModified": 1711172967,
+        "narHash": "sha256-HBkYzSfFM0oMnRSjquI1CJ7a4jtIv9eRbAeJZDE8H3M=",
+        "owner": "girlbossceo",
+        "repo": "conduwuit",
+        "rev": "101cb34f9a1b94b91717af3581f35386f20d4601",
+        "type": "github"
       },
       "original": {
-        "owner": "famedly",
-        "repo": "conduit",
-        "type": "gitlab"
+        "owner": "girlbossceo",
+        "repo": "conduwuit",
+        "type": "github"
       }
     },
     "crane": {

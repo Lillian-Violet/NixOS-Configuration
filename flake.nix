@@ -19,7 +19,7 @@
 
     # Conduit fork without all the fuss and drama
     conduit = {
-      url = "gitlab:famedly/conduit";
+      url = "github:girlbossceo/conduwuit";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
