@@ -33,7 +33,7 @@ in {
   # Configure Conduit itself
   services.matrix-conduit = {
     settings = {
-      yes_i_am_very_very_sure_i_want_an_open_registration_server_prone_to_abuse = true;
+      registration_token = "It's me, Lillian Violet";
     };
     enable = true;
 
