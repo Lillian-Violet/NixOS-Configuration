@@ -40,7 +40,7 @@ in {
 
     settings.global = {
       inherit server_name;
-      # database_backend = "rocksdb";
+      database_backend = "rocksdb";
       allow_registration = false;
     };
   };
