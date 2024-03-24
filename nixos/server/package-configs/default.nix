@@ -14,5 +14,6 @@
     ./nextcloud
     ./postgres
     ./roundcube
+    ./coturn
   ];
 }

@@ -104,9 +104,24 @@
 
   # Contabo ipv6 nameservers: "2a02:c207::1:53" "2a02:c207::2:53"
 
-  networking.firewall.enable = true;
-
-  networking.firewall.allowedTCPPorts = [22 80 443];
+  # Open ports in the firewall.
+  networking.firewall = {
+    enable = true;
+    allowPing = false;
+    allowedTCPPorts = [
+      22 # SSH
+      5349 # STUN tls
+      5350 # STUN tls alt
+      80 # http
+      443 # https
+    ];
+    allowedUDPPortRanges = [
+      {
+        from = 49152;
+        to = 49999;
+      } # TURN relay
+    ];
+  };
 
   # networking.useNetworkd = true;
 
