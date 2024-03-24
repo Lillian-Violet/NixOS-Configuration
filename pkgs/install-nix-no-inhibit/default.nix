@@ -15,8 +15,8 @@ writeShellApplication
     # An install script for NixOS installation to /tmp
     set -e
     pushd /tmp > /dev/null
-    systemd-inhibit --what=idle rm -rf ./install-nix
-    systemd-inhibit --what=idle git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./install-nix
+    rm -rf ./install-nix
+    git clone https://git.lillianviolet.dev/Lillian-Violet/NixOS-Config.git ./install-nix
     pushd ./install-nix/nixos/hosts > /dev/null
     echo "Please choose the hostname you are installing to from the following list:"
     i=1
@@ -38,10 +38,10 @@ writeShellApplication
         --mode zap_create_mount \
         "./disko/''${dir}/default.nix"
     echo "NixOS Installing..."
-    systemd-inhibit --what=idle sudo nixos-install --flake .#"''${dir}"
+    sudo nixos-install --flake .#"''${dir}"
     popd > /dev/null
     echo "Cleaning up repository in '/tmp/install-nix'..."
-    systemd-inhibit --what=idle rm -rf ./install-nix
+    rm -rf ./install-nix
     popd > /dev/null
     echo "NixOS Install Succeeded!"
   '';
