@@ -56,7 +56,7 @@
     kate
 
     # Chat applications:
-    element-desktop
+    nheko
     signal-desktop
     webcord-vencord
 
