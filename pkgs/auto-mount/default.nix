@@ -16,7 +16,7 @@ writeShellApplication
 
   name = "auto-mount";
 
-  runtimeInputs = [jq coreutils udisks util-linux toybox];
+  runtimeInputs = [jq coreutils udisks util-linux toybox pkgs.steam];
 
   text = ''
     set -euo pipefail
@@ -76,7 +76,7 @@ writeShellApplication
             # TODO use -ifrunning and check return value - if there was a steam process and it returns -1, the message wasn't sent
             # need to retry until either steam process is gone or -ifrunning returns 0, or timeout i guess
             echo "Sent URL to steam: steam://''${command}/''${arg} (steam://''${command}/''${encoded})" >> /home/lillian/steam.txt
-            systemd-run -M 1000@ --user --collect --wait sh -c "${steam}/bin/steam steam://''${command}/''${encoded@Q}"
+            systemd-run -M 1000@ --user --collect --wait sh -c "${pkgs.steam}/bin/steam steam://''${command}/''${encoded@Q}"
         else
             echo "Could not send steam URL steam://''${command}/''${arg} (steam://''${command}/''${encoded}) -- steam not running"
         fi
