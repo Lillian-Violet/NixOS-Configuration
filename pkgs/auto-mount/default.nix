@@ -2,7 +2,6 @@
   lib,
   stdenv,
   system,
-  steam,
   pkgs,
   jq,
   coreutils,
@@ -17,7 +16,7 @@ writeShellApplication
 
   name = "auto-mount";
 
-  runtimeInputs = [jq coreutils udisks util-linux toybox steam];
+  runtimeInputs = [jq coreutils udisks util-linux toybox];
 
   text = ''
     set -euo pipefail
