@@ -195,7 +195,7 @@
     enable = true;
   };
 
-  users.users.lillian.extraGroups = ["decky" "tss"];
+  users.users.lillian.extraGroups = ["decky" "tss" "input"];
 
   # Enable completion of system packages by zsh
   environment.pathsToLink = ["/share/zsh"];
