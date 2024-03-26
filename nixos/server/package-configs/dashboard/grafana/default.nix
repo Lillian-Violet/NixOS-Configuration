@@ -6,9 +6,11 @@
   # grafana configuration
   services.grafana = {
     enable = true;
-    domain = "grafana.lillianviolet.dev";
-    http_port = 2342;
-    http_addr = "127.0.0.1";
+    server = {
+      domain = "grafana.lillianviolet.dev";
+      http_port = 2342;
+      http_addr = "127.0.0.1";
+    };
     provision = {
       datasources = [
         {
