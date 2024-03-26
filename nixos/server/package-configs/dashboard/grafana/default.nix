@@ -12,22 +12,25 @@
       http_addr = "127.0.0.1";
     };
     provision = {
-      datasources = [
-        {
-          name = "Prometheus";
-          type = "prometheus";
-          access = "proxy";
-          url = "http://localhost:${config.services.prometheus.port}";
-          isDefault = true;
-        }
-        # {
-        #   name = "Loki";
-        #   type = "loki";
-        #   access = "proxy";
-        #   url = "http://localhost:${config.services.loki.port}";
-        #   isDefault = true;
-        # }
-      ];
+      datasources.settings = {
+        apiVersion = 1;
+        datasources = [
+          {
+            name = "Prometheus";
+            type = "prometheus";
+            access = "proxy";
+            url = "http://localhost:${toString config.services.prometheus.port}";
+            isDefault = true;
+          }
+          # {
+          #   name = "Loki";
+          #   type = "loki";
+          #   access = "proxy";
+          #   url = "http://localhost:${config.services.loki.port}";
+          #   isDefault = true;
+          # }
+        ];
+      };
     };
   };
 
@@ -38,7 +41,7 @@
     ## LetsEncrypt
     enableACME = true;
     locations."/" = {
-      proxyPass = "http://127.0.0.1:${toString config.services.grafana.settings.server.port}";
+      proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
       proxyWebsockets = true;
     };
   };
