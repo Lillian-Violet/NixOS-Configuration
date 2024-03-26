@@ -15,5 +15,6 @@
     ./postgres
     ./roundcube
     ./coturn
+    ./dashboard
   ];
 }
