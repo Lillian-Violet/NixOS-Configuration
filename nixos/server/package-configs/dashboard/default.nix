@@ -9,6 +9,6 @@
   imports = [
     ./grafana
     #./loki
-    #./prometheus
+    ./prometheus
   ];
 }
