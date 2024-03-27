@@ -56,7 +56,7 @@
     kate
 
     # Chat applications:
-    nheko
+    cinny
     signal-desktop
     webcord-vencord
 
