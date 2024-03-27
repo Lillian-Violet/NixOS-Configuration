@@ -56,7 +56,7 @@
     kate
 
     # Chat applications:
-    cinny
+    cinny-desktop
     signal-desktop
     webcord-vencord
 
