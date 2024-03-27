@@ -18,9 +18,9 @@ writeShellApplication
     pushd ./update > /dev/null
     echo "Updating flake lock..."
     nix flake update
-    git add flake.lock
-    sudo nix flake check
+    git stage ./flake.lock
     git commit -m "update flake lock"
+    sudo nix flake check
     git push
     popd > /dev/null
     echo "Cleaning up repository in '/tmp/update'..."
