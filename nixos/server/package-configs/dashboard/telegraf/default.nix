@@ -41,7 +41,7 @@
         system = {};
       };
       outputs = {
-        influxdb_v2 = {
+        influxdb = {
           database = "telegraf";
           urls = ["localhost:8086"];
         };
