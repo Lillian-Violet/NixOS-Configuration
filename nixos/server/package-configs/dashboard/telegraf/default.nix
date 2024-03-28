@@ -40,14 +40,14 @@
         mem = {};
         system = {};
       };
-      # outputs = {
-      #   influxdb_v2 = {
-      #     urls = ["http://monitoringvm:8086"];
-      #     token = "\${influx_token}";
-      #     organization = "home";
-      #     bucket = "tigstack";
-      #   };
-      # };
+      outputs = {
+        influxdb_v2 = {
+          database = "telegraf";
+          urls = ["localhost:8086"];
+        };
+      };
     };
   };
+
+  services.influxdb.enable = true;
 }
