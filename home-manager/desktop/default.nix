@@ -70,7 +70,7 @@
 
     # Office applications:
     onlyoffice-bin
-    teams-for-linux
+    teams
     gimp
     thunderbird
 
