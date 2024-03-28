@@ -10,5 +10,6 @@
     ./grafana
     #./loki
     ./prometheus
+    ./telegraf
   ];
 }
